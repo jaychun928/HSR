@@ -826,22 +826,6 @@ html{scroll-padding-top:calc(var(--tbh) + 14px)}
     linear-gradient(currentColor,currentColor) 0 3.8px/12px 1.4px no-repeat,
     linear-gradient(currentColor,currentColor) 0 7.6px/12px 1.4px no-repeat}
 .tocbtn[aria-expanded="true"]{border-color:rgba(216,196,158,.6);color:#FFF8E9;background:rgba(216,196,158,.1)}
-@media (max-width:430px){
-  .brand i{display:none}
-  .brand{font-size:8.2px;letter-spacing:.18em}
-  .topbar-in{gap:8px}
-  .pgr button{padding:7px 7px 6px;font-size:10px}
-  .tocbtn{min-width:78px;height:36px;padding:0 12px;gap:7px;font-size:11.4px;letter-spacing:.1em}
-  .tocbtn .bars{width:13px;height:10px;
-    background:
-      linear-gradient(currentColor,currentColor) 0 0/13px 1.5px no-repeat,
-      linear-gradient(currentColor,currentColor) 0 4.2px/13px 1.5px no-repeat,
-      linear-gradient(currentColor,currentColor) 0 8.5px/13px 1.5px no-repeat}
-}
-
-@media (min-width:431px) and (max-width:699px){
-  .tocbtn{min-width:80px;height:34px;padding:0 13px;gap:7px;font-size:11.2px;letter-spacing:.1em}
-}
 
 /* ── 3단 접이식 목차 ── */
 .tpanel{position:fixed;left:0;right:0;top:var(--tbh);z-index:65;max-height:min(74vh,640px);overflow-y:auto;
@@ -1482,6 +1466,44 @@ html.js #realhalf[hidden]{display:none}
   .pv-d{width:6px;height:6px}
   .pv-pager{margin-top:15px;gap:10px}
 }
+
+/* ══════════════════════════════════════════════════════════════════
+   v18 — 상단 바 전체 비례 확대 (모바일·태블릿)
+   v17은 목차 버튼만 키워 PENACONY·진도 탭과의 균형이 깨졌다.
+   바 높이(--tbh)·로고·진도 탭·목차 버튼을 같은 배율로 키우고,
+   좁은 폭에서는 목차를 아이콘 버튼(v16의 조화)으로 되돌린다.
+   목차 버튼 높이는 진도 탭 묶음 높이와 정확히 같게 맞춘다.
+   ══════════════════════════════════════════════════════════════════ */
+@media (max-width:430px){
+  :root{--tbh:56px;--tabh:38px}
+  .brand i{display:none}
+  .brand{font-size:12.2px;letter-spacing:.16em}
+  .topbar-in{gap:10px}
+  .pgr button{display:inline-flex;align-items:center;justify-content:center;
+    height:var(--tabh);padding:0 10px;font-size:12.6px;letter-spacing:.03em}
+  .tocbtn{margin-left:auto;width:calc(var(--tabh) + 2px);height:calc(var(--tabh) + 2px);
+    padding:0;gap:0;font-size:12px;letter-spacing:0}
+  .tocbtn .lb{display:none}
+  .tocbtn .bars{width:16px;height:12px;
+    background:
+      linear-gradient(currentColor,currentColor) 0 0/16px 1.5px no-repeat,
+      linear-gradient(currentColor,currentColor) 0 5.25px/16px 1.5px no-repeat,
+      linear-gradient(currentColor,currentColor) 0 10.5px/16px 1.5px no-repeat}
+}
+@media (min-width:431px) and (max-width:1023px){
+  :root{--tbh:56px;--tabh:40px}
+  .brand{font-size:13px;letter-spacing:.2em}
+  .brand i{font-size:10.4px}
+  .topbar-in{gap:12px}
+  .pgr button{display:inline-flex;align-items:center;justify-content:center;
+    height:var(--tabh);padding:0 13px;font-size:13.4px;letter-spacing:.03em}
+  .tocbtn{height:calc(var(--tabh) + 2px);padding:0 14px;gap:8px;font-size:12.6px;letter-spacing:.08em}
+  .tocbtn .bars{width:14px;height:10px;
+    background:
+      linear-gradient(currentColor,currentColor) 0 0/14px 1.4px no-repeat,
+      linear-gradient(currentColor,currentColor) 0 4.3px/14px 1.4px no-repeat,
+      linear-gradient(currentColor,currentColor) 0 8.6px/14px 1.4px no-repeat}
+}
 </style>
 </head>
 <body>
@@ -1493,7 +1515,7 @@ html.js #realhalf[hidden]{display:none}
     <button type="button" data-p="2.2" aria-pressed="false">2.2</button>
     <button type="button" data-p="2.3" aria-pressed="true">2.3</button>
   </div>
-  <button class="tocbtn" type="button" id="tocbtn" aria-expanded="false" aria-controls="toc-panel">
+  <button class="tocbtn" type="button" id="tocbtn" aria-label="목차" aria-expanded="false" aria-controls="toc-panel">
     <span class="bars" aria-hidden="true"></span><span class="lb">목차</span>
   </button>
 </div></div>
