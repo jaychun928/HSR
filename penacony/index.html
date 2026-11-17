@@ -6,7 +6,7 @@
 <meta name="color-scheme" content="dark">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20fill='%23070a13'/%3E%3Cpath%20d='M16%205.5l2.6%207.4%207.4%202.6-7.4%202.6-2.6%207.4-2.6-7.4L5.5%2015.5l7.4-2.6z'%20fill='none'%20stroke='%23d8c49e'%20stroke-width='1.3'/%3E%3C/svg%3E">
 <title>페나코니 · 2.0~2.3 통합</title>
-<script>try{var p=localStorage.getItem('penacony-prog');if(p&&/^2\.[0-3]$/.test(p))document.documentElement.setAttribute('data-prog',p);else document.documentElement.setAttribute('data-first','1');var g=localStorage.getItem('penacony-gate22');document.documentElement.setAttribute('data-gate',g==='1'?'1':'0');}catch(e){}</script>
+<script>try{var p=localStorage.getItem('penaconyprog2');if(p&&/^2\.[0-3]$/.test(p))document.documentElement.setAttribute('data-prog',p);else document.documentElement.setAttribute('data-first','1');var g=localStorage.getItem('penaconygate22b');document.documentElement.setAttribute('data-gate',g==='1'?'1':'0');}catch(e){}</script>
 <style>
 :root{
   --bg:#070A13; --bg2:#0A101C; --navy:#0E1728; --card:#0B1322;
@@ -1598,7 +1598,7 @@ html.js #realhalf[hidden]{display:none}
     refreshLocks();
     refreshSpine();
     buildTOC();
-    save('penacony-prog', p);
+    save('penaconyprog2', p);
   }
 
   function refreshLocks() {
@@ -1918,8 +1918,8 @@ html.js #realhalf[hidden]{display:none}
   }
 
   /* ── 2.2 가짜 엔딩 · 추리 ─────────────────────────────────────────── */
-  var gate = load('penacony-gate22') === '1';               // 2.3·열한 번째 장 해금
-  var revealed = gate || load('penacony-quiz22') === '1';   // 추리 정답까지
+  var gate = load('penaconygate22b') === '1';               // 2.3·열한 번째 장 해금
+  var revealed = gate || load('penaconyquiz22b') === '1';   // 추리 정답까지
   if (!gate) root.dataset.gate = '0';
   var solved = revealed;
   var S = {};
@@ -1965,8 +1965,8 @@ html.js #realhalf[hidden]{display:none}
     document.body.classList.add('real');
     gate = true; revealed = true; solved = true;
     root.dataset.gate = '1';
-    save('penacony-gate22', '1');
-    save('penacony-quiz22', '1');
+    save('penaconygate22b', '1');
+    save('penaconyquiz22b', '1');
     buildTOC();
   }
 
@@ -2023,7 +2023,7 @@ html.js #realhalf[hidden]{display:none}
     if (v === '2.3') {
       gate = true; revealed = true; solved = true;
       root.dataset.gate = '1';
-      save('penacony-gate22', '1'); save('penacony-quiz22', '1');
+      save('penaconygate22b', '1'); save('penaconyquiz22b', '1');
       restoreGate();
     }
     applyProg(v);
@@ -2188,7 +2188,7 @@ html.js #realhalf[hidden]{display:none}
           $$('#quiz .opt').forEach(function (b) { if (b !== opt) markOff(b); });
           S.reveal.hidden = false;
           scrollToEl(S.reveal);
-          save('penacony-quiz22', '1');
+          save('penaconyquiz22b', '1');
           markGateCard();
         } else {
           showFeedback(k, o.feedback || []);
@@ -2281,7 +2281,7 @@ html.js #realhalf[hidden]{display:none}
       });
       $$('.beat.pair .pane').forEach(function (p) { ro.observe(p); });
     }
-    if (root.dataset.first === '1' && !load('penacony-prog')) openFirstRun();
+    if (root.dataset.first === '1' && !load('penaconyprog2')) openFirstRun();
     if (location.hash.length > 1) {
       var id = location.hash.slice(1);
       var el = document.getElementById(id);
