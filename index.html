@@ -1553,6 +1553,10 @@ html.js #realhalf[hidden]{display:none}
 html{transition:--st-glow 900ms var(--ease),--st-wash 900ms var(--ease),--st-low 900ms var(--ease)}
 body{background-color:var(--st-bg,#070A13);transition:background-color 900ms var(--ease)}
 .stage{position:fixed;left:0;right:0;top:0;height:74vh;z-index:0;pointer-events:none;
+  /* 아래 끝(74vh)에서 층이 직선으로 끊기지 않게 한다 — 무대의 색은 그 위에서 이미 다 사라지므로
+     이 페더는 층 경계에서 생기던 한 줄짜리 어두운 띠만 걷어낸다(QHD·모바일 실측). */
+  -webkit-mask-image:linear-gradient(180deg,#000 0%,#000 52%,rgba(0,0,0,.55) 76%,rgba(0,0,0,0) 100%);
+  mask-image:linear-gradient(180deg,#000 0%,#000 52%,rgba(0,0,0,.55) 76%,rgba(0,0,0,0) 100%);
   background:
     radial-gradient(132% 96% at 50% -18%,var(--st-glow),rgba(0,0,0,0) 78%),
     linear-gradient(180deg,var(--st-wash),rgba(0,0,0,0) 56%),
@@ -1591,10 +1595,20 @@ html[data-stage="ship"]{--st-bg:#060C0D;--st-glow:rgba(96,158,168,.28);--st-wash
    장마다 레이어가 늘어 같은 문제가 된다). 그림은 그대로 두고, 어둡게 누르는
    일은 상자 전체의 opacity와 ::after 한 겹의 그라데이션으로만 한다. */
 .hero,.actopen{isolation:isolate}
+/* v23 — 아트는 좌우로도 사라진다.
+   마스크를 층별로 나눠 건다. 상자에는 세로 페더(위·아래), 그림과 그 위의
+   어둡게 누르는 겹(::after)에는 같은 가로 페더. 한 요소에 두 마스크를
+   mask-composite로 겹치지 않으므로 어느 브라우저에서도 같은 결과가 나오고,
+   ::after의 좌우 그라데이션이 상자 끝에서 직선으로 끊기는 일도 없다. */
 .hart,.aart{position:absolute;top:0;left:0;right:0;z-index:0;overflow:hidden;pointer-events:none;
-  opacity:.80;
+  opacity:.80;--artfx:9%;
   -webkit-mask-image:linear-gradient(180deg,#000 0%,#000 46%,rgba(0,0,0,.52) 72%,rgba(0,0,0,0) 100%);
   mask-image:linear-gradient(180deg,#000 0%,#000 46%,rgba(0,0,0,.52) 72%,rgba(0,0,0,0) 100%)}
+.hart img,.aart img,.hart::after,.aart::after{
+  -webkit-mask-image:linear-gradient(90deg,rgba(0,0,0,0) 0%,#000 var(--artfx),
+    #000 calc(100% - var(--artfx)),rgba(0,0,0,0) 100%);
+  mask-image:linear-gradient(90deg,rgba(0,0,0,0) 0%,#000 var(--artfx),
+    #000 calc(100% - var(--artfx)),rgba(0,0,0,0) 100%)}
 .hero>*:not(.hart),.actopen>*:not(.aart){position:relative}
 .hart{height:clamp(300px,33vw,460px)}
 /* 막 헤더는 페이지 중간에서 시작하므로 위도 살짝 열고, 아래는 본문 앞에서 완전히 지운다. */
@@ -1602,6 +1616,13 @@ html[data-stage="ship"]{--st-bg:#060C0D;--st-glow:rgba(96,158,168,.28);--st-wash
   -webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,0) 0%,#000 13%,#000 32%,rgba(0,0,0,.44) 62%,rgba(0,0,0,0) 94%);
   mask-image:linear-gradient(180deg,rgba(0,0,0,0) 0%,#000 13%,#000 32%,rgba(0,0,0,.44) 62%,rgba(0,0,0,0) 94%)}
 .hart img,.aart img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 44%}
+/* 넓은 화면 — 아트를 본문 칼럼보다 좌우로 240px씩 넓혀 페더가 본문 밖 여백에서 끝나게 한다.
+   칼럼이 화면 가운데 서므로 그림도 가운데에서 좌우로 넓어지고, 화면 폭은 넘지 않는다
+   (1400px에서 1300px — 넘치는 화면 없음). */
+@media (min-width:1400px){
+  .hero{overflow:visible}
+  .hart,.aart{left:-240px;right:-240px;--artfx:13%}
+}
 /* 글자는 왼쪽에 서므로 왼쪽을 눌러 대비를 만들고, 오른쪽은 그림을 살려 둔다.
    아트 자체는 위의 mask가 아래로 갈수록 지우므로 바탕과 이어지는 이음매가 없다. */
 .hart::after{content:"";position:absolute;inset:0;pointer-events:none;
@@ -1620,7 +1641,7 @@ html[data-stage="ship"]{--st-bg:#060C0D;--st-glow:rgba(96,158,168,.28);--st-wash
       rgba(4,5,9,0) 88%)}
 @media (max-width:699px){
   .hart{height:min(400px,46vh)}
-  .hart,.aart{opacity:.74}
+  .hart,.aart{opacity:.74;--artfx:7%}
   .hart::after,.aart::after{background:
     linear-gradient(180deg,rgba(4,5,9,.80) 0%,rgba(4,5,9,.58) 40%,rgba(4,5,9,.19) 76%,rgba(4,5,9,0) 100%),
     linear-gradient(90deg,rgba(4,5,9,.34) 0%,rgba(4,5,9,0) 16%,rgba(4,5,9,0) 84%,rgba(4,5,9,.34) 100%)}
