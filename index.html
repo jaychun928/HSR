@@ -1635,6 +1635,18 @@ html[data-stage="ship"]{--st-bg:#060C0D;--st-glow:rgba(96,158,168,.28);--st-wash
 @media (min-width:1920px){
   #realhalf>.vopen .vopen-t{font-size:72px}
 }
+
+/* ── ④ 여덟째 날 진입 — 단일 캔버스 연출층(판때기 없음) ──────────────
+   스크립트가 만든 캔버스 한 장이 화면을 덮고, 끝나면 스스로 DOM에서 빠진다.
+   크기는 인라인(px)으로 잡으므로 여기서는 자리만 정한다. */
+.rift-cv{position:fixed;left:0;top:0;z-index:2147483000;pointer-events:none;
+  display:block;touch-action:none;-webkit-user-select:none;user-select:none;
+  will-change:contents}
+
+/* 여덟째 날 진입 — 암전은 캔버스가 아니라 합성 층으로(프레임 비용 절감) */
+.rift-dark{position:fixed;left:0;top:0;width:100%;height:100%;z-index:2147482998;
+  pointer-events:none;opacity:0;will-change:opacity;
+  background:radial-gradient(120% 120% at 50% 44%,#191020 0%,#0f0913 52%,#06040a 100%)}
 </style>
 </head>
 <body>
@@ -1745,12 +1757,12 @@ html[data-stage="ship"]{--st-bg:#060C0D;--st-glow:rgba(96,158,168,.28);--st-wash
     n._t = setTimeout(function () { n.classList.remove('on'); }, 2400);
   }
 
-  function scrollToEl(el) {
+  function scrollToEl(el, instant) {
     if (!el) return;
     var tbh = parseFloat(getComputedStyle(root).getPropertyValue('--tbh')) || 48;
     var y = el.getBoundingClientRect().top + window.pageYOffset - tbh - 12;
     var far = Math.abs(y - window.pageYOffset) > innerHeight * 3;
-    window.scrollTo({ top: Math.max(0, y), behavior: (reduced || far) ? 'auto' : 'smooth' });
+    window.scrollTo({ top: Math.max(0, y), behavior: (reduced || far || instant) ? 'auto' : 'smooth' });
   }
 
   /* ── 무대 전환 — 읽는 대목의 배경 공기만 바뀐다 ────────────────────
@@ -2119,17 +2131,393 @@ html[data-stage="ship"]{--st-bg:#060C0D;--st-glow:rgba(96,158,168,.28);--st-wash
     markGateCard();
   }
 
-  /* ── 여덟째 날 진입 — 커튼 없이 그 자리로 ─────────────────────────
-     v20: 황금 커튼(.veil)을 걷어냈다. 해설 끝 단추를 누르면 11장이
-     곧바로 열리고, 그 장의 큰 여백과 타이포 스케일이 장면 전환을
-     대신한다. 스크롤은 smooth라 한 번 부드럽게 미끄러진다.          */
-  function enterReal() {
-    if (!S.real) return;
-    if (S.real.hidden) {
-      openReal();
-      rebuildStages();
+  /* ── 여덟째 날 진입 — 꿈의 빛이 유리금으로 갈라져 기억 입자로 흩어진다 ──────
+     CSS 판을 움직이지 않는다. 화면을 덮는 단일 2D 캔버스 한 장 위에서
+     꿈의 빛이 충격점에서 번지고 → 가느다란 균열이 사방으로 갈라지고 →
+     빛이 오므라들었다가 수백 개의 발광 입자로 터져 나가고 → 그 입자가
+     금빛에서 남빛·자주빛으로 식어 사라지면서 암전이 걷히고 11장이 드러난다.
+       0.00–0.14  꿈의 빛이 화면을 채운다(뒤는 이미 암전)
+       0.06–0.42  균열이 사방으로 갈라진다
+       0.30–0.45  빛이 오므라들며 한 번 부풀어 오른다
+       0.44–1.20  수백 개의 입자가 잔상을 끌며 사방으로 흩날린다
+       1.00–1.36  암전이 걷히고 11장이 제자리에서 선명해진다
+     DPR은 2까지, 픽셀 총량은 예산으로 제한(QHD·모바일 60fps).
+     외부 라이브러리·이미지 0. prefers-reduced-motion이면 캔버스 없이 전환. */
+  var RIFT_MS = 1500;
+
+  function riftRand(a) {
+    return function () {
+      a |= 0; a = a + 0x6D2B79F5 | 0;
+      var t = Math.imul(a ^ a >>> 15, 1 | a);
+      t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+      return ((t ^ t >>> 14) >>> 0) / 4294967296;
+    };
+  }
+
+  function riftPlay(ox, oy) {
+    if (reduced || document.getElementById('riftcv')) return false;
+    var W = Math.max(320, window.innerWidth), H = Math.max(320, window.innerHeight);
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var budget = 2.2e6;                       /* 모바일은 2 그대로, QHD는 0.77로 낮춰 60fps */
+    if (W * H * dpr * dpr > budget) dpr = Math.max(0.72, Math.sqrt(budget / (W * H)));
+
+    var cv = document.createElement('canvas');
+    cv.id = 'riftcv'; cv.className = 'rift-cv';
+    cv.setAttribute('aria-hidden', 'true');
+    cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
+    cv.style.width = W + 'px'; cv.style.height = H + 'px';
+    var ctx = cv.getContext('2d');
+    if (!ctx) return false;
+    var dark = document.createElement('div');
+    dark.className = 'rift-dark';
+    dark.setAttribute('aria-hidden', 'true');
+
+    var R = riftRand(0x2f1a97b);
+    function cl(v, a, b) { return v < a ? a : v > b ? b : v; }
+    function sm(a, b, x) { var u = cl((x - a) / (b - a), 0, 1); return u * u * (3 - 2 * u); }
+    function ez(u) { return 1 - Math.pow(1 - cl(u, 0, 1), 3); }
+
+    var DIAG = Math.sqrt(W * W + H * H);
+    var CX = W * 0.5 + ((typeof ox === 'number' ? ox : W * 0.5) - W * 0.5) * 0.4;
+    var CY = H * 0.45 + ((typeof oy === 'number' ? oy : H * 0.45) - H * 0.45) * 0.4;
+    var SZ = Math.sqrt(W * H) / 900;
+    var RMAX = Math.sqrt(Math.pow(Math.max(CX, W - CX), 2) + Math.pow(Math.max(CY, H - CY), 2));
+
+    /* 1) 꿈의 빛 — 투명 배경 위에 뜨는 금빛·호박빛 덩어리 */
+    var GS = 0.6;
+    var gw = Math.round(W * GS), gh = Math.round(H * GS);
+    var glow = document.createElement('canvas'); glow.width = gw; glow.height = gh;
+    var gc = glow.getContext('2d');
+    var gx = CX * GS, gy = CY * GS, gr0 = Math.min(gw, gh) * 1.12;
+    var g1 = gc.createRadialGradient(gx, gy, 0, gx, gy, gr0);
+    g1.addColorStop(0, 'rgba(255,244,224,0.90)');
+    g1.addColorStop(0.05, 'rgba(255,226,176,0.82)');
+    g1.addColorStop(0.16, 'rgba(253,196,128,0.58)');
+    g1.addColorStop(0.36, 'rgba(232,144,96,0.32)');
+    g1.addColorStop(0.62, 'rgba(176,86,116,0.10)');
+    g1.addColorStop(1, 'rgba(96,48,104,0)');
+    gc.fillStyle = g1; gc.fillRect(0, 0, gw, gh);
+    var LOBES = [[0.68, 0.24, 0.32, 'rgba(255,186,112,0.30)'], [0.26, 0.62, 0.36, 'rgba(246,152,98,0.26)'],
+                 [0.58, 0.84, 0.38, 'rgba(198,110,158,0.18)'], [0.36, 0.16, 0.28, 'rgba(255,208,152,0.24)']];
+    gc.globalCompositeOperation = 'lighter';
+    for (var li = 0; li < LOBES.length; li++) {
+      var ld = LOBES[li], lcx = gw * ld[0], lcy = gh * ld[1], lr = Math.max(gw, gh) * ld[2];
+      var lg = gc.createRadialGradient(lcx, lcy, 0, lcx, lcy, lr);
+      lg.addColorStop(0, ld[3]); lg.addColorStop(1, 'rgba(0,0,0,0)');
+      gc.fillStyle = lg; gc.fillRect(0, 0, gw, gh);
     }
-    scrollToEl(S.real);
+    /* 부드러운 그라디언트의 계단(밴딩)을 깨는 미세 노이즈 */
+    var nt = document.createElement('canvas'); nt.width = nt.height = 96;
+    var ntc = nt.getContext('2d'), nid = ntc.createImageData(96, 96);
+    for (var ni = 0; ni < 96 * 96; ni++) {
+      var gv = 110 + ((R() * 36) | 0);
+      nid.data[ni * 4] = nid.data[ni * 4 + 1] = nid.data[ni * 4 + 2] = gv;
+      nid.data[ni * 4 + 3] = 255;
+    }
+    ntc.putImageData(nid, 0, 0);
+    gc.globalCompositeOperation = 'overlay'; gc.globalAlpha = 0.35;
+    gc.fillStyle = gc.createPattern(nt, 'repeat');
+    gc.fillRect(0, 0, gw, gh);
+    gc.globalAlpha = 1;
+    gc.globalCompositeOperation = 'destination-out';
+    var eg = gc.createRadialGradient(gx, gy, gr0 * 0.40, gx, gy, gr0 * 1.05);
+    eg.addColorStop(0, 'rgba(0,0,0,0)'); eg.addColorStop(1, 'rgba(0,0,0,1)');
+    gc.fillStyle = eg; gc.fillRect(0, 0, gw, gh);
+    gc.globalCompositeOperation = 'source-over';
+
+    /* 2) 균열 — 충격점에서 사방으로 갈라지는 가느다란 빛금(덩굴도 격자도 아니게) */
+    var BR = [], k, i;
+    var nb0 = 11 + (R() * 5 | 0);
+    for (k = 0; k < nb0; k++) {
+      var ang = R() * 6.2832, x0 = CX, y0 = CY;
+      var step = Math.min(W, H) * (0.035 + R() * 0.05);
+      var pts = [[x0, y0]], tot = 0, seg = 5 + (R() * 8 | 0);
+      for (i = 0; i < seg; i++) {
+        ang += (R() < 0.42) ? (R() - 0.5) * 0.9 : (R() - 0.5) * 0.09;
+        var lx = pts[pts.length - 1][0], ly = pts[pts.length - 1][1];
+        var nx = lx + Math.cos(ang) * step, ny = ly + Math.sin(ang) * step;
+        if (nx < -20 || nx > W + 20 || ny < -20 || ny > H + 20) break;
+        pts.push([nx, ny]); tot += step; step *= 0.94 + R() * 0.1;
+        if (R() < 0.16 && BR.length < 70) {
+          var ba = ang + (R() < 0.5 ? -1 : 1) * (0.5 + R() * 0.8), bx2 = nx, by2 = ny, bl = 2 + (R() * 4 | 0);
+          var bpts = [[bx2, by2]], bstep = step * 0.7;
+          for (var bi2 = 0; bi2 < bl; bi2++) {
+            ba += (R() - 0.5) * 0.6;
+            bx2 += Math.cos(ba) * bstep; by2 += Math.sin(ba) * bstep;
+            bpts.push([bx2, by2]); bstep *= 0.85;
+          }
+          BR.push({ pts: bpts, len: bstep, t0: 80 + tot / Math.min(W, H) * 110 + R() * 70, dur: 200 + R() * 240 });
+        }
+      }
+      if (tot > 30) BR.push({ pts: pts, len: tot, t0: 60 + R() * 60, dur: 220 + R() * 260 });
+    }
+
+    /* 3) 빛줄기 — 넓고 옅은 광선 몇 개(별 모양 금지) */
+    var RC = 640, ray = document.createElement('canvas');
+    ray.width = ray.height = RC;
+    var rctx = ray.getContext('2d');
+    rctx.globalCompositeOperation = 'lighter';
+    for (var ri = 0; ri < 5; ri++) {
+      var ra = R() * 6.2832, rw = 0.12 + R() * 0.2, rl = RC * (0.34 + R() * 0.6), al = 0.05 + R() * 0.08;
+      var rg = rctx.createRadialGradient(RC / 2, RC / 2, 0, RC / 2, RC / 2, rl);
+      rg.addColorStop(0, 'rgba(255,240,206,' + al.toFixed(3) + ')');
+      rg.addColorStop(0.5, 'rgba(255,204,138,' + (al * 0.4).toFixed(3) + ')');
+      rg.addColorStop(1, 'rgba(255,178,108,0)');
+      rctx.fillStyle = rg;
+      rctx.beginPath(); rctx.moveTo(RC / 2, RC / 2);
+      rctx.arc(RC / 2, RC / 2, rl, ra - rw, ra + rw); rctx.closePath(); rctx.fill();
+    }
+
+    /* 4) 입자 스프라이트 — 금빛에서 남빛·자주빛으로 식는 16단 */
+    var STOPS = [[0, 255, 232, 190], [0.22, 255, 196, 140], [0.46, 238, 164, 220],
+                 [0.70, 150, 178, 255], [1, 178, 124, 255]];
+    function rampRGB(u) {
+      u = cl(u, 0, 1);
+      for (var q = 1; q < STOPS.length; q++) {
+        if (u <= STOPS[q][0]) {
+          var aa = STOPS[q - 1], bb = STOPS[q], ff = (u - aa[0]) / Math.max(1e-6, bb[0] - aa[0]);
+          return [aa[1] + (bb[1] - aa[1]) * ff, aa[2] + (bb[2] - aa[2]) * ff, aa[3] + (bb[3] - aa[3]) * ff];
+        }
+      }
+      return [192, 148, 255];
+    }
+    function sprite(rgb, size, soft) {
+      var s2 = document.createElement('canvas'); s2.width = s2.height = size;
+      var c = s2.getContext('2d'), h = size / 2, t3 = 'rgba(' + rgb[0] + ',' + rgb[1] + ',' + rgb[2] + ',';
+      var gg = c.createRadialGradient(h, h, 0, h, h, h);
+      gg.addColorStop(0, t3 + (soft ? '0.34)' : '0.95)'));
+      gg.addColorStop(0.14, t3 + (soft ? '0.30)' : '0.88)'));
+      gg.addColorStop(0.34, t3 + '0.34)');
+      gg.addColorStop(0.64, t3 + '0.07)');
+      gg.addColorStop(1, t3 + '0)');
+      c.fillStyle = gg; c.beginPath(); c.arc(h, h, h, 0, 6.2832); c.fill();
+      return s2;
+    }
+    var TINTS = 16, SPR = [], TRGB = [];
+    for (var ti = 0; ti < TINTS; ti++) {
+      var tc = rampRGB(ti / (TINTS - 1)).map(function (x) { return x | 0; });
+      TRGB.push(tc); SPR.push(sprite(tc, 64, false));
+    }
+    var BLOOM = sprite([255, 236, 200], 160, true);
+
+    /* 5) 입자 — 빛이 부서진 자리. 중심 가까울수록 크고 느리고, 바깥으로 갈수록 작고 빠르다. */
+    var PN = Math.round(cl(W * H / 420, 700, 1150));
+    var P0 = [];
+    for (var pi = 0; pi < PN; pi++) {
+      var rr0 = Math.pow(R(), 0.55) * RMAX * 0.92;
+      var aa0 = R() * 6.2832;
+      var px = CX + Math.cos(aa0) * rr0, py = CY + Math.sin(aa0) * rr0 * 0.94;
+      var nr = rr0 / RMAX;
+      var dirx = Math.cos(aa0), diry = Math.sin(aa0) * 0.94;
+      var spd = DIAG * (0.10 + R() * 0.34) * (0.35 + nr * 1.15);
+      var big = R() < 0.34 - nr * 0.22;
+      P0.push({
+        x: px, y: py,
+        vx: dirx * spd + (R() - 0.5) * DIAG * 0.10,
+        vy: diry * spd + (R() - 0.5) * DIAG * 0.10 - DIAG * 0.02,
+        k: 0.7 + R() * 1.7, w: (R() - 0.5) * 2.2,
+        g: -DIAG * 0.02,
+        life: 620 + R() * 720, delay: 420 + nr * 200 + R() * 180,
+        size: (big ? (4.5 + R() * 9) : (1.3 + R() * 3.2)) * SZ,
+        a: big ? (0.46 + R() * 0.34) : (0.60 + R() * 0.40),
+        tint: cl(nr * 0.3 + R() * 0.22, 0, 1), cool: 0.55 + R() * 0.75,
+        trail: R() < 0.55 ? (0.04 + R() * 0.07) : 0,
+        fl: R() * 6.2832, e: 0
+      });
+    }
+    /* 빛이 채워질 때 떠오르는 미세 먼지 */
+    for (var di = 0; di < 110; di++) {
+      var da = R() * 6.2832, dr = Math.pow(R(), 0.5) * RMAX * 0.95;
+      P0.push({
+        x: CX + Math.cos(da) * dr, y: CY + Math.sin(da) * dr * 0.94,
+        vx: (R() - 0.5) * DIAG * 0.02, vy: -DIAG * (0.004 + R() * 0.012),
+        k: 0.4, w: 0, g: 0,
+        life: 700 + R() * 520, delay: 40 + R() * 240,
+        size: (1.6 + R() * 3) * SZ, a: 0.14 + R() * 0.24,
+        tint: R() * 0.14, cool: 0.5 + R() * 0.5, trail: 0, fl: R() * 6.2832, e: 0
+      });
+    }
+    var PS = P0.map(function (p) { var o = {}; for (var kk in p) o[kk] = p[kk]; return o; });
+    var simT = 0;
+    function resetSim() {
+      PS = P0.map(function (p) { var o = {}; for (var kk in p) o[kk] = p[kk]; return o; });
+      simT = 0;
+    }
+    function advance(t) {
+      var g2 = 0;
+      while (simT < t && g2++ < 240) {
+        var dst = Math.min(16, t - simT);
+        simT += dst;
+        var ds = dst / 1000;
+        for (var q = 0; q < PS.length; q++) {
+          var p = PS[q];
+          if (simT < p.delay) continue;
+          var f = Math.exp(-p.k * ds);
+          var ca = Math.cos(p.w * ds), sa = Math.sin(p.w * ds);
+          var vx = p.vx * f, vy = p.vy * f;
+          p.vx = vx * ca - vy * sa;
+          p.vy = vx * sa + vy * ca + p.g * ds;
+          p.x += p.vx * ds; p.y += p.vy * ds;
+          p.e += dst;
+        }
+      }
+    }
+
+    /* 6) 그리기 */
+    function drawGlow(t) {
+      var gather = sm(300, 440, t);                       /* 0.30–0.44 오므라든다 */
+      var mA = sm(0, 140, t) * (1 - sm(430, 760, t) * 0.86) * (1 - sm(760, 1010, t));
+      if (mA <= 0.004) return;
+      var sc = 1 - 0.10 * gather + 0.06 * Math.exp(-Math.pow((t - 470) / 130, 2));
+      ctx.globalCompositeOperation = 'lighter';
+      ctx.globalAlpha = mA * (0.70 + 0.45 * Math.exp(-Math.pow((t - 450) / 120, 2)));
+      ctx.save();
+      ctx.translate(CX, CY); ctx.scale(sc, sc); ctx.translate(-CX, -CY);
+      ctx.drawImage(glow, 0, 0, W, H);
+      ctx.restore();
+    }
+
+    function drawCracks(t) {
+      var a = sm(50, 220, t) * (1 - sm(470, 720, t));
+      if (a <= 0.004) return;
+      ctx.globalCompositeOperation = 'lighter';
+      ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+      var p1 = new Path2D(), tips = [];
+      for (var q = 0; q < BR.length; q++) {
+        var b = BR[q], pr = cl((t - b.t0) / b.dur, 0, 1);
+        if (pr <= 0) continue;
+        pr = ez(pr);
+        var need = b.len * pr, acc = 0, pp = b.pts;
+        p1.moveTo(pp[0][0], pp[0][1]);
+        for (var s2 = 1; s2 < pp.length; s2++) {
+          var sx = pp[s2][0] - pp[s2 - 1][0], sy = pp[s2][1] - pp[s2 - 1][1];
+          var sl = Math.sqrt(sx * sx + sy * sy);
+          if (acc + sl >= need) {
+            var fr = (need - acc) / Math.max(0.001, sl);
+            p1.lineTo(pp[s2 - 1][0] + sx * fr, pp[s2 - 1][1] + sy * fr);
+            tips.push(pp[s2 - 1][0] + sx * fr, pp[s2 - 1][1] + sy * fr);
+            break;
+          }
+          p1.lineTo(pp[s2][0], pp[s2][1]); acc += sl;
+        }
+      }
+      ctx.strokeStyle = 'rgba(255,204,146,' + (0.09 * a).toFixed(3) + ')'; ctx.lineWidth = 4.5; ctx.stroke(p1);
+      ctx.strokeStyle = 'rgba(255,232,192,' + (0.34 * a).toFixed(3) + ')'; ctx.lineWidth = 1.05; ctx.stroke(p1);
+      ctx.strokeStyle = 'rgba(255,253,247,' + (0.82 * a).toFixed(3) + ')'; ctx.lineWidth = 0.45; ctx.stroke(p1);
+      var sz = 8 * SZ;
+      ctx.globalAlpha = a * 0.35;
+      for (var q2 = 0; q2 < tips.length; q2 += 2) {
+        ctx.drawImage(SPR[0], tips[q2] - sz / 2, tips[q2 + 1] - sz / 2, sz, sz);
+      }
+      ctx.globalAlpha = 1;
+    }
+
+    function drawRays(t) {
+      var env = sm(20, 220, t) * (1 - sm(430, 740, t));
+      if (env <= 0.01) return;
+      ctx.globalCompositeOperation = 'lighter';
+      var s = Math.max(W, H) * 2.4;
+      ctx.save(); ctx.translate(CX, CY); ctx.rotate(0.05 * t / 1000);
+      ctx.globalAlpha = env * 0.14; ctx.drawImage(ray, -s / 2, -s / 2, s, s);
+      ctx.rotate(1.1);
+      ctx.globalAlpha = env * 0.09; ctx.drawImage(ray, -s * 0.44, -s * 0.44, s * 0.88, s * 0.88);
+      ctx.restore();
+    }
+
+    function drawParticles(t) {
+      var gA = 1 - sm(1150, 1440, t);
+      if (gA <= 0.004) return;
+      ctx.globalCompositeOperation = 'lighter';
+      for (var q = 0; q < PS.length; q++) {
+        var p = PS[q];
+        if (p.e <= 0) continue;
+        var u = p.e / p.life;
+        if (u >= 1) continue;
+        var fl = 0.82 + 0.18 * Math.sin(t * 0.015 + p.fl);
+        var a = sm(0, 0.06, u) * (1 - sm(0.5, 1, u)) * p.a * gA * fl;
+        if (a <= 0.004) continue;
+        var tint = (cl(p.tint + (t - 380) / 900 * p.cool, 0, 1) * (TINTS - 1)) | 0;
+        var sz = p.size * (1.3 - 0.5 * u);
+        if (p.trail) {
+          var r3 = TRGB[tint];
+          ctx.globalAlpha = a * 0.5;
+          ctx.strokeStyle = 'rgba(' + r3[0] + ',' + r3[1] + ',' + r3[2] + ',1)';
+          ctx.lineWidth = Math.max(0.4, p.size * 0.13);
+          ctx.lineCap = 'round';
+          ctx.beginPath(); ctx.moveTo(p.x, p.y);
+          ctx.lineTo(p.x - p.vx * p.trail, p.y - p.vy * p.trail); ctx.stroke();
+        }
+        ctx.globalAlpha = a;
+        ctx.drawImage(SPR[tint], p.x - sz * 0.5, p.y - sz * 0.5, sz, sz);
+      }
+    }
+
+    function drawFlash(t) {
+      var env = sm(410, 450, t) * (1 - sm(455, 700, t));
+      if (env <= 0.004) return;
+      ctx.globalCompositeOperation = 'lighter';
+      ctx.globalAlpha = env * 0.34;
+      var s = Math.max(W, H) * 0.72;
+      ctx.drawImage(BLOOM, CX - s / 2, CY - s / 2, s, s);
+    }
+
+    function draw(t) {
+      var bA = sm(0, 90, t) * (1 - sm(1000, 1360, t));
+      if (dark.style.opacity !== bA.toFixed(3)) dark.style.opacity = bA.toFixed(3);
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
+      ctx.clearRect(0, 0, cv.width, cv.height);
+      var zs = 1 + 0.05 * (1 - sm(0, 900, t));
+      ctx.setTransform(dpr * zs, 0, 0, dpr * zs, -dpr * W * (zs - 1) / 2, -dpr * H * (zs - 1) / 2);
+      ctx.globalCompositeOperation = 'source-over'; ctx.globalAlpha = 1;
+      drawGlow(t);
+      drawCracks(t);
+      drawRays(t);
+      drawParticles(t);
+      drawFlash(t);
+      ctx.globalCompositeOperation = 'source-over'; ctx.globalAlpha = 1;
+    }
+
+    var t0 = 0, raf = 0, hold = null, done = false, tmo = 0;
+    function finish() {
+      if (done) return; done = true;
+      if (raf) cancelAnimationFrame(raf);
+      raf = 0; if (tmo) clearTimeout(tmo);
+      if (dark.parentNode) dark.parentNode.removeChild(dark);
+      if (cv.parentNode) cv.parentNode.removeChild(cv);
+    }
+    function tick(now) {
+      if (!t0) t0 = now;
+      var t = hold != null ? hold : now - t0;
+      if (t > simT) advance(t);
+      draw(t);
+      if (t >= RIFT_MS) { finish(); return; }
+      if (hold != null) { raf = 0; return; }
+      raf = requestAnimationFrame(tick);
+    }
+    /* 촬영용 정지 — 페이지에서 seek(ms)를 부르면 그 순간의 프레임을 그대로 세운다. */
+    cv.__seek = function (ms) {
+      if (tmo) { clearTimeout(tmo); tmo = 0; }
+      if (ms < simT) resetSim();
+      hold = cl(ms, 0, RIFT_MS);
+      if (!raf) raf = requestAnimationFrame(tick);
+    };
+
+    document.body.appendChild(dark);
+    document.body.appendChild(cv);
+    tmo = setTimeout(function () { if (hold == null) finish(); }, RIFT_MS + 900);
+    raf = requestAnimationFrame(tick);
+    return true;
+  }
+
+  function enterReal(e) {
+    if (!S.real) return;
+    var first = S.real.hidden;
+    if (first) { openReal(); rebuildStages(); }
+    /* 처음 열 때만 연출. 두 번째부터는 그 자리로 곧장 스크롤한다. */
+    var cx = e && e.clientX > 0 ? e.clientX : null;
+    var cy = e && e.clientY > 0 ? e.clientY : null;
+    var anim = first && riftPlay(cx, cy);
+    scrollToEl(S.real, anim);
   }
 
   function restoreGate() {
@@ -2241,7 +2629,7 @@ html[data-stage="ship"]{--st-bg:#060C0D;--st-glow:rgba(96,158,168,.28);--st-wash
       }
 
       if (t.closest('#btn-next')) { openIntervention(); return; }
-      if (t.closest('#to-real')) { enterReal(); return; }
+      if (t.closest('#to-real')) { enterReal(e); return; }
 
       var opt = t.closest('.opt');
       if (opt) {
