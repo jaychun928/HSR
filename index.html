@@ -1602,8 +1602,10 @@ html[data-stage="ship"]{--st-bg:#060C0D;--st-glow:rgba(96,158,168,.28);--st-wash
    ::after의 좌우 그라데이션이 상자 끝에서 직선으로 끊기는 일도 없다. */
 .hart,.aart{position:absolute;top:0;left:0;right:0;z-index:0;overflow:hidden;pointer-events:none;
   opacity:.80;--artfx:9%;
-  -webkit-mask-image:linear-gradient(180deg,#000 0%,#000 46%,rgba(0,0,0,.52) 72%,rgba(0,0,0,0) 100%);
-  mask-image:linear-gradient(180deg,#000 0%,#000 46%,rgba(0,0,0,.52) 72%,rgba(0,0,0,0) 100%)}
+  -webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,.55) 3%,#000 9%,#000 46%,
+    rgba(0,0,0,.52) 72%,rgba(0,0,0,0) 100%);
+  mask-image:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,.55) 3%,#000 9%,#000 46%,
+    rgba(0,0,0,.52) 72%,rgba(0,0,0,0) 100%)}
 .hart img,.aart img,.hart::after,.aart::after{
   -webkit-mask-image:linear-gradient(90deg,rgba(0,0,0,0) 0%,#000 var(--artfx),
     #000 calc(100% - var(--artfx)),rgba(0,0,0,0) 100%);
