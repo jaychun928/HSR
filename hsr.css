@@ -51,7 +51,7 @@ a{color:inherit;text-decoration:none}
 .tb-go i{font-style:normal;color:#676B7A;margin:0 3px}
 @media (max-width:400px){.brand{font-size:8.6px;letter-spacing:.22em}.brand i{display:none}.pgr button{padding:7px 6px 6px}}
 @media (max-width:380px){.topbar-in{gap:8px}.brand{font-size:8.2px;letter-spacing:.18em}.pgr{gap:1px}.pgr button{padding:7px 5px 6px}}
-@media (max-width:339px){.brand{display:none}}
+@media (max-width:339px){.topbar-in:has(.pgr) .brand{display:none}}
 
 /* ── 히어로 ── */
 .hero{position:relative;padding:40px 0 34px}
