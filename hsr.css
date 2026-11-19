@@ -198,3 +198,12 @@ h1 small{display:block;margin-top:10px;font-family:var(--sans);font-size:10.2px;
   .pgr.ready .pgr-ind{transition:none}
   .pl-go i,.pn-a{transition:none}
 }
+
+/* ── 상단 바 홈 버튼 (v36) — 「← 목차」 텍스트 대신 아이콘 하나 ────────── */
+.tb-home{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;
+  width:30px;height:30px;margin-left:-7px;color:#9C9688;transition:color .22s var(--ease)}
+.tb-home:hover{color:var(--champ2)}
+.tb-home svg{width:15.5px;height:15.5px;fill:none;stroke:currentColor;stroke-width:1.25;
+  stroke-linejoin:round;stroke-linecap:round}
+.tb-home:focus-visible{outline:1px solid rgba(216,196,158,.8);outline-offset:2px}
+.topbar-in .pgr{margin-left:2px}
