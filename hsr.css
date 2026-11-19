@@ -50,6 +50,8 @@ a{color:inherit;text-decoration:none}
 .tb-go:hover{color:var(--champ2)}
 .tb-go i{font-style:normal;color:#676B7A;margin:0 3px}
 @media (max-width:400px){.brand{font-size:8.6px;letter-spacing:.22em}.brand i{display:none}.pgr button{padding:7px 6px 6px}}
+@media (max-width:380px){.topbar-in{gap:8px}.brand{font-size:8.2px;letter-spacing:.18em}.pgr{gap:1px}.pgr button{padding:7px 5px 6px}}
+@media (max-width:339px){.brand{display:none}}
 
 /* ── 히어로 ── */
 .hero{position:relative;padding:40px 0 34px}
@@ -141,6 +143,7 @@ h1 small{display:block;margin-top:10px;font-family:var(--sans);font-size:10.2px;
 .vp-k{margin:0;font-size:9px;letter-spacing:.26em;color:var(--champ)}
 .vp-t{margin:11px 0 0;font-family:var(--serif);font-weight:500;font-size:clamp(23px,5.2vw,30px);
   line-height:1.3;letter-spacing:-.035em;color:#F7F0E1}
+.vp-h .vp-t:first-child{margin-top:1px}
 .vp-s{margin:8px 0 0;font-size:11.2px;letter-spacing:.06em;color:#7C7F8E}
 .vp-note{margin:16px 0 6px;font-size:13.6px;line-height:1.92;color:#9FA2B0;max-width:36em}
 
