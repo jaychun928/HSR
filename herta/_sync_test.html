@@ -1,0 +1,2391 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>우주정거장 헤르타 · 프롤로그 · 개척 후문</title>
+<meta name="description" content="우주정거장 헤르타의 프롤로그 네 장과 개척 후문 — 장면별 본문, 원문 대사, 인물·개념 카드.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20fill='%23070a13'/%3E%3Cpath%20d='M16%205.5l2.6%207.4%207.4%202.6-7.4%202.6-2.6%207.4-2.6-7.4L5.5%2015.5l7.4-2.6z'%20fill='none'%20stroke='%23d8c49e'%20stroke-width='1.3'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#070A13; --bg2:#0A101C; --navy:#0E1728; --card:#0B1322;
+  --ink:#F2EDE1; --ink2:#D2CBBC; --ink3:#A29D91; --ink4:#737684;
+  --champ:#D8C49E; --champ2:#F0E2C2; --moon:#AFC2DF;
+  --rule:rgba(242,237,225,.13); --rule2:rgba(242,237,225,.065);
+  --serif:"Noto Serif CJK KR","Noto Serif KR","AppleMyungjo","Nanum Myeongjo","NanumMyeongjo",Palatino,Georgia,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Noto Sans CJK KR","Apple SD Gothic Neo","Noto Sans KR","Pretendard","Malgun Gothic",sans-serif;
+  --pad:20px; --rail:280px; --gap:76px; --body:664px; --stageH:118px;
+  --ease:cubic-bezier(.2,.75,.2,1);
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{margin:0;padding:0;-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{position:relative;margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.86;
+  letter-spacing:-.011em;word-break:keep-all;overflow-wrap:break-word;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;padding-bottom:env(safe-area-inset-bottom)}
+body::before{content:"";position:absolute;left:0;right:0;top:0;height:1280px;z-index:0;pointer-events:none;
+  -webkit-mask-image:linear-gradient(180deg,#000 0%,#000 48%,rgba(0,0,0,0) 94%);
+  mask-image:linear-gradient(180deg,#000 0%,#000 48%,rgba(0,0,0,0) 94%);
+  background:
+    radial-gradient(92% 58% at 50% -6%, #17223C 0%, #0D1526 46%, rgba(7,10,19,0) 80%),
+    radial-gradient(56% 38% at 102% 16%, rgba(112,132,178,.09), rgba(112,132,178,0) 70%),
+    radial-gradient(50% 36% at -4% 42%, rgba(150,124,164,.07), rgba(150,124,164,0) 72%)}
+body::after{content:"";position:absolute;left:0;right:0;top:0;height:1280px;z-index:0;pointer-events:none;opacity:.028;
+  -webkit-mask-image:linear-gradient(180deg,#000 0%,#000 46%,rgba(0,0,0,0) 90%);
+  mask-image:linear-gradient(180deg,#000 0%,#000 46%,rgba(0,0,0,0) 90%);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+.page{position:relative;z-index:1;max-width:calc(var(--rail) + var(--gap) + var(--body) + var(--pad)*2);
+  margin:0 auto;padding:0 var(--pad)}
+::selection{background:rgba(216,196,158,.26);color:#FFF8E9}
+
+/* ===== hero ===== */
+.hero{position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center;
+  padding:44px 0 40px}
+.mast{position:relative;display:flex;align-items:baseline;justify-content:space-between;gap:14px;
+  padding:11px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.mast-l{font-family:var(--serif);font-size:10.4px;letter-spacing:.46em;color:var(--champ)}
+.mast-r{font-size:8.8px;letter-spacing:.22em;color:var(--ink4);white-space:nowrap}
+.kick{position:relative;margin:clamp(26px,5vh,42px) 0 0;font-size:10px;letter-spacing:.22em;color:#9E998C}
+h1{position:relative;margin:16px 0 0;font-family:var(--serif);font-weight:500;font-size:clamp(46px,12vw,76px);
+  line-height:1.04;letter-spacing:-.05em;color:#FCF7EA}
+h1 small{display:block;margin-top:8px;font-family:var(--sans);font-size:11px;font-weight:400;letter-spacing:.2em;color:#8F8B7E}
+.acts{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:0;margin:26px 0 0;border-top:1px solid var(--rule)}
+.act{display:flex;align-items:baseline;gap:10px;padding:12px 0;border-bottom:1px solid var(--rule2);min-width:0}
+.act:nth-child(odd){padding-right:16px}
+.act:nth-child(even){padding-left:16px;border-left:1px solid var(--rule2)}
+.act-n{font-family:var(--serif);font-size:10px;letter-spacing:.14em;color:var(--champ);flex:0 0 auto}
+.act-t{font-family:var(--serif);font-size:14.4px;line-height:1.45;letter-spacing:-.02em;color:#EDE6D6;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lede{position:relative;margin:24px 0 0;font-size:16px;line-height:1.92;color:var(--ink2);max-width:32em}
+.vrow{position:relative;display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin:24px 0 0}
+.vnote{font-size:10.8px;line-height:1.6;color:#858796;letter-spacing:.02em}
+.hint{position:relative;margin:16px 0 0;font-size:11.2px;line-height:1.85;color:#7E8090;max-width:34em}
+.cue{position:relative;margin:clamp(26px,4.2vh,36px) 0 0;display:flex;align-items:center;gap:10px}
+@media (max-width:699px){.cue{display:none}}
+.cue i{display:block;width:1px;height:24px;background:linear-gradient(180deg,rgba(216,196,158,.65),rgba(216,196,158,0))}
+.cue span{font-size:8.2px;letter-spacing:.34em;color:#686C7B}
+
+/* ===== 공통 알약 ===== */
+.pill{display:inline-flex;align-items:center;gap:7px;appearance:none;border:1px solid rgba(216,196,158,.4);
+  background:#060A14;color:#EADFC7;font:inherit;font-size:11.2px;letter-spacing:.01em;cursor:pointer;
+  padding:7px 13px 6px;border-radius:999px;transition:border-color .18s var(--ease),color .18s var(--ease),background .18s var(--ease)}
+.pill:hover{border-color:rgba(216,196,158,.76);color:#FFF7E6;background:#080D1A}
+.pill:focus-visible{outline:1px solid rgba(216,196,158,.85);outline-offset:3px}
+.pill .dot{width:4px;height:4px;border-radius:50%;background:var(--champ)}
+.pill.sm{font-size:10px;padding:5px 10px 4px}
+
+/* ===== shell / 좌측 목차 ===== */
+.shell{display:block}
+.rail{margin:0 0 8px}
+.rail-h{display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding-bottom:0;border-bottom:1px solid var(--rule)}
+.rail-t{display:flex;align-items:baseline;gap:10px;background:none;border:0;padding:14px 0 13px;
+  font:inherit;color:inherit;cursor:pointer;text-align:left;flex:1 1 auto;min-width:0}
+.rail-t b{margin:0;font-family:var(--serif);font-size:11px;font-weight:400;letter-spacing:.32em;color:var(--champ)}
+.rail-t em{font-style:normal;font-size:9.6px;letter-spacing:.03em;color:#7B7E8D}
+.rail-t .ic{position:relative;width:7px;height:7px;flex:0 0 auto;margin:-3px 0 0 3px;
+  border-right:1px solid #8A8C96;border-bottom:1px solid #8A8C96;transform:rotate(45deg);
+  transition:transform .22s var(--ease),border-color .22s var(--ease)}
+.rail[data-open="1"] .rail-t .ic{transform:rotate(225deg);border-color:var(--champ)}
+.rail .toc{display:none}
+.rail[data-open="1"] .toc{display:block}
+.rail .pill.sm{margin:12px 0}
+
+.toc{margin:0;padding:0;list-style:none}
+.vol{border-bottom:1px solid var(--rule2)}
+.vol-h{display:flex;align-items:flex-start;gap:11px;width:100%;padding:15px 2px 12px;background:none;border:0;
+  font:inherit;color:inherit;text-align:left;cursor:pointer}
+.v-no{font-family:var(--serif);font-size:10px;letter-spacing:.2em;color:var(--champ);flex:0 0 auto;min-width:22px;padding-top:2px}
+.v-tx{flex:1 1 auto;min-width:0}
+.v-t{display:block;font-family:var(--serif);font-weight:500;font-size:15.4px;line-height:1.4;letter-spacing:-.02em;
+  color:#F4EEDF;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.v-s{display:block;font-style:normal;font-size:9.2px;letter-spacing:.12em;color:#7A7D8D;margin-top:4px}
+.v-ic{flex:0 0 auto;position:relative;width:9px;height:9px;margin-top:7px}
+.v-ic::before,.v-ic::after{content:"";position:absolute;background:#84868F;transition:transform .22s var(--ease),background .22s var(--ease)}
+.v-ic::before{left:0;top:4px;width:9px;height:1px}
+.v-ic::after{left:4px;top:0;width:1px;height:9px}
+.vol[data-open="1"]>.vol-h .v-ic::after{transform:scaleY(0)}
+.vol.cur>.vol-h .v-ic::before{background:var(--champ)}
+.vol.cur[data-open="0"] .v-no::before{content:"";display:inline-block;width:3px;height:3px;border-radius:50%;
+  background:var(--champ);margin-right:6px;vertical-align:2px}
+.vol.cur>.vol-h .v-t{color:#FFF8E9}
+.chs,.leaves{display:none;margin:0;padding:0;list-style:none}
+.vol[data-open="1"]>.chs{display:block}
+.ch[data-open="1"]>.leaves{display:block}
+.ch-h{display:flex;align-items:baseline;gap:8px;width:100%;padding:7px 2px 7px 0;background:none;border:0;
+  border-top:1px solid var(--rule2);font:inherit;color:inherit;text-align:left;cursor:pointer}
+.c-no{font-family:var(--serif);font-size:9.2px;letter-spacing:.14em;color:#9C916F;flex:0 0 auto;min-width:18px}
+.c-t{flex:1 1 auto;min-width:0;font-size:12.4px;line-height:1.5;letter-spacing:-.012em;color:#BAB5A7;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.c-t i{font-style:normal;color:#7F8290;font-size:10.6px}
+.c-ct{flex:0 0 auto;font-size:8.8px;letter-spacing:.08em;color:#606376;min-width:10px;text-align:right;margin-left:4px}
+.c-ic{flex:0 0 auto;position:relative;width:8px;height:8px;margin-left:9px}
+.c-ic.solo{visibility:hidden}
+.c-ic::before,.c-ic::after{content:"";position:absolute;background:#6E7183;transition:transform .2s var(--ease)}
+.c-ic::before{left:0;top:3.5px;width:8px;height:1px}
+.c-ic::after{left:3.5px;top:0;width:1px;height:8px}
+.ch[data-open="1"]>.ch-h .c-ic::after{transform:scaleY(0)}
+.ch.cur>.ch-h .c-t{color:#F6EEDC}
+.ch.cur>.ch-h .c-no{color:var(--champ)}
+.leaves{padding:0 0 9px 0}
+.leaf{display:flex;align-items:baseline;gap:7px;padding:6px 4px 6px 18px;position:relative;
+  font-size:11px;line-height:1.55;color:#A8A49B;text-decoration:none;border-radius:2px;
+  transition:color .16s var(--ease),background .16s var(--ease)}
+.leaf+.leaf{border-top:1px solid rgba(242,237,225,.04)}
+.leaf::before{content:"";position:absolute;left:5px;top:13px;width:4px;height:1px;background:rgba(216,196,158,.36);
+  transition:width .18s var(--ease),background .18s var(--ease)}
+.l-pov{flex:0 0 auto;font-family:var(--serif);font-size:8.4px;letter-spacing:.06em;color:#707383;min-width:7px}
+.l-t{flex:1 1 auto;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.l-v{flex:0 0 auto;font-size:8.2px;letter-spacing:.1em;color:#5F6374}
+.leaf:hover{color:#F1E9D8;background:rgba(242,237,225,.028)}
+.leaf:hover::before{width:10px;background:rgba(216,196,158,.8)}
+.leaf.cur{color:#FFF8E9;background:rgba(216,196,158,.075)}
+.leaf.cur::before{width:10px;background:var(--champ)}
+.leaf.cur .l-pov{color:var(--champ)}
+.leaf.lock{color:#6E7180;cursor:default}
+.leaf.lock::before{background:rgba(242,237,225,.13);width:4px}
+.veil{letter-spacing:.16em;color:#5B5F70}
+.rail-f{margin:14px 0 0;font-size:9.4px;line-height:1.7;color:#636678}
+.rail-f b{font-weight:400;color:#8F897B}
+
+/* ===== 무대 ===== */
+.story{position:relative;min-width:0}
+.stage{position:sticky;top:0;z-index:30;padding-top:env(safe-area-inset-top);
+  background:#080D18;border-bottom:1px solid rgba(242,237,225,.06)}
+
+.stage::after{content:"";position:absolute;left:0;right:0;top:100%;height:18px;pointer-events:none;
+  background:linear-gradient(180deg,rgba(7,10,19,.94) 0%,rgba(7,10,19,.55) 44%,rgba(7,10,19,0) 100%)}
+.stage-in{position:relative;z-index:1;min-height:64px;display:flex;flex-direction:column;justify-content:flex-end}
+.scene{display:none;padding:8px 0 7px}
+.scene.on{display:block;animation:stageIn .32s var(--ease) both}
+@keyframes stageIn{from{opacity:0;transform:translateY(3px)}to{opacity:1;transform:none}}
+.s-top{display:flex;align-items:baseline;gap:10px;min-width:0}
+.s-no{font-family:var(--serif);font-size:10px;letter-spacing:.18em;color:var(--champ);flex:0 0 auto}
+.s-place{flex:1 1 auto;min-width:0;font-size:9.2px;letter-spacing:.15em;color:#A6A197;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.s-ver{flex:0 0 auto;appearance:none;border:1px solid rgba(216,196,158,.3);background:#060A14;color:#C9BC99;
+  font:inherit;font-size:9px;letter-spacing:.08em;padding:3px 9px 2px;border-radius:999px;cursor:pointer;
+  transition:border-color .18s var(--ease),color .18s var(--ease)}
+.s-ver:hover{border-color:rgba(216,196,158,.72);color:#FFF7E6}
+.s-ver i{font-style:normal;font-size:8px;color:#91876F;margin-left:2px}
+.s-mission{margin:4px 0 0;font-family:var(--serif);font-size:13.2px;line-height:1.35;font-weight:500;letter-spacing:-.02em;
+  color:#EDE6D7;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.s-mood{margin:2px 0 0;font-size:10px;line-height:1.5;color:#93908A;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media (max-width:699px){.s-mood{display:none}}
+.prog{position:relative;z-index:1;height:1px;background:rgba(242,237,225,.075)}
+.prog i{position:absolute;left:0;top:0;height:1px;width:0;background:linear-gradient(90deg,rgba(216,196,158,.5),rgba(216,196,158,.96));
+  transition:width .45s var(--ease)}
+
+/* ===== 장면 본문 ===== */
+.flow{position:relative}
+.beat{position:relative;padding:30px 0 42px;border-bottom:0;scroll-margin-top:calc(var(--stageH) + 10px)}
+.beat.open::after{content:"";display:block;width:4px;height:4px;margin:38px auto -20px;
+  background:rgba(216,196,158,.34);transform:rotate(45deg)}
+.vopen{margin:18px 0 0;padding:34px 0 0;border-top:1px solid var(--rule)}
+.vopen-k{display:block;font-size:9px;letter-spacing:.24em;color:var(--champ)}
+.vopen-t{display:block;margin:9px 0 0;font-family:var(--serif);font-weight:500;font-size:clamp(25px,6.4vw,34px);
+  line-height:1.24;letter-spacing:-.04em;color:#FBF5E7}
+.vopen-s{display:block;margin:7px 0 0;font-size:9.6px;letter-spacing:.14em;color:#83868F}
+.vopen-r{display:block;width:46px;height:1px;margin:16px 0 0;background:linear-gradient(90deg,rgba(216,196,158,.8),rgba(216,196,158,0))}
+.bt-head{display:grid;grid-template-columns:44px minmax(0,1fr) auto;column-gap:14px;align-items:start;margin:0 0 24px;padding-top:24px;min-width:0}
+.bt-n{font-family:var(--serif);font-size:34px;line-height:.92;letter-spacing:-.04em;color:rgba(216,196,158,.58);font-weight:400}
+.bt-tx{min-width:0;padding-top:1px}
+.bt-k{margin:0;font-size:8.8px;letter-spacing:.2em;color:#8B877A;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bt-t{margin:7px 0 0;font-family:var(--serif);font-size:clamp(21px,5.2vw,27px);line-height:1.3;font-weight:500;
+  letter-spacing:-.035em;color:#FBF5E7;text-wrap:pretty}
+.bt-t .bt-alt{font-size:.72em;color:#B9B3A4;letter-spacing:-.02em}
+.bt-p{margin:8px 0 0;font-size:9.6px;letter-spacing:.14em;color:#918D82;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bt-v{font-size:8.6px;letter-spacing:.12em;color:#666A7A;padding-top:5px}
+.bt-m{display:none}
+
+/* 필름 스틸 자리 */
+.plate{margin:0 0 28px}
+.plate-f{position:relative;aspect-ratio:16/9;overflow:hidden;border:1px solid rgba(242,237,225,.085);
+  background:
+    radial-gradient(118% 88% at 50% -4%, rgba(46,64,104,.26) 0%, rgba(20,30,54,.13) 48%, rgba(9,13,26,0) 80%),
+    linear-gradient(160deg,#0F182E 0%,#0A1120 62%,#080C17 100%)}
+.plate-f::before{content:"";position:absolute;inset:0;
+  background:radial-gradient(70% 58% at 50% 50%, rgba(216,196,158,.05), rgba(216,196,158,0) 72%)}
+.plate-f::after{content:"";position:absolute;inset:0;
+  box-shadow:inset 0 0 52px rgba(4,7,14,.55),inset 0 0 0 1px rgba(242,237,225,.045)}
+.cm{position:absolute;width:11px;height:11px;border:1px solid rgba(216,196,158,.42);z-index:2}
+.cm.a{left:9px;top:9px;border-right:0;border-bottom:0}
+.cm.b{right:9px;top:9px;border-left:0;border-bottom:0}
+.cm.c{left:9px;bottom:9px;border-right:0;border-top:0}
+.cm.d{right:9px;bottom:9px;border-left:0;border-top:0}
+.plate-in{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;z-index:1}
+.p-no{font-family:var(--serif);font-size:10.6px;letter-spacing:.42em;color:#B8A47E;padding-left:.42em}
+.p-r{width:22px;height:1px;background:rgba(216,196,158,.36)}
+.p-p{font-size:8.8px;letter-spacing:.22em;color:#7B7E90;text-align:center;padding:0 18px}
+.plate-cap{display:flex;align-items:baseline;justify-content:space-between;gap:14px;margin-top:8px;
+  font-size:9px;line-height:1.5;letter-spacing:.08em;color:#818492}
+.cap-l{min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cap-r{flex:0 0 auto;color:#616578}
+
+/* 시점 */
+.povs{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin:0 0 20px}
+.pov-sw{display:inline-flex;align-items:center;gap:2px;padding:3px;border:1px solid rgba(242,237,225,.14);
+  border-radius:999px;background:rgba(6,10,21,.65)}
+.pov{appearance:none;border:0;background:none;border-radius:999px;font:inherit;font-size:10.4px;line-height:1.4;
+  letter-spacing:.01em;color:#918E86;padding:5px 11px 4px;cursor:pointer;
+  transition:color .18s var(--ease),background .18s var(--ease)}
+.pov .pv-n{font-family:var(--serif);font-size:8.2px;letter-spacing:.06em;color:#686C7E;margin-right:5px}
+.pov:hover{color:#E8E2D4}
+.pov[aria-pressed="true"]{background:rgba(216,196,158,.13);color:#FCF6E8}
+.pov[aria-pressed="true"] .pv-n{color:var(--champ)}
+.pov:focus-visible{outline:1px solid rgba(216,196,158,.8);outline-offset:2px}
+.pv-hint{font-size:9.2px;letter-spacing:.09em;color:#626677;transition:opacity .3s var(--ease)}
+.povs[data-swiped="1"] .pv-hint{opacity:0}
+.views{position:relative;overflow:hidden;transition:height .44s var(--ease)}
+.pane{display:none}
+.pane.on{display:block}
+.pane.leaving{display:block;position:absolute;left:0;right:0;top:0}
+.views.rev .pane.on{animation:slideL .44s var(--ease) both}
+.views:not(.rev) .pane.on{animation:slideR .44s var(--ease) both}
+@keyframes slideR{from{opacity:0;transform:translateX(16px)}to{opacity:1;transform:none}}
+@keyframes slideL{from{opacity:0;transform:translateX(-16px)}to{opacity:1;transform:none}}
+
+/* 본문 */
+.prose{margin:0}
+.prose p{margin:0 0 1.5em;font-size:16px;line-height:1.94;color:#DDD6C7;letter-spacing:-.011em;text-wrap:pretty}
+.prose p:last-child{margin-bottom:0}
+.prose.lead p{font-size:16.6px;line-height:1.92;color:#E9E2D2}
+.prose+.plate{margin-top:34px}
+.plate+.prose{margin-top:0}
+.prose.rest p:first-child{margin-top:0}
+
+/* 인용 */
+.pull{position:relative;margin:34px 0 0;padding:24px 0 0;border-top:1px solid var(--rule)}
+.pull::before{content:"\201C";position:absolute;left:-2px;top:10px;font-family:var(--serif);font-size:38px;line-height:1;
+  color:rgba(216,196,158,.26)}
+.pull blockquote{margin:0;padding-left:24px;font-family:var(--serif);font-size:17.6px;line-height:1.82;color:#EFE7D6;
+  letter-spacing:-.012em;text-wrap:pretty}
+.pull figcaption{margin:12px 0 0;padding-left:24px;font-size:9.2px;letter-spacing:.12em;color:#828594;line-height:1.5}
+.pull figcaption::before{content:"";display:inline-block;width:14px;height:1px;background:rgba(216,196,158,.5);
+  vertical-align:3px;margin-right:9px}
+
+/* 키워드 링크 */
+.kw{display:inline;padding:0 0 1px;margin:0;border:0;background:none;font:inherit;line-height:inherit;
+  letter-spacing:inherit;color:#F6EDDA;cursor:pointer;
+  background-image:linear-gradient(rgba(216,196,158,.46),rgba(216,196,158,.46));
+  background-repeat:no-repeat;background-position:0 100%;background-size:100% 1px;
+  transition:color .18s var(--ease),background-size .18s var(--ease),background-image .18s var(--ease)}
+.kw:hover{color:#FFF9ED;background-image:linear-gradient(rgba(216,196,158,.95),rgba(216,196,158,.95));
+  background-size:100% 2px}
+.kw:focus-visible{outline:1px solid rgba(216,196,158,.8);outline-offset:2px;border-radius:1px}
+
+/* 탭 */
+.tabs{display:flex;flex-wrap:wrap;align-items:flex-end;gap:24px;margin:40px 0 0;padding:14px 0 0;border-top:1px solid var(--rule)}
+.tab{appearance:none;-webkit-appearance:none;background:none;border:0;border-bottom:1px solid transparent;border-radius:0;
+  font:inherit;font-size:11.4px;line-height:1.4;letter-spacing:.01em;color:#939087;cursor:pointer;
+  padding:0 0 7px;margin:0;display:inline-flex;align-items:baseline;gap:6px;
+  transition:color .2s var(--ease),border-color .2s var(--ease)}
+.tab em{font-style:normal;font-size:9px;letter-spacing:.02em;color:#64687C;transition:color .2s var(--ease)}
+.tab:hover{color:#E8E2D4}
+.tab:focus-visible{outline:1px solid rgba(216,196,158,.7);outline-offset:3px}
+.tab[aria-expanded="true"]{color:#FBF5E7;border-bottom-color:var(--champ)}
+.tab[aria-expanded="true"] em{color:var(--champ)}
+.slot{overflow:hidden}
+.panel{display:none;padding:18px 0 0;animation:fade .24s var(--ease) both}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.panel.on{display:block}
+
+/* 배경 설정 */
+.it{padding:13px 0;border-bottom:1px solid var(--rule2)}
+.it:first-child{border-top:1px solid var(--rule2)}
+.ih{display:flex;align-items:baseline;gap:9px}
+.it .id{flex:0 0 auto;width:3px;height:3px;border-radius:50%;background:var(--champ);margin-right:2px;align-self:center}
+.it .iq{margin:0;flex:1 1 auto;min-width:0;font-size:12.4px;line-height:1.55;color:#E6E0CF;letter-spacing:-.01em}
+.it .iv{flex:0 0 auto;font-size:8.6px;letter-spacing:.08em;color:#66697E}
+.it .ib{margin:7px 0 0;font-size:13px;line-height:1.84;color:#BAB5A9;letter-spacing:-.01em}
+.it .is{margin:7px 0 0;font-size:9.2px;line-height:1.6;color:#707383}
+.it.sealed .iq{color:#7E808E}
+.it.sealed .ib{color:#6E7080}
+.it.sealed .id{background:#484D5F}
+
+/* 이후 전개 */
+.recall .ih{width:100%;background:none;border:0;font:inherit;color:inherit;text-align:left;padding:0;cursor:pointer;align-items:flex-start}
+.recall .iq{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:12.8px;
+  line-height:1.7;color:#DAD4C7}
+.recall .ih[aria-expanded="true"] .iq{-webkit-line-clamp:unset;color:#F5EFE1}
+.recall .ip{flex:0 0 auto;position:relative;width:8px;height:8px;margin:8px 2px 0 0}
+.recall .ip::before,.recall .ip::after{content:"";position:absolute;background:#838593;transition:transform .22s var(--ease),background .22s var(--ease)}
+.recall .ip::before{left:0;top:3.5px;width:8px;height:1px}
+.recall .ip::after{left:3.5px;top:0;width:1px;height:8px}
+.recall .ih[aria-expanded="true"] .ip::after{transform:scaleY(0)}
+.recall .ih[aria-expanded="true"] .ip::before{background:var(--champ)}
+.recall .ib{height:0;overflow:hidden;transition:height .3s var(--ease)}
+.recall .ibi{padding:10px 0 4px 13px;margin-left:2px;border-left:1px solid rgba(216,196,158,.26)}
+.imeta{margin:0 0 6px;font-size:9.2px;line-height:1.6;color:#75788E}
+.inote{margin:0;font-size:11.4px;line-height:1.74;color:#B3AFA4}
+.sealedrow{padding:13px 0;border-bottom:1px solid var(--rule2);display:flex;align-items:baseline;gap:9px}
+.sealedrow p{margin:0;flex:1 1 auto;font-size:11.4px;line-height:1.6;color:#777A8B}
+.sealedrow span{flex:0 0 auto;font-size:8.6px;letter-spacing:.08em;color:#616475}
+
+/* 관련 흐름 */
+.th{margin:0 0 20px;padding:0}
+.th:last-child{margin-bottom:4px}
+.th-h{margin:0 0 8px;display:flex;align-items:baseline;gap:8px;font-size:11.6px;letter-spacing:.01em;color:#E0D9C8}
+.th-h .id{width:3px;height:3px;border-radius:50%;background:var(--champ);flex:0 0 auto;align-self:center}
+.th-h em{font-style:normal;font-size:8.8px;letter-spacing:.1em;color:#66697D}
+.st{margin:6px 0 0;padding:0;list-style:none}
+.st li{position:relative;padding:0 0 13px 16px;border-left:1px solid rgba(242,237,225,.12);margin-left:3px}
+.st li:last-child{border-left-color:transparent;padding-bottom:2px}
+.st li::before{content:"";position:absolute;left:-2px;top:7px;width:3px;height:3px;border-radius:50%;background:rgba(216,196,158,.46)}
+.st li.cur::before{background:var(--champ2);box-shadow:0 0 0 3px rgba(216,196,158,.15)}
+.st .sn{font-family:var(--serif);font-size:9px;letter-spacing:.14em;color:rgba(216,196,158,.8);margin-right:7px}
+.st .sl{font-size:11.8px;line-height:1.6;color:#D8D2C3}
+.st .sq{margin:6px 0 0;font-size:10.8px;line-height:1.74;color:#9F9B91;padding-left:10px;border-left:1px solid rgba(216,196,158,.2)}
+.st .sv{font-size:8.4px;letter-spacing:.08em;color:#636678;margin-left:6px}
+.st li.sealed .sl{color:#6F7282}
+.st li.sealed .sq{display:none}
+
+/* 잠긴 장면 */
+.beat.lock{padding:0}
+.lk-row{display:flex;align-items:center;gap:10px;padding:13px 0;border-bottom:1px solid var(--rule2)}
+.lk-row b{font-family:var(--serif);font-size:10px;letter-spacing:.18em;color:#8F897B;font-weight:400}
+.lk-row .veil{flex:1 1 auto;font-size:10.6px;letter-spacing:.18em}
+.lk-row .lk-v{font-size:8.8px;letter-spacing:.08em;color:#5F6374}
+.lk{margin:6px 0 0;padding:22px 20px;border:1px solid rgba(242,237,225,.11);border-radius:2px;
+  background:linear-gradient(180deg,rgba(15,25,48,.55),rgba(9,14,28,.38))}
+.lk-t{margin:0;font-family:var(--serif);font-size:15px;line-height:1.55;color:#D3CCBC}
+.lk-s{margin:8px 0 0;font-size:11.2px;line-height:1.8;color:#818493}
+.lk .pill{margin-top:16px}
+
+/* ===== 시트 ===== */
+.sheet{position:fixed;inset:0;z-index:80;display:flex;align-items:flex-end;justify-content:center;
+  visibility:hidden;opacity:0;transition:opacity .22s var(--ease),visibility .22s}
+.sheet.on{visibility:visible;opacity:1}
+.sheet-bg{position:absolute;inset:0;background:rgba(4,7,15,.7);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.sheet-card{position:relative;width:100%;max-height:88svh;overflow-y:auto;-webkit-overflow-scrolling:touch;
+  padding:22px var(--pad) calc(24px + env(safe-area-inset-bottom));
+  background:linear-gradient(180deg,#101934 0%,#080E1D 94%);
+  border-top:1px solid rgba(216,196,158,.32);border-radius:12px 12px 0 0;
+  box-shadow:0 -24px 60px -22px rgba(0,0,0,.92);
+  transform:translateY(18px);transition:transform .32s var(--ease)}
+.sheet.on .sheet-card{transform:none}
+.sheet-card::before{content:"";position:absolute;left:50%;top:8px;width:32px;height:2px;margin-left:-16px;
+  border-radius:2px;background:rgba(242,237,225,.2)}
+.shx{position:absolute;top:9px;right:8px;width:34px;height:34px;border:0;background:transparent;color:#8E9099;
+  font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;border-radius:50%;
+  transition:color .18s var(--ease),background .18s var(--ease)}
+.shx:hover{color:#F4ECDA;background:rgba(242,237,225,.06)}
+.shk{margin:10px 0 0;padding-right:40px;font-size:8.6px;letter-spacing:.26em;color:var(--champ)}
+.sht{margin:8px 0 0;font-family:var(--serif);font-size:19.5px;line-height:1.4;font-weight:500;letter-spacing:-.03em;
+  color:#FBF5E7;padding-right:32px}
+.shd{margin:9px 0 0;font-size:11.4px;line-height:1.8;color:#9A968C}
+
+/* 진도 타임라인 — 상자·테두리 없이 블러 위에 얹는 타이포그래피 */
+.sheet--bare .sheet-bg{background:radial-gradient(120% 90% at 50% 100%,rgba(9,14,28,.86) 0%,rgba(4,7,15,.84) 60%,rgba(4,7,15,.9) 100%);
+  backdrop-filter:blur(18px) saturate(.9);-webkit-backdrop-filter:blur(18px) saturate(.9)}
+.sheet--bare .sheet-card{background:none;border:0;box-shadow:none;border-radius:0;max-height:94svh;
+  padding:max(40px, calc(env(safe-area-inset-top) + 34px)) var(--pad) calc(34px + env(safe-area-inset-bottom));
+  display:flex;flex-direction:column;align-items:center}
+.sheet--bare .sheet-card::before{display:none}
+.vtl{width:100%;max-width:520px;margin:0 auto}
+.vtl-x{align-self:flex-end;display:block;margin:-14px -6px 22px auto;padding:6px;border:0;background:none;
+  font:inherit;font-size:10px;letter-spacing:.18em;color:#8C887C;cursor:pointer}
+.vtl-x:hover{color:#EDE4D2}
+.vtl-k{margin:0;font-size:8.6px;letter-spacing:.3em;color:var(--champ)}
+.vtl-t{margin:10px 0 0;font-family:var(--serif);font-weight:500;font-size:clamp(23px,6vw,30px);line-height:1.34;
+  letter-spacing:-.035em;color:#FBF5E7}
+.vtl-s{margin:12px 0 0;font-size:11.2px;line-height:1.75;color:#979284}
+.vtl-s b{font-weight:500;color:#D8C7A0}
+.vtl-list{position:relative;margin:30px 0 0;padding:0 0 0 26px;list-style:none}
+.vtl-list::before{content:"";position:absolute;left:4px;top:9px;bottom:9px;width:1px;
+  background:linear-gradient(180deg,rgba(216,196,158,.55) 0%,rgba(216,196,158,.3) 55%,rgba(242,237,225,.12) 100%)}
+.vtl-i{position:relative}
+.vtl-i + .vtl-i{margin-top:2px}
+.vtl-b{display:block;width:100%;padding:17px 0 17px;border:0;background:none;font:inherit;color:inherit;
+  text-align:left;cursor:pointer}
+.vtl-b::before{content:"";position:absolute;left:-26px;top:24px;width:9px;height:9px;margin-left:0;
+  border-radius:50%;background:#0A1020;box-shadow:inset 0 0 0 1px rgba(216,196,158,.5);transition:.18s var(--ease)}
+.vtl-i.is-past .vtl-b::before{background:rgba(216,196,158,.62);box-shadow:none}
+.vtl-i.is-cur .vtl-b::before{left:-27px;top:23px;width:11px;height:11px;background:var(--champ);
+  box-shadow:0 0 0 4px rgba(216,196,158,.13)}
+.vtl-i.is-future .vtl-b::before{background:transparent;box-shadow:inset 0 0 0 1px rgba(242,237,225,.2)}
+.vtl-v{display:block;font-family:var(--serif);font-size:10.4px;letter-spacing:.2em;color:#8E8467}
+.vtl-i.is-cur .vtl-v{color:var(--champ)}
+.vtl-a{display:block;margin:5px 0 0;font-family:var(--serif);font-size:17.4px;line-height:1.5;letter-spacing:-.03em;color:#A8A294}
+.vtl-i.is-cur .vtl-a{font-size:20.5px;color:#FFF8E9}
+.vtl-i.is-past .vtl-a{color:#DED5C1}
+.vtl-e{display:block;margin:5px 0 0;font-size:10.6px;line-height:1.7;color:#6F7282}
+.vtl-i.is-cur .vtl-e{color:#9C937E}
+.vtl-tag{display:inline-block;margin:0 0 0 8px;font-size:8.6px;letter-spacing:.16em;color:var(--champ);
+  vertical-align:2px}
+.vtl-i.is-future .vtl-a{color:#7C7A72}
+.vtl-note{margin:26px 0 0;font-size:10.2px;line-height:1.85;color:#6F7282;max-width:440px}
+
+/* ── 팝업·문서 시트 — 상자 없이 블러 위에 얹는 편집주 ── */
+.sheet--bare .sheet-card{background:none;border:0;box-shadow:none;border-radius:0}
+.sheet--bare .sheet-bg{background:rgba(4,7,15,.52);backdrop-filter:blur(10px) saturate(.92);-webkit-backdrop-filter:blur(10px) saturate(.92)}
+.sheet--bare .sheet-card::before{display:none}
+#pop.sheet--bare .sheet-card{width:100%;max-width:560px;padding:22px var(--pad) calc(30px + env(safe-area-inset-bottom))}
+#pop.sheet--bare .shk{margin-top:4px}
+#pop.sheet--bare .shd{max-width:34em}
+#pop.sheet--bare .sheet-card > .pqs:first-of-type,
+#wsh.sheet--bare .sheet-card > .wm:first-of-type{margin-top:18px}
+#pop.isfloat{align-items:flex-start;justify-content:flex-start}
+#pop.isfloat .sheet-bg{background:rgba(4,7,15,.42);backdrop-filter:blur(2.5px);-webkit-backdrop-filter:blur(2.5px)}
+#pop.sheet--bare .sheet-card{align-items:stretch;text-align:left}
+#pop.isfloat .sheet-card{position:absolute;width:min(332px,30vw);max-height:min(76vh,600px);overflow-y:auto;
+  padding:24px 28px 28px 26px;border-left:1px solid rgba(216,196,158,.3);
+  background:linear-gradient(100deg,rgba(6,10,18,.975) 0%,rgba(6,10,18,.955) 62%,rgba(6,10,18,.9) 100%);
+  backdrop-filter:blur(24px) brightness(.6) saturate(.88);
+  -webkit-backdrop-filter:blur(24px) brightness(.6) saturate(.88);
+  -webkit-mask-image:radial-gradient(122% 112% at 100% 45%,#000 62%,rgba(0,0,0,.95) 80%,rgba(0,0,0,0) 100%);
+  mask-image:radial-gradient(122% 112% at 100% 45%,#000 62%,rgba(0,0,0,.95) 80%,rgba(0,0,0,0) 100%);
+  transform:none;transition:opacity .2s var(--ease)}
+#pop.isfloat .shx{top:0;right:-2px}
+#pop.isfloat .pqs{margin-top:16px}
+#wsh.sheet--bare .sheet-card{width:100%;max-width:600px;align-items:stretch;text-align:left;padding:max(38px,calc(env(safe-area-inset-top) + 30px)) var(--pad) calc(32px + env(safe-area-inset-bottom))}
+#wsh.sheet--bare .shx{align-self:flex-end;position:static;margin:0 0 6px}
+#wsh.sheet--bare .wm{border-top:1px solid rgba(242,237,225,.1)}
+#wsh.sheet--bare .wm:first-of-type{border-top:0}
+
+/* 우주사 기둥 목차 */
+.klabel{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin:18px 0 4px;font-size:8.4px;letter-spacing:.22em;color:#73768A}
+.klabel>span{letter-spacing:.22em}
+.klabel em{font-style:normal;font-size:8.2px;letter-spacing:.06em;color:#5E6273}
+.klabel:first-child{margin-top:4px}
+.wrows{padding:0 0 10px}
+.wrow{display:flex;align-items:baseline;gap:8px;width:100%;padding:7px 4px 7px 18px;position:relative;
+  background:none;border:0;font:inherit;font-size:11px;line-height:1.55;color:#A8A49B;text-align:left;cursor:pointer;
+  border-radius:2px;transition:color .16s var(--ease),background .16s var(--ease)}
+.wrow+.wrow{border-top:1px solid rgba(242,237,225,.04)}
+.wrow::before{content:"\25C7";position:absolute;left:4px;top:4px;font-size:7px;color:rgba(175,194,223,.5);
+  transition:color .18s var(--ease)}
+.wrow:hover{color:#F1E9D8;background:rgba(242,237,225,.028)}
+.wrow:hover::before{color:var(--champ)}
+.wrow-n{flex:1 1 auto;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pqs{margin:13px 0 0}
+.pq{margin:0;padding:11px 0 0;border-top:1px solid var(--rule2)}
+.pq:first-child{padding-top:0;border-top:0}
+.pq blockquote{margin:0;font-family:var(--serif);font-size:13.4px;line-height:1.86;letter-spacing:-.01em;color:#E9E1CF}
+.pq figcaption{margin:7px 0 0;font-size:9.2px;letter-spacing:.06em;color:#7B7E8E}
+.sul{margin:15px 0 0;padding-top:12px;border-top:1px solid var(--rule2)}
+.surow{display:flex;align-items:baseline;gap:7px;width:100%;padding:5px 0;background:none;border:0;font:inherit;
+  font-size:11px;line-height:1.6;color:#ABBACE;text-align:left;cursor:pointer}
+.surow:hover{color:#D6E0EC}
+.surow .sua{color:#788CA2;font-size:10.2px}
+.surow .sum{flex:0 0 auto;font-size:9.4px;letter-spacing:.04em;color:#8293A9}
+.surow .sut{flex:1 1 auto;min-width:0}
+.suq{margin:1px 0 9px 17px;padding-left:10px;border-left:1px solid rgba(175,194,223,.24);
+  font-size:10.6px;line-height:1.8;color:#929DAC}
+.suq[hidden]{display:none}
+
+/* 우주사 시트 */
+.wm{border-top:1px solid var(--rule2)}
+.wm:first-child{border-top:0}
+.wm-h{display:flex;align-items:baseline;gap:9px;width:100%;padding:12px 0 11px;background:none;border:0;font:inherit;
+  text-align:left;cursor:pointer;color:inherit}
+.wm-n{font-family:var(--serif);font-size:14.4px;font-weight:500;letter-spacing:-.02em;color:#E0D9C8}
+.wm-ic{position:relative;width:8px;height:8px;flex:0 0 auto;margin-left:auto;align-self:center}
+.wm-ic::before,.wm-ic::after{content:"";position:absolute;background:#6E7183;transition:transform .2s var(--ease)}
+.wm-ic::before{left:0;top:3.5px;width:8px;height:1px}
+.wm-ic::after{left:3.5px;top:0;width:1px;height:8px}
+.wm[data-open="1"] .wm-ic::after{transform:scaleY(0)}
+.wm[data-open="1"] .wm-n{color:#FFF8E9}
+.wm-b{display:none;padding:0 0 14px}
+.wm[data-open="1"] .wm-b{display:block}
+.wm-l{margin:0;font-size:11.4px;line-height:1.84;color:#9F9BA2}
+.wm-g{margin:8px 0 0;font-size:9.6px;letter-spacing:.04em;color:#707386}
+.wm-h2{margin:12px 0 6px;font-size:8.6px;letter-spacing:.18em;color:#797C8E}
+.wm-chs{margin:0;font-size:10.4px;line-height:1.9;color:#A09C93}
+.wm-keys{margin:0;display:flex;flex-wrap:wrap;gap:7px}
+.kw2{background:none;border:0;border-bottom:1px solid rgba(216,196,158,.55);font:inherit;font-size:11.2px;
+  line-height:1.5;color:#E4DBC5;padding:0 0 1px;cursor:pointer}
+.kw2:hover{color:#FFF8E9;border-bottom-color:var(--champ)}
+
+/* footer */
+footer{position:relative;padding:64px 0 60px}
+.f-t{font-family:var(--serif);font-size:15.4px;font-weight:500;letter-spacing:.01em;line-height:1.6;color:#ECE4D3}
+.f-s{margin:12px 0 0;font-size:11.2px;line-height:1.88;color:#868893;max-width:33em}
+.f-m{margin:24px 0 0;padding-top:13px;border-top:1px solid var(--rule2);font-size:8.8px;letter-spacing:.24em;color:#5C6070}
+.vh{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .views,.pane.on,.scene.on{animation:none!important}
+  .prog i,.slot,.sheet,.sheet-card,.views{transition:none!important}
+}
+
+/* ===== 태블릿 ===== */
+@media (min-width:700px){
+  :root{--pad:32px}
+  .prose p{font-size:16.6px;line-height:1.94;margin-bottom:1.48em}
+  .prose.lead p{font-size:17.2px}
+  .s-mission{font-size:19px}
+  .sheet-card{max-width:600px;margin:0 auto}
+  .beat{padding:40px 0 50px}
+  .lede{font-size:16.6px}
+}
+@media (max-width:1023px){
+  .rail .pill.sm{display:none}
+  .rail-h{padding-top:2px}
+}
+@media (min-width:700px) and (max-width:1023px){
+  .page{max-width:calc(var(--body) + var(--pad)*2)}
+  .rail{margin-bottom:26px}
+}
+
+/* ===== 데스크톱 ===== */
+@media (min-width:1024px){
+  :root{--pad:40px;--stageH:108px}
+  .page{display:grid;grid-template-columns:var(--rail) minmax(0,1fr);column-gap:var(--gap);align-items:start;
+    max-width:calc(var(--rail) + var(--gap) + var(--body) + var(--pad)*2)}
+  .hero{grid-column:2;grid-row:1;min-height:76svh;padding:clamp(44px,7vh,76px) 0 44px}
+  .shell{display:contents}
+  .rail{grid-column:1;grid-row:1 / span 2;position:sticky;top:0;align-self:start;margin:0;height:100svh;
+    max-height:100svh;display:flex;flex-direction:column;padding:26px 0 24px;border-right:1px solid var(--rule2)}
+  .rail-h{border-bottom:1px solid var(--rule);padding-right:20px}
+  .rail-t{cursor:default;padding:0 0 12px}
+  .rail-t .ic{display:none}
+  .rail .toc{display:block;overflow-y:auto;overscroll-behavior:contain;padding-right:18px;margin-top:2px;
+    scrollbar-width:thin;scrollbar-color:rgba(242,237,225,.16) transparent}
+  .rail .toc::-webkit-scrollbar{width:3px}
+  .rail .toc::-webkit-scrollbar-thumb{background:rgba(242,237,225,.14);border-radius:3px}
+  .rail-f{padding-right:20px}
+  .story{grid-column:2;grid-row:2;min-width:0;max-width:var(--body)}
+  .stage{padding-top:4px}
+  .stage-in{min-height:76px}
+  .scene{padding:12px 0 11px}
+  .s-mission{font-size:14.2px}
+  .s-mood{font-size:10.2px}
+  .beat{padding:46px 0 56px}
+  .bt-head{padding-top:28px}
+  .bt-n{font-size:40px}
+  .prose p{font-size:17px;line-height:1.96}
+  .prose.lead p{font-size:17.6px}
+  .lede{font-size:17px;line-height:1.94}
+  .plate{margin-bottom:32px}
+  .pull{margin-top:36px}
+  .tabs{margin-top:44px}
+  .sheet{align-items:center;padding:32px}
+  .sheet-card{max-width:560px;border:1px solid rgba(216,196,158,.22);border-radius:3px;max-height:82vh;
+    padding:26px 28px 26px;transform:translateY(10px) scale(.99);
+    box-shadow:0 30px 80px -26px rgba(0,0,0,.95),0 0 0 1px rgba(0,0,0,.4)}
+  .sheet.on .sheet-card{transform:none}
+  .sheet-card::before{display:none}
+  .shx{top:10px;right:10px}
+  footer{padding:80px 0 68px}
+}
+@media (min-width:1024px) and (max-width:1279px){
+  :root{--gap:52px;--pad:32px}
+}
+@media (min-width:1280px){
+  :root{--gap:88px;--body:680px}
+}
+
+/* ===== 오버레이 최종 — 상자·테두리 없이 (모든 미디어 쿼리 뒤에서 확정) ===== */
+.sheet--bare{align-items:flex-start;justify-content:center;padding:0}
+.sheet--bare .sheet-bg{background:rgba(4,7,15,.66);backdrop-filter:blur(20px) saturate(.88);-webkit-backdrop-filter:blur(20px) saturate(.88)}
+.sheet--bare .sheet-card,
+#pop.sheet--bare .sheet-card,
+#wsh.sheet--bare .sheet-card,
+#vsh.sheet--bare .sheet-card{border:0;border-radius:0;background:none;box-shadow:none;transform:none;
+  max-height:94svh;overflow-y:auto;display:flex;flex-direction:column;align-items:stretch;text-align:left;
+  padding:max(38px,calc(env(safe-area-inset-top) + 28px)) var(--pad) calc(30px + env(safe-area-inset-bottom))}
+#pop.sheet--bare{align-items:flex-end}
+#pop.sheet--bare .sheet-card{justify-content:flex-end;max-width:560px;width:100%;margin:0 auto;padding-bottom:calc(64px + env(safe-area-inset-bottom))}
+#wsh.sheet--bare .sheet-card{max-width:600px;width:100%;margin:0 auto}
+#vsh.sheet--bare .sheet-card{align-items:center;width:100%}
+#pop.sheet--bare .sheet-card > .shx{position:static;align-self:flex-end;margin:0 0 4px}
+@media (min-width:1024px){
+  #pop.sheet--bare .sheet-card{align-items:stretch;text-align:left;max-width:560px;justify-content:flex-start}
+  #pop.isfloat{align-items:flex-start;justify-content:flex-start;padding:0}
+  #pop.isfloat .sheet-bg{background:rgba(4,7,15,.42);backdrop-filter:blur(2.5px);-webkit-backdrop-filter:blur(2.5px)}
+  #pop.isfloat .sheet-card{position:absolute;width:min(332px,30vw);max-height:min(76vh,600px);overflow-y:auto;
+    margin:0;padding:24px 28px 28px 26px;justify-content:flex-start;
+    background:linear-gradient(100deg,rgba(6,10,18,.975) 0%,rgba(6,10,18,.955) 62%,rgba(6,10,18,.9) 100%);
+    backdrop-filter:blur(24px) brightness(.6) saturate(.88);-webkit-backdrop-filter:blur(24px) brightness(.6) saturate(.88);
+    -webkit-mask-image:radial-gradient(122% 112% at 100% 45%,#000 62%,rgba(0,0,0,.95) 80%,rgba(0,0,0,0) 100%);
+    mask-image:radial-gradient(122% 112% at 100% 45%,#000 62%,rgba(0,0,0,.95) 80%,rgba(0,0,0,0) 100%)}
+  #pop.isfloat .sheet-card > .shx{position:absolute;top:2px;right:2px;align-self:auto;margin:0}
+}
+
+
+/* ── 2.3 전용 ── */
+.page{max-width:calc(664px + var(--pad)*2)}
+@media (min-width:1024px){
+  .page{display:block;max-width:calc(664px + var(--pad)*2)}
+  .flow{max-width:664px}
+}
+.hero{padding-bottom:34px}
+.mast-l{letter-spacing:.4em;white-space:nowrap}
+.mast-r{font-size:8.6px;letter-spacing:.14em}
+@media (max-width:520px){.mast{flex-wrap:wrap;row-gap:4px}
+  .mast-l{font-size:9.6px;letter-spacing:.34em}
+  .mast-r{letter-spacing:.1em}}
+.hero .acts{margin-top:22px}
+.act{align-items:flex-start}
+.act-t{white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+  font-size:13.8px;line-height:1.42}
+.hero .lede b{font-weight:400;color:#F0E6D2}
+.toc{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:26px 0 0;border-top:1px solid var(--rule)}
+.tocrow{display:flex;align-items:baseline;gap:9px;padding:10px 0;border-bottom:1px solid var(--rule2);
+  text-decoration:none;color:#C7C1B3;font-size:12.2px;line-height:1.5;min-width:0}
+.tocrow:nth-child(odd){padding-right:14px}
+.tocrow:nth-child(even){padding-left:14px;border-left:1px solid var(--rule2)}
+.tocrow .tn{font-family:var(--serif);font-size:9.6px;letter-spacing:.12em;color:var(--champ);flex:0 0 auto}
+.tocrow .tt{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tocrow:hover{color:#FFF8E9}
+@media (max-width:520px){.toc{grid-template-columns:1fr}
+  .tocrow:nth-child(even){padding-left:0;border-left:0}}
+.meta{display:flex;flex-wrap:wrap;gap:6px 22px;margin:0 0 20px;padding:0 0 12px;border-bottom:1px solid var(--rule2)}
+.meta div{display:flex;align-items:baseline;gap:7px;min-width:0}
+.meta dt{font-size:8.6px;letter-spacing:.18em;color:#7E808E;flex:0 0 auto}
+.meta dd{margin:0;font-size:11.2px;line-height:1.55;color:#C9C3B5}
+.beat{padding:26px 0 34px}
+.bt-head{grid-template-columns:64px minmax(0,1fr) auto;column-gap:12px}
+.bt-n{white-space:nowrap;font-size:22px;letter-spacing:-.03em}
+@media (max-width:520px){
+  .bt-head{grid-template-columns:58px minmax(0,1fr);column-gap:10px}
+  .bt-n{font-size:20px}
+}
+.beat.sep{margin:6px 0 0;padding:24px 0 30px 18px;border-left:1px solid rgba(216,196,158,.26)}
+.beat.sep .bt-head{padding-top:14px}
+.sep-k{margin:0 0 14px;font-size:9.6px;letter-spacing:.04em;color:#8B877A}
+.sep-k span{display:inline-block;margin-right:8px;padding:2px 7px 1px;border:1px solid rgba(216,196,158,.42);
+  border-radius:2px;font-size:8.6px;letter-spacing:.16em;color:#D8C49E}
+.prose p{font-size:15.6px;line-height:1.94}
+.prose.lead p{font-size:16px}
+.prose.lead p:last-child{margin-bottom:1.5em}
+.prose.rest{margin-top:0}
+.plate{margin:6px 0 24px}
+.plate-f{aspect-ratio:16/7}
+.ch-lede{margin:0 0 10px;padding:0 0 16px;border-bottom:1px solid var(--rule2);
+  font-family:var(--serif);font-size:14.6px;line-height:1.85;color:#CFC8B8}
+.popx{position:fixed;inset:0;z-index:90;display:flex;align-items:flex-end;justify-content:center;
+  visibility:hidden;opacity:0;transition:opacity .22s var(--ease),visibility .22s var(--ease)}
+.popx.on{visibility:visible;opacity:1}
+.popx-bg{position:absolute;inset:0;background:rgba(4,7,15,.76);
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.popx-card{position:relative;width:100%;max-width:560px;max-height:min(82svh,680px);overflow-y:auto;
+  background:#0A1220;border-top:1px solid rgba(216,196,158,.32);padding:22px 22px calc(26px + env(safe-area-inset-bottom));
+  box-shadow:0 -24px 60px rgba(0,0,0,.5);transform:translateY(10px);transition:transform .24s var(--ease)}
+.popx.on .popx-card{transform:none}
+.popx-card .shx{position:absolute;top:10px;right:8px}
+@media (min-width:700px){.popx{align-items:center;padding:24px}
+  .popx-card{border:1px solid rgba(242,237,225,.13);border-radius:3px;max-height:min(78svh,640px)}}
+body.locked{overflow:hidden}
+.foot{margin:52px 0 60px;padding-top:14px;border-top:1px solid var(--rule);
+  font-size:10px;line-height:1.8;letter-spacing:.02em;color:#6E7183}
+.foot b{font-weight:400;color:#9A9487}
+@media (max-width:699px){.prose p{font-size:15px;line-height:1.88}.prose.lead p{font-size:15.4px}}
+.prose.rest p:last-child{margin-bottom:0}
+/* 본문 중간 원문 인용 블록 */
+.dq{position:relative;margin:2px 0 26px;padding:14px 16px 13px 18px;
+  border-left:2px solid rgba(216,196,158,.46);
+  background:linear-gradient(90deg,rgba(216,196,158,.055),rgba(216,196,158,0) 78%)}
+.dq blockquote{margin:0;font-family:var(--serif);font-size:15px;line-height:1.86;
+  letter-spacing:-.012em;color:#EFE7D6;text-wrap:pretty}
+.dq blockquote p{margin:0 0 9px}
+.dq blockquote p:last-child{margin-bottom:0}
+.dq blockquote p::before{content:"“";color:rgba(216,196,158,.6);margin-right:2px}
+.dq blockquote p::after{content:"”";color:rgba(216,196,158,.6);margin-left:2px}
+.dq blockquote p:not(:last-child)::after{content:"";margin:0}
+.dq blockquote p:not(:first-child)::before{content:"";margin:0}
+.dq figcaption{margin-top:9px;font-size:9.6px;letter-spacing:.1em;color:#828594;line-height:1.5}
+.dq figcaption::before{content:"";display:inline-block;width:12px;height:1px;
+  background:rgba(216,196,158,.5);vertical-align:3px;margin-right:8px}
+@media (max-width:699px){.dq{width:auto;margin-bottom:24px;padding:13px 13px 12px 15px}
+  .dq blockquote{font-size:14.4px;line-height:1.84}}
+
+/* ── 회수 블록 ── */
+.payoff{margin:26px 0 0;padding:30px 0 0;border-top:1px solid rgba(216,196,158,.3)}
+.py-h{margin:0;font-size:9.6px;letter-spacing:.2em;color:#C9A87A}
+.py-h span{display:inline-block;margin-right:9px;padding:2px 8px 1px;border:1px solid rgba(216,196,158,.5);
+  border-radius:2px;font-size:8.6px;letter-spacing:.2em}
+.py-s{margin:12px 0 26px;font-size:12.4px;line-height:1.8;color:#A9A496}
+.py{padding:20px 0 22px;border-top:1px solid var(--rule2)}
+.py-k{margin:0;font-size:9px;letter-spacing:.2em;color:#8B877A}
+.py-q{margin:8px 0 10px;font-family:var(--serif);font-size:17.4px;line-height:1.5;color:#F0E7D4}
+.py-a{margin:0 0 14px;display:flex;gap:9px;align-items:baseline;font-size:14.6px;line-height:1.6;color:#E4DBC8}
+.py-a span{flex:0 0 auto;padding:1px 7px 0;border:1px solid rgba(216,196,158,.46);border-radius:2px;
+  font-size:8.6px;letter-spacing:.16em;color:#D8C49E}
+.py-b{margin:0 0 14px;font-size:14.2px;line-height:1.85;color:#CBC4B4}
+.py-q2{margin:0 0 12px;padding:8px 12px 8px 14px;border-left:2px solid rgba(216,196,158,.4);
+  background:linear-gradient(90deg,rgba(216,196,158,.05),rgba(216,196,158,0) 80%)}
+.py-q2 blockquote{margin:0;font-family:var(--serif);font-size:13.4px;line-height:1.8;color:#EAE1CF}
+.py-q2 figcaption{margin-top:6px;font-size:9px;letter-spacing:.1em;color:#7E8290}
+/* 반전의 핵심 인용 — 한 단계 키운 블록 */
+.dq.big{margin:18px 0 30px;padding:20px 18px 18px 22px;border-left-width:3px;
+  border-left-color:rgba(216,196,158,.7);
+  background:linear-gradient(90deg,rgba(216,196,158,.1),rgba(216,196,158,0) 82%)}
+.dq.big blockquote{font-size:17.2px;line-height:1.82;color:#FBF3E2}
+.dq.big blockquote p{margin:0 0 12px}
+.dq.big figcaption{margin-top:12px;font-size:10px;color:#9A9CAA}
+@media (max-width:699px){.dq.big{margin:14px 0 26px;padding:17px 14px 15px 16px}
+  .dq.big blockquote{font-size:16px;line-height:1.78}}
+
+/* ── 10장: 가짜 엔딩 ── */
+.vopen.fake .vopen-t{color:#F4EAD2}
+.vopen.fake .vopen-k{color:#E3C08A}
+.fake-note{margin:0 0 6px;padding:13px 15px;border:0;border-left:2px solid rgba(216,196,158,.34);
+  background:linear-gradient(90deg,rgba(216,196,158,.06),rgba(216,196,158,.014) 62%,rgba(216,196,158,0));
+  font-size:11.4px;line-height:1.7;color:#B9B2A2}
+.fake-note span{display:inline-block;margin-right:8px;font-family:var(--serif);font-size:9px;
+  letter-spacing:.34em;color:#E3C08A;vertical-align:1px}
+body.ending .beat{padding-top:22px}
+/* 완결 카드 — v25: 상자로 뜨지 않고 본문 배경에 녹아든다. 테두리 대신 좌우로
+   사라지는 금빛 가는 선 두 개(위·아래)와, 어떤 무대 색 위에도 앉는 옅은 금빛
+   그라데이션 한 겹만 둔다. */
+.endcard{position:relative;margin:40px 0 0;padding:64px 18px 56px;text-align:center;
+  border:0;background:none;
+  background-image:radial-gradient(68% 54% at 50% 46%,rgba(216,196,158,.085),
+    rgba(216,196,158,.026) 50%,rgba(216,196,158,0) 88%)}
+.endcard::before,.endcard::after{content:"";position:absolute;left:50%;transform:translateX(-50%);
+  width:min(100%,560px);height:1px;
+  background:linear-gradient(90deg,rgba(216,196,158,0),rgba(216,196,158,.26) 20%,
+    rgba(216,196,158,.26) 80%,rgba(216,196,158,0))}
+.endcard::before{top:0}
+.endcard::after{bottom:0}
+.ec-k{margin:0;font-size:9px;letter-spacing:.34em;color:#8A8578}
+.ec-t{margin:14px 0 0;font-family:var(--serif);font-size:19px;letter-spacing:.02em;color:#E9DFC8}
+.ec-c{margin:10px 0 0;font-family:var(--serif);font-size:52px;line-height:1;color:#D8C49E}
+.ec-s{margin:20px 0 0;font-size:12.4px;line-height:1.9;color:#B8B2A4}
+.ec-n{margin:18px 0 0;font-family:var(--serif);font-size:13px;letter-spacing:.06em;color:#8E8A7E}
+.nx{margin:26px auto 0;display:block;min-width:132px;padding:12px 26px;border:1px solid rgba(216,196,158,.5);
+  border-radius:2px;background:rgba(216,196,158,.06);color:#EFE4CB;font-size:13px;letter-spacing:.18em;cursor:pointer}
+.nx:hover{background:rgba(216,196,158,.14)}
+.nx:focus-visible{outline:2px solid var(--champ);outline-offset:3px}
+.ec-f{margin:22px 0 0;font-size:8.6px;letter-spacing:.22em;color:#61646F}
+
+/* ── 개입 · 추리 ── */
+.intervene{position:relative;margin:0;padding:44px 0 10px;border:0;
+  background:radial-gradient(120% 46% at 50% 0%,rgba(132,38,30,.22),rgba(132,38,30,0) 62%)}
+/* v25 — 붉은 상단 경계도 좌우로 사라지는 가는 선으로 바꿔 본문과 잉기게 한다. */
+.intervene::before{content:"";position:absolute;left:0;right:0;top:0;height:1px;
+  background:linear-gradient(90deg,rgba(196,96,86,0),rgba(196,96,86,.34) 20%,
+    rgba(196,96,86,.34) 80%,rgba(196,96,86,0))}
+.intervene[hidden],.reveal[hidden],#realhalf[hidden]{display:none}
+body.void{--champ:#E0A08E;--champ2:#C77B6C}
+body.void{background:linear-gradient(180deg,#120A0C 0%,#0A070B 46%,#080610 100%)}
+body.void.real{background:var(--bg)}
+body.void .ec-t,body.void .ec-c{color:#D8A090}
+.iv-head{margin:0 0 22px}
+.iv-k{margin:0;font-size:9px;letter-spacing:.32em;color:#C88D80}
+.iv-t{margin:10px 0 0;font-family:var(--serif);font-size:22px;line-height:1.4;color:#F1E3D6}
+.iv-s{margin:8px 0 0;font-size:11.6px;line-height:1.7;color:#A99A93}
+.quiz{margin:30px 0 0;padding:20px 18px 16px;border:0;
+  background:radial-gradient(64% 70% at 50% 42%,rgba(196,96,86,.075),rgba(196,96,86,.022) 50%,
+    rgba(196,96,86,0) 88%)}
+.quiz-q{margin:0 0 14px;font-size:13.4px;line-height:1.7;color:#EFE2D6}
+.opts{list-style:none;margin:0;padding:0}
+.opts li+li{margin-top:8px}
+.opt{display:block;width:100%;text-align:left;padding:12px 14px;border:1px solid rgba(242,237,225,.14);
+  border-radius:2px;background:rgba(255,255,255,.02);color:#DCD4C6;font-size:13.4px;line-height:1.6;cursor:pointer}
+.opt:hover{border-color:rgba(216,196,158,.44)}
+.opt:focus-visible{outline:2px solid var(--champ);outline-offset:2px}
+.opt.off{border-color:rgba(150,60,52,.4);color:#8C7A74;text-decoration:line-through;cursor:default}
+.opt.off:hover{border-color:rgba(150,60,52,.4)}
+.opt.right{border-color:rgba(216,196,158,.7);background:rgba(216,196,158,.1);color:#FBF2DC}
+.fb{margin:8px 0 2px;padding:10px 12px;border-left:2px solid rgba(196,96,86,.6);
+  font-size:12.6px;line-height:1.75;color:#D3BDB4}
+.fb q{font-family:var(--serif);font-style:normal;color:#EFE1D4}
+.fb .fbc{display:block;margin-top:6px;font-size:9.4px;letter-spacing:.1em;color:#8A7C77}
+.quiz-hint{margin:14px 0 0;font-size:11px;letter-spacing:.04em;color:#8C8079}
+.quiz-hint.done{color:#D8C49E}
+
+/* 정답 해설 */
+.reveal{margin:34px 0 0;padding:26px 0 6px;border-top:1px solid rgba(216,196,158,.28);animation:rvIn .5s var(--ease) both}
+@keyframes rvIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.rv-k{margin:0;font-size:9px;letter-spacing:.3em;color:#D8C49E}
+.rv-k span{display:inline-block;margin-right:8px;padding:2px 7px 1px;border:1px solid rgba(216,196,158,.5);
+  border-radius:2px;font-size:8.6px;letter-spacing:.16em}
+.rv-t{margin:12px 0 18px;font-family:var(--serif);font-size:21px;line-height:1.45;color:#F4EAD6}
+.reveal .prose p{color:#E4DCD0}
+.rv-go{margin:22px 0 0}
+.go{display:inline-block;padding:12px 20px;border:1px solid rgba(216,196,158,.5);border-radius:2px;
+  background:rgba(216,196,158,.07);color:#F3E8D0;font-size:13px;letter-spacing:.04em;cursor:pointer}
+.go:hover{background:rgba(216,196,158,.15)}
+
+/* ── 해설 뒤에 열리는 장 ── */
+#realhalf{animation:rhIn .7s var(--ease) both}
+@keyframes rhIn{from{opacity:0}to{opacity:1}}
+body.void #realhalf .vopen-k{color:#E3C08A}
+/* ══════════════════════════════════════════════════════════════════
+   v13 통합본 전용 — 상단 목차/진도, 막 블록, 잠금, 시점 스와이프,
+   회수 인라인 링크와 복귀 버튼
+   ══════════════════════════════════════════════════════════════════ */
+:root{--tbh:48px}
+html{scroll-padding-top:calc(var(--tbh) + 14px)}
+.page{max-width:calc(680px + var(--pad)*2)}
+@media (min-width:1024px){.page{display:block;max-width:calc(680px + var(--pad)*2)}.flow{max-width:680px}}
+
+/* ── 상단 바 ── */
+.topbar{position:sticky;top:0;z-index:70;
+  background:linear-gradient(180deg,rgba(7,10,19,.97),rgba(7,10,19,.93));
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--rule2)}
+.topbar-in{display:flex;align-items:center;gap:10px;height:var(--tbh);max-width:calc(680px + var(--pad)*2);
+  margin:0 auto;padding:0 var(--pad)}
+.brand{font-family:var(--serif);font-size:9.2px;letter-spacing:.32em;color:var(--champ);white-space:nowrap;flex:0 0 auto}
+.brand i{font-style:normal;color:#5E6274;letter-spacing:.1em;margin-left:6px;font-size:8.4px}
+/* v24 — 알약 트랙도 안쪽 캡슐도 없다. `2.0 2.1 2.2 2.3` 글자만 여백을 두고
+   늘어서고, 선택된 막 아래로 얇은 금빛 밑줄 하나만 미끄러진다. */
+.pgr{position:relative;display:inline-flex;align-items:stretch;flex:0 0 auto;gap:2px;--pgp:0px}
+/* 밑줄 — 위치·폭은 app.js가 transform·width로 옮긴다(선택된 글자 폭에 정확히 맞춘다). */
+.pgr-ind{position:absolute;left:0;bottom:-1px;height:2px;width:0;z-index:0;border-radius:1px;
+  background:linear-gradient(90deg,rgba(216,196,158,.28),rgba(242,226,192,.96) 50%,rgba(216,196,158,.28));
+  box-shadow:0 0 9px rgba(216,196,158,.42);pointer-events:none}
+.pgr.pgr-ready .pgr-ind{transition:transform .34s cubic-bezier(.22,.61,.36,1),width .34s cubic-bezier(.22,.61,.36,1)}
+.pgr button{position:relative;z-index:1;appearance:none;border:0;background:none;font:inherit;font-size:10px;
+  letter-spacing:.02em;color:#7C7F8E;padding:6px 9px 6px;cursor:pointer;line-height:1;border-radius:2px;
+  transition:color .22s var(--ease)}
+.pgr button:hover{color:#EDE6D6}
+.pgr button[aria-pressed="true"]{background:none;color:#FFF8E9}
+.pgr button:focus-visible{outline:1px solid rgba(216,196,158,.8);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){.pgr.pgr-ready .pgr-ind{transition:none}}
+@media (max-width:360px){.pgr button{padding:6px 7px 6px}}
+.tocbtn{margin-left:auto;flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;
+  appearance:none;border:0;background:none;border-radius:0;cursor:pointer;
+  font:inherit;font-size:10px;letter-spacing:.06em;color:#A8A294;width:34px;height:34px;padding:0;
+  line-height:1;transition:color .22s var(--ease)}
+.tocbtn:hover,.tocbtn[aria-expanded="true"]{color:#FFF8E9;background:none;border-color:transparent}
+.tocbtn:focus-visible{outline:1px solid rgba(216,196,158,.8);outline-offset:3px}
+.tocbtn .bars{display:inline-block;width:12px;height:9px;flex:0 0 auto;
+  background:
+    linear-gradient(currentColor,currentColor) 0 0/12px 1.4px no-repeat,
+    linear-gradient(currentColor,currentColor) 0 3.8px/12px 1.4px no-repeat,
+    linear-gradient(currentColor,currentColor) 0 7.6px/12px 1.4px no-repeat}
+
+/* ── 3단 접이식 목차 ── */
+.tpanel{position:fixed;left:0;right:0;top:var(--tbh);z-index:65;max-height:min(84vh,760px);overflow-y:auto;
+  -webkit-overflow-scrolling:touch;background:#080C16;border-bottom:1px solid var(--rule);
+  box-shadow:0 26px 60px rgba(0,0,0,.55);display:none}
+.tpanel.on{display:block;animation:tpIn .2s var(--ease) both}
+.tpanel-bg{position:fixed;left:0;right:0;top:var(--tbh);bottom:0;z-index:64;display:none;
+  background:rgba(4,7,15,.62);-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px)}
+.tpanel-bg.on{display:block;animation:fade .2s var(--ease) both}
+@keyframes tpIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+.tpanel-in{max-width:calc(680px + var(--pad)*2);margin:0 auto;padding:20px var(--pad) 0}
+.ttree,.tchs,.tleaves{list-style:none;margin:0;padding:0}
+.tact{border-bottom:1px solid var(--rule2)}
+.tact-h{display:flex;align-items:baseline;gap:9px;width:100%;padding:11px 0;background:none;border:0;
+  font:inherit;text-align:left;cursor:pointer;color:#D3CCBD}
+.tact-h:hover{color:#FFF8E9}
+.t-no{font-family:var(--serif);font-size:9.6px;letter-spacing:.16em;color:var(--champ);flex:0 0 auto;min-width:26px}
+.t-tx{flex:1 1 auto;min-width:0;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.t-t{font-family:var(--serif);font-size:13.6px;letter-spacing:-.01em}
+.t-s{font-size:9px;letter-spacing:.06em;color:#75798B}
+.t-ct{flex:0 0 auto;font-size:8.8px;letter-spacing:.06em;color:#61657A}
+.t-ic{flex:0 0 auto;position:relative;width:9px;height:9px;margin-top:6px}
+.t-ic::before,.t-ic::after{content:"";position:absolute;background:#84868F}
+.t-ic::before{left:0;top:4px;width:9px;height:1px}
+.t-ic::after{left:4px;top:0;width:1px;height:9px;transition:transform .2s var(--ease)}
+.tact[data-open="1"]>.tact-h .t-ic::after{transform:scaleY(0)}
+.tchs,.tleaves{display:none}
+.tact[data-open="1"]>.tchs{display:block}
+.tch[data-open="1"]>.tleaves{display:block}
+.tch{border-top:1px solid rgba(242,237,225,.04)}
+.tch-h{display:flex;align-items:baseline;gap:8px;width:100%;padding:7px 0 7px 26px;background:none;border:0;
+  font:inherit;text-align:left;cursor:pointer;color:#B7B2A4}
+.tch-h:hover{color:#F4EDDD}
+.c-no{font-family:var(--serif);font-size:9px;letter-spacing:.12em;color:#948A6C;flex:0 0 auto;min-width:16px}
+.c-t{flex:1 1 auto;min-width:0;font-size:12px;line-height:1.45}
+.c-ct{flex:0 0 auto;font-size:8.4px;color:#5E6277}
+.c-ic{flex:0 0 auto;position:relative;width:7px;height:7px;margin-top:5px}
+.c-ic::before,.c-ic::after{content:"";position:absolute;background:#6F7280}
+.c-ic::before{left:0;top:3px;width:7px;height:1px}
+.c-ic::after{left:3px;top:0;width:1px;height:7px;transition:transform .18s var(--ease)}
+.tch[data-open="1"]>.tch-h .c-ic::after{transform:scaleY(0)}
+.tch.keep>.tch-h .c-ic::after{transform:scaleY(0)}
+.tleaf{display:flex;align-items:baseline;gap:8px;padding:5px 0 5px 46px;text-decoration:none;
+  color:#8E8B80;font-size:11.4px;line-height:1.5}
+.tleaf:hover{color:#F0E9DA}
+.tleaf .l-n{font-family:var(--serif);font-size:8.8px;letter-spacing:.08em;color:#7C7358;flex:0 0 auto;min-width:26px}
+.tleaf.cur{color:#FFF8E9}
+.tleaf.cur .l-n{color:var(--champ)}
+.tleaf .l-pv{font-size:8px;letter-spacing:.06em;color:#6E7286;flex:0 0 auto}
+.tlock{color:#5C5F70}
+.tlock .t-t,.tlock .c-t,.tlock .l-n{color:#5C5F70}
+.tlock .t-s{color:#4E5162}
+
+/* ── 막 블록 · 잠금 ────────────────────────────────────────────
+   한 번에 한 막만 화면에 놓는다(#actview). 보이지 않는 막은 display:none이라
+   문서 높이·그리기·찾기에 끼어들지 않는다. 막을 바꿀 때만 두 막이
+   잠깐 겹쳐 놓이고(is-anim) 가로로 밀린다.                              */
+.actview{position:relative}
+.act-block{position:relative;display:none}
+.act-block.is-on{display:block}
+.actview.is-anim{overflow:visible}
+/* v25 — 전환 중에 #actview가 가로로 자르면(border-box) 표지·막 헤더 아트(.aart)가
+   본문 칼럼(860px) 끝에서 네모나게 잘리고, 전환이 끝날 때 페더가 돌아온다.
+   두 막은 host 높이 안에 absolute로 놓이므로 세로로도 넘치지 않는다.
+   가로로 삐져나오는 26px 이동은 html/body의 overflow-x:hidden이 맡는다. */
+.actview.is-anim>.act-block{position:absolute;left:0;top:0;width:100%}
+/* 전환은 app.js가 Web Animations로 건다(들어오는 막 420ms · 나가는 막 300ms). */
+.act-body{display:block}
+html[data-gate="0"] .act-body[data-after-gate]{display:none}
+.actlock{display:none;margin:44px 0 10px;padding:32px 26px 30px;border:0;
+  background:radial-gradient(70% 84% at 50% 34%,rgba(216,196,158,.075),rgba(216,196,158,.022) 50%,
+    rgba(216,196,158,0) 88%)}
+.actlock .lk-k{margin:0;font-size:8.8px;letter-spacing:.3em;color:#8A8578}
+.actlock .lk-t{margin:12px 0 0;font-family:var(--serif);font-size:20px;letter-spacing:.18em;color:#6B6E80}
+.actlock .lk-s{margin:12px 0 18px;font-size:11.8px;line-height:1.8;color:#8F8B80}
+.actlock .lk-s .lk-n{color:#A8A496}
+.actlock .lk-s .lk-now{color:#8F8B80}
+.actlock .lk-sep{margin:0 7px;font-style:normal;color:#5E6274}
+.actlock .lk-s .lk-n:only-child{margin-right:0}
+.actlock .lk-b{display:inline-flex;align-items:center;gap:8px;padding:9px 15px 8px;border:1px solid rgba(216,196,158,.45);
+  border-radius:2px;background:rgba(216,196,158,.06);color:#EFE4CB;font:inherit;font-size:11.6px;cursor:pointer}
+.actlock .lk-b:hover{background:rgba(216,196,158,.14)}
+html[data-prog="2.0"] .act-body[data-rank="1"],html[data-prog="2.0"] .act-body[data-rank="2"],
+html[data-prog="2.0"] .act-body[data-rank="3"],html[data-prog="2.1"] .act-body[data-rank="2"],
+html[data-prog="2.1"] .act-body[data-rank="3"],html[data-prog="2.2"] .act-body[data-rank="3"]{display:none}
+html[data-prog="2.0"] .actlock[data-lock="1"],html[data-prog="2.0"] .actlock[data-lock="2"],
+html[data-prog="2.0"] .actlock[data-lock="3"],html[data-prog="2.1"] .actlock[data-lock="2"],
+html[data-prog="2.1"] .actlock[data-lock="3"],html[data-prog="2.2"] .actlock[data-lock="3"]{display:block}
+/* 잠긴 막의 화면 — 카드 한 장이 그 막의 자리에 서고, 화면 한 장을 채운다. */
+.act-block.is-on.is-lock{display:flex;flex-direction:column;justify-content:center;
+  min-height:calc(100svh - var(--tbh));padding:clamp(22px,6vh,64px) 0}
+.act-block.is-lock .actlock{margin:0 auto;width:100%;max-width:460px}
+
+/* ── 막 오프너 ── */
+.actopen{position:relative;margin:0 0 8px;padding:40px 0 22px;border-top:1px solid var(--rule)}
+.actopen:first-child{border-top:0;padding-top:34px}
+.ao-k{margin:0;font-size:9px;letter-spacing:.34em;color:#C9A87A}
+.ao-t{margin:14px 0 0;font-family:var(--serif);font-weight:500;font-size:clamp(28px,7.6vw,40px);
+  line-height:1.18;letter-spacing:-.035em;color:#FBF4E4}
+.ao-s{margin:12px 0 0;font-size:11px;letter-spacing:.08em;color:#8C8778;line-height:1.7}
+.ao-l{margin:16px 0 0;font-size:13.6px;line-height:1.85;color:#BEB7A7}
+.ao-stats{display:flex;flex-wrap:wrap;gap:6px 16px;margin:18px 0 0;padding:14px 0 0;border-top:1px solid var(--rule2);
+  list-style:none}
+.ao-stats li{font-size:9.2px;letter-spacing:.1em;color:#7E8294}
+.ao-stats b{font-family:var(--serif);font-weight:400;font-size:11.8px;color:#D8C49E;margin-right:2px;letter-spacing:0}
+
+/* ── 막 끝 — 「← 이전 막 / 다음 막 →」 ─────────────────────────────
+   한 번에 한 막만 보이므로, 막을 오가는 자리는 상단 캡슐 탭과 여기 둘뿐이다.
+   좀은 화면에서는 제목이 위로 올라가고 두 단추가 좌우로 갈라진다.        */
+.actnav{position:relative;display:flex;align-items:center;justify-content:space-between;
+  gap:16px;margin:32px 0 64px;padding:22px 0 0;border:0}
+/* 위 경계는 상자 테두리가 아니라 좌우로 사라지는 가는 금빛 선 하나만 남긴다. */
+.actnav::before{content:"";position:absolute;left:0;right:0;top:0;height:1px;
+  background:linear-gradient(90deg,rgba(216,196,158,0),rgba(216,196,158,.30) 18%,
+    rgba(216,196,158,.30) 82%,rgba(216,196,158,0))}
+.anv{appearance:none;border:0;border-radius:0;background:none;display:inline-flex;align-items:center;
+  gap:8px;padding:3px 1px;font:inherit;font-size:11.8px;line-height:1.3;letter-spacing:.08em;
+  color:#938E80;cursor:pointer;
+  transition:color .22s var(--ease),border-color .22s var(--ease),background .22s var(--ease)}
+.anv i{font-style:normal;font-size:12px;line-height:1;color:#9C9480;transition:color .22s var(--ease),transform .26s var(--ease)}
+.anv span{font-variant-numeric:tabular-nums}
+.anv:hover{color:#FFF8E9}
+.anv:hover i{color:var(--champ2)}
+.anv-p:hover i{transform:translateX(-3px)}
+.anv-n:hover i{transform:translateX(3px)}
+.anv:focus-visible{outline:1px solid rgba(216,196,158,.8);outline-offset:3px}
+.anv.is-off{visibility:hidden}
+@media (min-width:700px){
+  .actnav{margin:38px 0 72px;padding:26px 0 0}
+  .anv{font-size:13px;letter-spacing:.1em;gap:9px}
+  .anv i{font-size:13.4px}
+}
+@media (min-width:1200px){
+  .anv{font-size:13.6px}
+  .anv i{font-size:14px}
+}
+@media (min-width:1920px){
+  .anv{font-size:14.6px;gap:10px}
+  .anv i{font-size:15px}
+}
+
+/* ── 시점 스와이프(2.1) ── */
+.pair-in{margin:0}
+.povs{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin:0 0 18px}
+.pov-sw{display:inline-flex;align-items:center;gap:2px;padding:3px;border:1px solid rgba(242,237,225,.14);
+  border-radius:999px;background:rgba(6,10,21,.65)}
+.pov{appearance:none;border:0;background:none;border-radius:999px;font:inherit;font-size:10.4px;line-height:1.4;
+  letter-spacing:.01em;color:#918E86;padding:5px 11px 4px;cursor:pointer;
+  transition:color .18s var(--ease),background .18s var(--ease)}
+.pov .pv-n{font-family:var(--serif);font-size:8.2px;letter-spacing:.06em;color:#686C7E;margin-right:5px}
+.pov:hover{color:#E8E2D4}
+.pov[aria-pressed="true"]{background:rgba(216,196,158,.13);color:#FCF6E8}
+.pov[aria-pressed="true"] .pv-n{color:var(--champ)}
+.pov:focus-visible{outline:1px solid rgba(216,196,158,.8);outline-offset:2px}
+.pv-hint{font-size:9.2px;letter-spacing:.09em;color:#626677;transition:opacity .3s var(--ease)}
+.povs[data-swiped="1"] .pv-hint{opacity:0}
+.views{position:relative;overflow:hidden;transition:height .42s var(--ease);touch-action:pan-y}
+.pane{display:none}
+.pane.on{display:block}
+.pane.leaving{display:block;position:absolute;left:0;right:0;top:0}
+.views.rev .pane.on{animation:slideL .42s var(--ease) both}
+.views:not(.rev) .pane.on{animation:slideR .42s var(--ease) both}
+@keyframes slideR{from{opacity:0;transform:translateX(16px)}to{opacity:1;transform:none}}
+@keyframes slideL{from{opacity:0;transform:translateX(-16px)}to{opacity:1;transform:none}}
+.pane .bt-head{padding-top:4px}
+
+/* ── 회수 인라인 링크 ── */
+a.rc{color:inherit;text-decoration:none;border:0}
+a.rc .t{border-bottom:1px solid rgba(216,196,158,.42);padding-bottom:1px;
+  transition:border-color .18s var(--ease),color .18s var(--ease)}
+a.rc:hover .t{border-bottom-color:rgba(240,226,194,.95);color:#FFF8E9}
+a.rc:focus-visible{outline:1px solid rgba(216,196,158,.8);outline-offset:2px}
+a.rc .g{font-family:var(--sans);font-size:.62em;letter-spacing:.02em;color:#9A8E6E;margin-left:.34em;
+  white-space:nowrap;border:0;vertical-align:.06em;font-weight:400}
+a.rc:hover .g{color:var(--champ)}
+.dq a.rc .t,.pull a.rc .t{border-bottom-color:rgba(216,196,158,.5)}
+
+/* 점프 대상 강조 */
+.hit{animation:hit 1.9s var(--ease) 1}
+@keyframes hit{0%{background:rgba(216,196,158,.3);box-shadow:0 0 0 4px rgba(216,196,158,.16)}
+  60%{background:rgba(216,196,158,.16);box-shadow:0 0 0 4px rgba(216,196,158,.06)}
+  100%{background:transparent;box-shadow:none}}
+.beat.hit{animation:hitSec 1.9s var(--ease) 1}
+@keyframes hitSec{0%{background:linear-gradient(180deg,rgba(216,196,158,.09),transparent 70%)}
+  100%{background:transparent}}
+
+/* 복귀 버튼 */
+#backbtn{position:fixed;left:50%;bottom:calc(18px + env(safe-area-inset-bottom));transform:translate(-50%,14px);
+  z-index:75;display:inline-flex;align-items:center;gap:8px;padding:10px 16px 9px;border-radius:999px;
+  border:1px solid rgba(216,196,158,.5);background:rgba(9,14,26,.96);color:#F2E8D3;font:inherit;font-size:11.6px;
+  letter-spacing:.02em;cursor:pointer;opacity:0;pointer-events:none;
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+  box-shadow:0 12px 34px rgba(0,0,0,.5);transition:opacity .2s var(--ease),transform .2s var(--ease)}
+#backbtn.on{opacity:1;transform:translate(-50%,0);pointer-events:auto}
+#backbtn:hover{border-color:rgba(240,226,194,.9);color:#FFF8E9}
+#backbtn i{font-style:normal;font-size:13px;line-height:1;color:var(--champ)}
+
+/* ── 진도 안내 ── */
+.prognote{position:fixed;left:50%;bottom:calc(18px + env(safe-area-inset-bottom));transform:translate(-50%,10px);
+  z-index:76;padding:9px 15px 8px;border-radius:999px;border:1px solid rgba(216,196,158,.32);
+  background:rgba(9,14,26,.96);color:#DCD3BF;font-size:11px;letter-spacing:.01em;opacity:0;pointer-events:none;
+  transition:opacity .22s var(--ease),transform .22s var(--ease);max-width:calc(100vw - 32px);text-align:center}
+.prognote.on{opacity:1;transform:translate(-50%,0)}
+#backbtn.on ~ .prognote{bottom:calc(74px + env(safe-area-inset-bottom))}
+
+/* ── 2.2 개입 블록에서 쓰는 보조 ── */
+html.js #realhalf[hidden]{display:none}
+.foot b{font-weight:400;color:#9A9487}
+.colophon{margin:56px 0 64px;padding-top:16px;border-top:1px solid var(--rule)}
+.colophon p{margin:0 0 8px;font-size:10px;line-height:1.8;letter-spacing:.02em;color:#6E7183}
+.colophon b{font-weight:400;color:#9A9487}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.94em;color:#8F93A4}
+@media (max-width:699px){
+  .prose p{font-size:15px;line-height:1.9}
+  .prose.lead p{font-size:15.4px}
+  .ao-t{font-size:clamp(26px,7.2vw,34px)}
+  .popx-card{max-height:min(84svh,660px)}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms !important;transition-duration:.01ms !important}
+  html{scroll-behavior:auto}
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   v14 — 인물·개념 시트(무테두리 드로어), 시점 전환 탭, 목차 접기,
+   큰 화면(QHD) 가독성
+   ══════════════════════════════════════════════════════════════════ */
+
+/* ── 인물·개념 시트 — 상자 대신 블러 위에 놓인 편집 시트 ─────────── */
+.popx{position:fixed;inset:0;z-index:90;display:block;visibility:hidden;opacity:0;
+  transition:opacity .24s var(--ease),visibility .24s var(--ease)}
+.popx.on{visibility:visible;opacity:1}
+.popx-bg{position:absolute;inset:0;background:rgba(4,7,15,.58);
+  -webkit-backdrop-filter:blur(18px) saturate(.9);backdrop-filter:blur(18px) saturate(.9)}
+.popx-card{position:absolute;top:0;right:0;bottom:0;width:min(540px,100%);max-width:none;max-height:none;
+  padding:clamp(30px,4.4vh,48px) clamp(26px,2.6vw,48px) 56px;overflow-y:auto;-webkit-overflow-scrolling:touch;
+  background:linear-gradient(180deg,rgba(14,21,38,.985) 0%,rgba(8,13,24,.995) 72%);
+  border:0;border-radius:0;box-shadow:-44px 0 100px rgba(0,0,0,.6);
+  transform:translateX(26px);transition:transform .3s var(--ease)}
+.popx.on .popx-card{transform:none}
+.popx-card::before{content:"";position:absolute;left:0;right:0;top:0;height:1px;
+  background:linear-gradient(90deg,rgba(216,196,158,.45),rgba(216,196,158,0) 78%)}
+.popx-card::after{content:"";position:absolute;left:0;top:0;bottom:0;width:1px;
+  background:linear-gradient(180deg,rgba(216,196,158,.16),rgba(242,237,225,0) 46%)}
+.popx-card .shx{position:absolute;top:14px;right:14px;width:38px;height:38px;font-size:18px;color:#9EA0AA}
+.popx-card .shx:hover{color:#FFF8E9}
+.popx-card .shk{margin:2px 0 0;padding-right:46px;font-size:11px;letter-spacing:.3em;color:#CDB182}
+.popx-card .sht{margin:16px 0 0;padding-right:36px;font-size:clamp(28px,3.1vw,37px);line-height:1.24;
+  font-weight:500;letter-spacing:-.045em;color:#FCF6E8}
+.popx-card .shd{margin:14px 0 0;max-width:30em;font-size:14.2px;line-height:1.78;color:#A9A69B;letter-spacing:-.01em}
+.shb{margin:26px 0 0;padding-top:22px;border-top:1px solid var(--rule2)}
+.shb p{margin:0 0 1.05em;font-size:15.6px;line-height:1.92;letter-spacing:-.012em;color:#DCD5C6;text-wrap:pretty}
+.shb p:last-child{margin-bottom:0}
+.shq-k{margin:28px 0 2px;font-size:10px;letter-spacing:.26em;color:#8C887B}
+.popx-card .pqs{margin:10px 0 0}
+.popx-card .pq{padding:14px 0 0;border-top:1px solid var(--rule2)}
+.popx-card .pq blockquote{font-size:15px;line-height:1.9;color:#EFE7D6}
+.popx-card .pq figcaption{font-size:11.4px;letter-spacing:.04em;color:#9296A6}
+@media (max-width:899px){
+  .popx{display:flex;align-items:flex-end;justify-content:center}
+  .popx-card{position:relative;top:auto;left:0;right:0;bottom:auto;width:100%;
+    max-height:min(88svh,780px);border-radius:18px 18px 0 0;
+    padding:30px var(--pad) calc(36px + env(safe-area-inset-bottom));
+    box-shadow:0 -30px 70px rgba(0,0,0,.62);transform:translateY(22px)}
+  .popx-card::after{display:none}
+  .popx-card::before{top:11px;left:50%;right:auto;width:38px;height:2px;margin-left:-19px;border-radius:2px;
+    background:rgba(242,237,225,.24)}
+  .popx-card .shx{top:10px;right:10px}
+  .popx-card .sht{font-size:clamp(26px,7.4vw,32px)}
+  .shb p{font-size:15px;line-height:1.9}
+}
+
+/* ── 시점 전환 — 두 자리를 나란히 놓은 탭과 전환 단추 ───────────── */
+.povs{display:block;margin:0 0 24px;padding:0}
+.povs.pv-insert{padding:16px 0 0;border-top:1px solid var(--rule2)}
+.pv-k{margin:0 0 11px;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;
+  font-size:10px;letter-spacing:.24em;color:#C9A87A}
+.pv-k span{font-family:var(--sans);font-size:11.4px;letter-spacing:.01em;color:#8E919D}
+.pv-tabs{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.pv-tabs .pov{display:flex;flex-direction:column;align-items:flex-start;gap:4px;width:100%;
+  margin:0;padding:13px 15px 14px;border:1px solid rgba(242,237,225,.13);border-radius:3px;
+  background:rgba(8,13,24,.55);text-align:left;cursor:pointer;
+  transition:border-color .18s var(--ease),background .18s var(--ease)}
+.pv-tabs .pov .pv-n{display:block;margin:0;font-family:var(--serif);font-size:10px;letter-spacing:.2em;color:#8E8467}
+.pv-tabs .pov .pv-t{display:block;font-size:14px;line-height:1.45;letter-spacing:-.02em;color:#CFC9BA;font-weight:400}
+.pv-tabs .pov .pv-s{display:block;font-size:11.6px;line-height:1.55;color:#80838F}
+.pv-tabs .pov:hover{border-color:rgba(216,196,158,.42);background:rgba(216,196,158,.05)}
+.pv-tabs .pov[aria-pressed="true"]{border-color:rgba(216,196,158,.62);background:rgba(216,196,158,.11)}
+.pv-tabs .pov[aria-pressed="true"] .pv-n{color:var(--champ)}
+.pv-tabs .pov[aria-pressed="true"] .pv-t{color:#FFF8E9}
+.pv-tabs .pov[aria-pressed="true"] .pv-s{color:#B3AC9B}
+.pv-tabs .pov:focus-visible{outline:1px solid rgba(216,196,158,.85);outline-offset:2px}
+.pv-tabs .pov[disabled]{opacity:.55;cursor:default}
+.pv-act{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:13px 0 0}
+.pv-swap{appearance:none;border:1px solid rgba(216,196,158,.44);border-radius:2px;
+  background:rgba(216,196,158,.07);color:#F0E6CF;font:inherit;font-size:13px;letter-spacing:.01em;
+  padding:10px 16px 9px;cursor:pointer;transition:background .18s var(--ease),border-color .18s var(--ease)}
+.pv-swap:hover{background:rgba(216,196,158,.17);border-color:rgba(216,196,158,.75);color:#FFF8E9}
+.pv-swap:focus-visible{outline:1px solid rgba(216,196,158,.85);outline-offset:2px}
+.pv-act .pv-hint{font-size:11.6px;letter-spacing:.02em;color:#8B8E9A}
+.povs[data-swiped="1"] .pv-act .pv-hint{display:none}
+.pv-note{margin:12px 0 0;font-size:12.8px;line-height:1.75;color:#989488}
+@media (max-width:440px){
+  .pv-tabs{grid-template-columns:1fr}
+  .pv-tabs .pov .pv-t{font-size:14.4px}
+}
+
+/* ── 목차 — 접힌 장, 눌러서 펴는 절 ─────────────────────────────── */
+.tch-h{padding:11px 0 11px 24px}
+.tch .c-t{color:#C4BEAF}
+.tch.cur > .tch-h .c-t{color:#FFF6E4}
+.tch.cur > .tch-h .c-no{color:var(--champ)}
+.tact.cur > .tact-h .t-t{color:#FFF6E4}
+.tch[data-open="1"] > .tch-h{background:rgba(242,237,225,.018)}
+.tact-h{padding:12px 0}
+.tleaf{padding:7px 0 7px 46px}
+.ao-x{margin:14px 0 0;font-size:12.4px;line-height:1.75;color:#7F8290;letter-spacing:.01em}
+
+/* ── 큰 화면 — 본문·보조 글자를 함께 키운다 ─────────────────────── */
+@media (min-width:1200px){
+  .page,.topbar-in,.tpanel-in{max-width:calc(820px + var(--pad)*2)}
+  .flow{max-width:820px}
+  body{font-size:18px}
+  .hero{padding:64px 0 52px}
+  h1{font-size:clamp(72px,7.4vw,92px)}
+  h1 small{font-size:14px;color:#ACA795;letter-spacing:.16em}
+  .mast-l{font-size:12.6px;letter-spacing:.42em}
+  .mast-r{font-size:12.6px;color:#9EA1AD;letter-spacing:.18em}
+  .kick{font-size:13px;color:#B3AE9E}
+  .lede{font-size:18.4px;line-height:1.9;max-width:33em}
+  .act-n{font-size:12.4px}
+  .act-t{font-size:16.4px}
+  .ao-k{font-size:13px}
+  .ao-s{font-size:13.4px;color:#A5A08F}
+  .ao-l{font-size:16.6px;line-height:1.9;max-width:33em}
+  .ao-x{font-size:13.4px;color:#9A9CAA}
+  .ao-t{font-size:clamp(40px,4.4vw,52px)}
+  .vopen-k{font-size:13px}
+  .vopen-s{font-size:13px;color:#A19C8D}
+  .vopen-t{font-size:clamp(32px,3.2vw,38px)}
+  .bt-n{font-size:40px}
+  .bt-k{font-size:13px;color:#A9A493}
+  .bt-p{font-size:13px;color:#A19D91}
+  .bt-t{font-size:clamp(26px,2.3vw,32px)}
+  .prose p{font-size:18px;line-height:1.96;color:#E1DACB}
+  .prose.lead p{font-size:19px;line-height:1.94}
+  .dq blockquote{font-size:16.8px;line-height:1.88}
+  .dq figcaption{font-size:12.4px;color:#9EA1AD}
+  .dq.big blockquote{font-size:19px}
+  .pull blockquote{font-size:20.4px;line-height:1.82}
+  .pull figcaption{font-size:12.4px;color:#9EA1AD}
+  .meta dt{font-size:12.4px;color:#9A9CAA}
+  .meta dd{font-size:13.6px}
+  .sep .sep-k{font-size:12.6px}
+  .plate-cap{font-size:11.6px;color:#9EA1AD}
+  .p-p{font-size:11.6px}
+  a.rc .g{font-size:12.4px;color:#BFAF85}
+  .pv-k{font-size:12px;letter-spacing:.22em}
+  .pv-k span{font-size:12.6px;color:#A0A3AD}
+  .pv-tabs .pov .pv-n{font-size:11.6px}
+  .pv-tabs .pov .pv-t{font-size:15.4px}
+  .pv-tabs .pov .pv-s{font-size:12.8px;color:#8F929E}
+  .pv-note{font-size:13.6px;color:#A29E92}
+  .pv-swap,.tabs .tab{font-size:13.6px}
+  .tab em{font-size:12px}
+  .it .iq{font-size:14.6px}
+  .it .ib{font-size:15px;line-height:1.9}
+  .it .iv{font-size:12px;color:#8F93A0}
+  .it .is{font-size:12.4px;color:#8F93A0}
+  .th-h{font-size:14px}
+  .th-h em{font-size:12px;color:#8F93A0}
+  .st .sl{font-size:14px}
+  .st .sq{font-size:13.2px;color:#AFAC9F}
+  .st .sv{font-size:12px;color:#8F93A0}
+  .st .sn{font-size:12px}
+  .py-h{font-size:12.6px}
+  .py-s{font-size:14px;color:#B3AFA1}
+  .py-k{font-size:12.4px;color:#A19C8D}
+  .py-q{font-size:20px}
+  .py-a{font-size:16.4px}
+  .py-b{font-size:16px;line-height:1.9}
+  .py-q2 blockquote{font-size:15.6px}
+  .py-q2 figcaption{font-size:12px;color:#9599A6}
+  .ec-k{font-size:12.4px;color:#A19C8D}
+  .ec-t{font-size:22px}
+  .ec-s{font-size:14.4px}
+  .ec-n{font-size:15px}
+  .ec-f{font-size:12px;color:#8F93A0}
+  .actlock .lk-k{font-size:12.4px;color:#A19C8D}
+  .actlock .lk-s{font-size:14.4px;line-height:1.85;color:#A8A496}
+  .actlock .lk-b{font-size:14px}
+  .nx{font-size:15px}
+  .colophon p{font-size:13px;line-height:1.85;color:#9296A4}
+  .brand{font-size:12.6px}
+  .brand i{font-size:12px}
+  .pgr button{font-size:13.4px;padding:10px 11px 7px}
+  .tocbtn{width:36px;height:36px;padding:0}
+  .tocbtn .bars{width:14px;height:10px;
+    background:
+      linear-gradient(currentColor,currentColor) 0 0/14px 1.4px no-repeat,
+      linear-gradient(currentColor,currentColor) 0 4.3px/14px 1.4px no-repeat,
+      linear-gradient(currentColor,currentColor) 0 8.6px/14px 1.4px no-repeat}
+  .t-t{font-size:16.4px}
+  .t-s{font-size:12.4px;color:#A0A3AD}
+  .t-ct{font-size:12.4px;color:#9296A2}
+  .t-no{font-size:12.6px}
+  .c-t{font-size:14.6px}
+  .c-no{font-size:12.4px}
+  .c-ct{font-size:12.4px;color:#9296A2}
+  .tleaf{font-size:14px}
+  .tleaf .l-n{font-size:12px}
+  .tleaf .l-pv{font-size:11.6px;color:#9296A2}
+  .popx-card .shk{font-size:12px}
+  .popx-card .shd{font-size:15px}
+  .shb p{font-size:16.6px;line-height:1.94}
+  .popx-card .pq blockquote{font-size:16px}
+  .popx-card .pq figcaption{font-size:12.4px;color:#9EA1AD}
+  .prognote{font-size:13px}
+  #backbtn{font-size:13px}
+  .beat{padding:34px 0 46px}
+}
+@media (min-width:1920px){
+  .page,.topbar-in,.tpanel-in{max-width:calc(860px + var(--pad)*2)}
+  .flow{max-width:860px}
+  body{font-size:19px}
+  h1{font-size:clamp(88px,6.4vw,104px)}
+  h1 small{font-size:15px}
+  .mast-l,.mast-r{font-size:13.4px}
+  .kick,.ao-k,.ao-x,.vopen-k,.vopen-s,.bt-k,.bt-p{font-size:14px}
+  .ao-s{font-size:14.4px}
+  .lede{font-size:19.6px}
+  .ao-l{font-size:17.6px}
+  .prose p{font-size:19.4px;line-height:1.98}
+  .prose.lead p{font-size:20.4px;line-height:1.96}
+  .dq blockquote{font-size:18px}
+  .dq figcaption,.pull figcaption{font-size:13px}
+  .dq.big blockquote{font-size:20.4px}
+  .pull blockquote{font-size:22px}
+  .bt-t{font-size:34px}
+  .vopen-t{font-size:42px}
+  .ao-t{font-size:56px}
+  .meta dt{font-size:13px}
+  .meta dd{font-size:14.4px}
+  a.rc .g{font-size:13px;color:#C6B58A}
+  .pv-k{font-size:13px}
+  .pv-k span{font-size:13.2px}
+  .pv-tabs .pov .pv-n{font-size:12.4px}
+  .pv-tabs .pov .pv-t{font-size:16.4px}
+  .pv-tabs .pov .pv-s{font-size:13.4px}
+  .pv-note{font-size:14.4px}
+  .pv-swap,.it .iq{font-size:15.4px}
+  .it .ib{font-size:16px}
+  .it .iv,.it .is{font-size:13px}
+  .th-h{font-size:15px}
+  .th-h em,.st .sv,.st .sn{font-size:13px}
+  .st .sl{font-size:15px}
+  .st .sq{font-size:14px}
+  .tabs .tab{font-size:14.4px}
+  .tab em{font-size:13px}
+  .py-h,.py-k,.ec-k,.actlock .lk-k{font-size:13.4px}
+  .py-s{font-size:15px}
+  .py-q{font-size:21.4px}
+  .py-a{font-size:17.4px}
+  .py-b{font-size:17px}
+  .py-q2 blockquote{font-size:16.6px}
+  .py-q2 figcaption{font-size:13px}
+  .ec-t{font-size:23px}
+  .ec-s,.ec-n{font-size:15.6px}
+  .ec-f{font-size:13px}
+  .actlock .lk-s{font-size:15.4px}
+  .actlock .lk-b,.nx{font-size:15.4px}
+  .colophon p{font-size:14px}
+  .brand,.brand i{font-size:13.4px}
+  .pgr button{font-size:14px}
+  .tocbtn{width:38px;height:38px}
+  .tocbtn .bars{width:15px;height:11px;
+    background:
+      linear-gradient(currentColor,currentColor) 0 0/15px 1.5px no-repeat,
+      linear-gradient(currentColor,currentColor) 0 4.75px/15px 1.5px no-repeat,
+      linear-gradient(currentColor,currentColor) 0 9.5px/15px 1.5px no-repeat}
+  .t-ct,.c-ct,.tleaf .l-pv{font-size:13px}
+  .t-t{font-size:17.4px}
+  .t-s{font-size:13.2px}
+  .t-no{font-size:13.4px}
+  .c-t{font-size:15.6px}
+  .c-no{font-size:13px}
+  .tleaf{font-size:14.8px}
+  .tleaf .l-n{font-size:13px}
+  .popx-card .shk{font-size:13px}
+  .popx-card .shd{font-size:16px}
+  .shb p{font-size:17.4px;line-height:1.96}
+  .popx-card .pq blockquote{font-size:17px}
+  .popx-card .pq figcaption{font-size:13px}
+  .prognote,#backbtn{font-size:13.6px}
+}
+
+/* ── 작은 화면에서도 읽히는 최소 크기 — 보조 라벨·메타·링크 표지 ──── */
+@media (max-width:1199px){
+  .meta dt{font-size:10.4px;color:#9092A0}
+  .meta dd{font-size:12.4px}
+  .bt-k{font-size:10.4px;color:#989487}
+  .bt-p{font-size:10.8px;color:#918D82}
+  .vopen-k{font-size:10.4px}
+  .vopen-s{font-size:10.8px;color:#918D82}
+  .ao-k{font-size:10.4px}
+  .ao-s{font-size:11.4px;color:#98937F}
+  .ao-x{font-size:11.6px;color:#8C8F9C}
+  .dq figcaption,.pull figcaption{font-size:10.6px;color:#9094A2}
+  a.rc .g{font-size:.68em;color:#B6A57E}
+  .plate-cap{font-size:10.4px;color:#9094A2}
+  .p-p{font-size:10px}
+  .mast-r{font-size:10.4px;color:#9EA0AC}
+  .mast-l{font-size:11px}
+  .kick{font-size:10.6px;color:#A8A392}
+  h1 small{font-size:12px;color:#A19D90}
+  .pv-k{font-size:11px}
+  .pv-k span{font-size:11.6px;color:#9295A0}
+  .pv-note{font-size:12.6px;color:#96928A}
+  .py-k{font-size:10.6px;color:#98937F}
+  .ec-k,.actlock .lk-k{font-size:10.6px;color:#98937F}
+  .ec-f{font-size:10px;color:#8B8E9A}
+  .t-s,.t-ct{font-size:10.6px;color:#8E919C}
+  .tleaf{font-size:12.6px}
+  .tleaf .l-n{font-size:10.6px}
+  .tleaf .l-pv{font-size:10px;color:#8E919C}
+  .c-no{font-size:10.6px}
+  .c-ct{font-size:10.4px;color:#8E919C}
+  .popx-card .shk{font-size:11px}
+  .popx-card .shd{font-size:14px}
+  .popx-card .pq figcaption{font-size:11px;color:#9296A4}
+  .shq-k{font-size:10.4px}
+  .it .is,.it .iv{font-size:10.4px;color:#8E919C}
+  .th-h em,.st .sv{font-size:10.4px;color:#8E919C}
+  .st .sq{font-size:11.6px}
+  .py-q2 figcaption{font-size:10.4px;color:#8E919C}
+  .brand{font-size:10.4px}
+  .pgr button{font-size:11px}
+  .tocbtn{font-size:11px}
+}
+@media (min-width:1600px){
+  .popx-card{width:min(620px,100%)}
+}
+.pv-tabs .pov[aria-pressed="true"]{box-shadow:inset 2px 0 0 rgba(216,196,158,.7)}
+
+/* ══════════════════════════════════════════════════════════════════
+   v15 — 모바일 실사용 수정 5건
+   ① 일반 시점 분리 절의 A/B 박스 제거(한 줄 표지)
+   ② 시점 전환 — 두 패널을 가로 트랙에 나란히 두고 translateX 로만 이동
+   ③ 「읽던 곳으로」 — iOS 하단 주소창 위로
+   ④ 카드 시트 — 상단 핵심 요약, 손잡이 드래그로 닫기, 모바일 × 제거
+   ⑤ 목차 — 그 막의 장 목록(막 탭은 v24에서 상단 바가 맡는다)
+   + 첫 방문 진도 선택 · 순차 해금
+   ══════════════════════════════════════════════════════════════════ */
+
+/* ── ② 시점 패널: 겹치지 않는 가로 트랙 ─────────────────────────── */
+.views{position:relative;overflow:hidden;transition:height .42s var(--ease);touch-action:pan-y}
+.vtrack{display:flex;align-items:flex-start;width:100%;will-change:transform;
+  transition:transform .42s var(--ease)}
+.pane{display:block;position:relative;left:auto;right:auto;top:auto;
+  flex:0 0 100%;width:100%;min-width:0}
+.pane.leaving{display:block;position:static}
+.views .vtrack .pane.on,.views.rev .vtrack .pane.on{animation:none}
+@media (prefers-reduced-motion:reduce){.vtrack{transition:none}}
+
+/* ── ① 일반 시점 분리: 두 칸 대신 한 줄 표지 ─────────────────────── */
+.pv-mark{margin:16px 0 0;padding:1px 0 1px 12px;border-left:2px solid rgba(216,196,158,.32);
+  display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;
+  font-size:12.6px;line-height:1.7;color:#8E8B80;letter-spacing:-.005em}
+.pv-mark-k{flex:0 0 auto;font-size:9.6px;letter-spacing:.24em;color:#C9A87A}
+.pv-mark-t{flex:1 1 auto;min-width:0}
+@media (min-width:1200px){
+  .pv-mark{font-size:13.4px;padding-left:13px}
+  .pv-mark-k{font-size:11px}
+}
+
+/* ── ③ 「읽던 곳으로」·진도 안내 위치 ─────────────────────────────── */
+@media (max-width:899px){
+  #backbtn{bottom:calc(84px + env(safe-area-inset-bottom))}
+  .prognote{bottom:calc(84px + env(safe-area-inset-bottom))}
+  #backbtn.on ~ .prognote{bottom:calc(146px + env(safe-area-inset-bottom))}
+}
+
+/* ── ④ 카드 시트: 상단 핵심 요약 ─────────────────────────────────── */
+.popx-card .shf{margin:20px 0 0;padding:0;border-top:1px solid rgba(242,237,225,.16)}
+.popx-card .shf > div{display:grid;grid-template-columns:4.6em 1fr;gap:4px 12px;align-items:baseline;
+  padding:9px 0 8px;border-bottom:1px solid rgba(242,237,225,.07)}
+.popx-card .shf dt{margin:0;font-size:10.6px;letter-spacing:.14em;color:#8D8878;font-variant-numeric:tabular-nums}
+.popx-card .shf dd{margin:0;font-size:13.6px;line-height:1.62;color:#DDD6C7;letter-spacing:-.012em;text-wrap:pretty}
+.popx-card .shd{margin:16px 0 0;font-size:14.4px;line-height:1.8;color:#C9C2B1;letter-spacing:-.012em}
+.popx-card .shf + .shd{margin-top:15px}
+.popx-card .shf + .shb{margin-top:22px}
+@media (max-width:899px){
+  .popx-card .shx{display:none}
+  .popx-card::before{background:rgba(242,237,225,.34)}
+  .popx-card .shf{margin-top:18px}
+  .popx-card .shf > div{grid-template-columns:4.2em 1fr;padding:9px 0 9px}
+  .popx-card .shf dt{font-size:10.4px}
+  .popx-card .shf dd{font-size:13.8px}
+  .popx-card .shd{font-size:14.6px}
+}
+@media (min-width:1200px){
+  .popx-card .shf dt{font-size:12px}
+  .popx-card .shf dd{font-size:15px}
+  .popx-card .shd{font-size:15.6px}
+}
+@media (min-width:1920px){
+  .popx-card .shf dt{font-size:12.6px}
+  .popx-card .shf dd{font-size:15.8px}
+  .popx-card .shd{font-size:16.2px}
+}
+
+/* ── ⑤ 목차: 맨 위 막 네 칸 + 고른 막의 장 목록 ─────────────────────
+   네 칸(.tt)을 누르면 그 아래 장 목록이 그 막으로 바뀌고(미리 보기), 장을
+   누르면 그 막으로 넘어가 그 장에 선다. 목록이 길어도 칸이 쓸려 올라가지
+   않도록 칸은 목차 위에 붙어 있고, 배경은 판과 같은 색이라 뒤가 비치지 않는다. */
+.toc-tabs{position:sticky;top:0;z-index:3;display:grid;grid-template-columns:repeat(4,1fr);
+  gap:6px;margin:0 0 14px;padding:4px 0 10px;background:#080C16;
+  box-shadow:0 9px 12px -10px rgba(0,0,0,.85)}
+.tt{appearance:none;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;
+  gap:4px;padding:11px 6px 10px;border:1px solid rgba(242,237,225,.12);border-radius:3px;
+  background:rgba(8,13,24,.45);font:inherit;cursor:pointer;overflow:hidden;
+  transition:border-color .16s var(--ease),background .16s var(--ease)}
+.tt b{font-family:var(--serif);font-weight:400;font-size:15px;line-height:1.2;letter-spacing:.1em;color:#CFC9BA}
+.tt span{max-width:100%;min-height:2.62em;font-size:10px;line-height:1.3;letter-spacing:.01em;color:#7D8193;
+  text-align:center;white-space:normal;word-break:keep-all;overflow-wrap:break-word;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;-webkit-box-pack:center;
+  overflow:hidden}
+.tt:hover{border-color:rgba(216,196,158,.42)}
+.tt.cur{border-color:rgba(216,196,158,.6);background:rgba(216,196,158,.12)}
+.tt.cur b{color:#FFF8E9}
+.tt.cur span{color:#B3AC9B}
+.tt.tlock b{color:#7A7E8F}
+.tt.tlock span{color:#5F6374}
+.tt:focus-visible{outline:1px solid rgba(216,196,158,.8);outline-offset:2px}
+.tcl{list-style:none;margin:0;padding:0}
+.tc{display:flex;align-items:baseline;gap:12px;width:100%;padding:14px 0 13px;
+  background:none;border:0;border-bottom:1px solid rgba(242,237,225,.055);
+  font:inherit;text-align:left;cursor:pointer;color:#C4BEAF}
+.tc:hover{color:#FFF8E9}
+.tc:hover .tc-n{color:var(--champ)}
+.tc-n{flex:0 0 auto;min-width:24px;font-family:var(--serif);font-size:11.6px;letter-spacing:.12em;color:#948A6C}
+.tc-t{flex:1 1 auto;min-width:0;font-size:15px;line-height:1.5;letter-spacing:-.01em}
+.tc-c{flex:0 0 auto;font-size:10.8px;letter-spacing:.04em;color:#737789}
+.tc.cur .tc-t{color:#FFF6E4}
+.tc.cur .tc-n{color:var(--champ)}
+.tc.cur .tc-c{color:#A99C7C}
+.tc:focus-visible{outline:1px solid rgba(216,196,158,.8);outline-offset:2px}
+.tlockbox{padding:32px 0 22px;text-align:center}
+.tl-t{margin:0;font-family:var(--serif);font-size:18px;letter-spacing:.24em;color:#5E6274}
+.tl-s{margin:12px 0 0;font-size:12.2px;letter-spacing:.04em;color:#7E8294}
+.tl-h{margin:11px 0 0;font-size:12.2px;line-height:1.7;color:#737789}
+@media (min-width:768px){
+  .toc-tabs{gap:8px;margin:0 0 16px;padding:5px 0 11px}
+  .tt{padding:12px 7px 11px}
+  .tt b{font-size:16px}
+  .tt span{font-size:11px}
+}
+@media (min-width:1200px){
+  .tpanel{max-height:min(86vh,860px)}
+  .tpanel-in{padding:28px var(--pad) 0}
+  .toc-tabs{gap:8px;margin:0 0 18px;padding:6px 0 12px}
+  .tt{padding:13px 8px 12px;gap:5px}
+  .tt b{font-size:17px}
+  .tt span{font-size:11.5px;line-height:1.32}
+  .tc{padding:18px 0 17px}
+  .tc-n{font-size:12.8px;min-width:28px}
+  .tc-t{font-size:17.2px}
+  .tc-c{font-size:12.2px}
+  .tl-t{font-size:21px}
+  .tl-s{font-size:13.4px}
+  .tl-h{font-size:13.4px}
+}
+@media (min-width:1920px){
+  .tpanel{max-height:min(90vh,1040px)}
+  .tpanel-in{padding:34px var(--pad) 0}
+  .toc-tabs{gap:10px;margin:0 0 16px;padding:6px 0 10px}
+  .tt{padding:15px 10px 14px;gap:6px}
+  .tt b{font-size:19px}
+  .tt span{font-size:13px;line-height:1.34}
+  .tc{padding:22px 0 21px;gap:16px}
+  .tc-n{font-size:14px;min-width:32px}
+  .tc-t{font-size:19px}
+  .tc-c{font-size:13.4px}
+  .tl-t{font-size:23px}
+  .tl-s,.tl-h{font-size:14.4px}
+}
+
+/* ── 시점 전환 표시 — 큰 단추 대신 가는 페이저(‹ ● ○ ›) ──────────── */
+.pv-pager{display:flex;align-items:center;justify-content:center;gap:9px;
+  margin:13px 0 0;padding:0;line-height:1;color:#5F6374;user-select:none}
+.pv-lt,.pv-gt{font-size:13px;line-height:1;color:#787C8C;transition:color .25s var(--ease)}
+.pv-lt.off,.pv-gt.off{color:#333747}
+.pv-d{display:block;width:5px;height:5px;border-radius:50%;background:rgba(242,237,225,.22);
+  transition:background .25s var(--ease),transform .25s var(--ease)}
+.pv-d.on{background:rgba(216,196,158,.88);transform:scale(1.12)}
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;
+  clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0}
+@media (min-width:1200px){
+  .pv-lt,.pv-gt{font-size:14px}
+  .pv-d{width:6px;height:6px}
+  .pv-pager{margin-top:15px;gap:10px}
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   v18 — 상단 바 전체 비례 확대 (모바일·태블릿)
+   v17은 목차 버튼만 키워 PENACONY·진도 탭과의 균형이 깨졌다.
+   바 높이(--tbh)·로고·진도 탭·목차 버튼을 같은 배율로 키우고,
+   좁은 폭에서는 목차를 아이콘 버튼(v16의 조화)으로 되돌린다.
+   목차 버튼 높이는 진도 탭 묶음 높이와 정확히 같게 맞춘다.
+   ══════════════════════════════════════════════════════════════════ */
+@media (max-width:430px){
+  :root{--tbh:56px;--tabh:38px}
+  .brand i{display:none}
+  .brand{font-size:12.2px;letter-spacing:.16em}
+  .topbar-in{gap:10px}
+  .pgr button{display:inline-flex;align-items:center;justify-content:center;
+    padding:10px 9px 6px;font-size:12.6px;letter-spacing:.03em}
+  .tocbtn{margin-left:auto;width:calc(var(--tabh) + 2px);height:calc(var(--tabh) + 2px);
+    padding:0;gap:0;font-size:12px;letter-spacing:0}
+  .tocbtn .bars{width:16px;height:12px;
+    background:
+      linear-gradient(currentColor,currentColor) 0 0/16px 1.5px no-repeat,
+      linear-gradient(currentColor,currentColor) 0 5.25px/16px 1.5px no-repeat,
+      linear-gradient(currentColor,currentColor) 0 10.5px/16px 1.5px no-repeat}
+}
+@media (min-width:431px) and (max-width:1023px){
+  :root{--tbh:56px;--tabh:40px}
+  .brand{font-size:13px;letter-spacing:.2em}
+  .brand i{font-size:10.4px}
+  .topbar-in{gap:12px}
+  .pgr button{display:inline-flex;align-items:center;justify-content:center;
+    padding:10px 12px 7px;font-size:13.4px;letter-spacing:.03em}
+  .tocbtn{width:calc(var(--tabh) + 2px);height:calc(var(--tabh) + 2px);padding:0;gap:0}
+  .tocbtn .bars{width:14px;height:10px;
+    background:
+      linear-gradient(currentColor,currentColor) 0 0/14px 1.4px no-repeat,
+      linear-gradient(currentColor,currentColor) 0 4.3px/14px 1.4px no-repeat,
+      linear-gradient(currentColor,currentColor) 0 8.6px/14px 1.4px no-repeat}
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   v19 — 1단계 연출
+   ① 무대 전환(Ambient Stage Shift) — 읽는 대목의 배경 공기만 바뀐다.
+      화면에 고정된 층 한 장의 색 세 개만 무대별로 바뀌고, 그 색이 900ms
+      동안 이어진다. 본문 위에는 아무것도 얹지 않는다(장식·배너 0).
+      알파는 본문 대비를 건드리지 않을 만큼만 쓴다(최대 .34, 상단 글로우).
+   ② 여덟째 날 진입 — 에나의 꿈(금빛)이 둘로 갈라지며 틈의 톤이 드러난다.
+   ══════════════════════════════════════════════════════════════════ */
+
+/* ── ① 무대 배경층 ───────────────────────────────────────────────── */
+/* 화면 바탕색(body 배경색)과 상단 글로우 색 두 개만 무대별로 갈아 끼우고,
+   그 색이 900ms 동안 이어진다. 바탕색은 캔버스 색이라 층을 만들지 않고,
+   글로우는 화면 위쪽 74%만 덮는다. 본문 위에는 아무것도 얹지 않는다. */
+@property --st-glow { syntax: '<color>'; inherits: true; initial-value: rgba(0,0,0,0) }
+@property --st-wash { syntax: '<color>'; inherits: true; initial-value: rgba(0,0,0,0) }
+@property --st-low  { syntax: '<color>'; inherits: true; initial-value: rgba(0,0,0,0) }
+html{transition:--st-glow 900ms var(--ease),--st-wash 900ms var(--ease),--st-low 900ms var(--ease)}
+body{background-color:var(--st-bg,#070A13);transition:background-color 900ms var(--ease)}
+.stage{position:fixed;left:0;right:0;top:0;height:74vh;z-index:0;pointer-events:none;
+  /* 아래 끝(74vh)에서 층이 직선으로 끊기지 않게 한다 — 무대의 색은 그 위에서 이미 다 사라지므로
+     이 페더는 층 경계에서 생기던 한 줄짜리 어두운 띠만 걷어낸다(QHD·모바일 실측). */
+  -webkit-mask-image:linear-gradient(180deg,#000 0%,#000 52%,rgba(0,0,0,.55) 76%,rgba(0,0,0,0) 100%);
+  mask-image:linear-gradient(180deg,#000 0%,#000 52%,rgba(0,0,0,.55) 76%,rgba(0,0,0,0) 100%);
+  background:
+    radial-gradient(132% 96% at 50% -18%,var(--st-glow),rgba(0,0,0,0) 78%),
+    linear-gradient(180deg,var(--st-wash),rgba(0,0,0,0) 56%),
+    radial-gradient(76% 50% at 2% -8%,var(--st-low),rgba(0,0,0,0) 80%)}
+/* 은하열차 — 차가운 강철빛 */
+html[data-stage="train"]{--st-bg:#080B12;--st-glow:rgba(114,146,190,.30);--st-wash:rgba(24,38,60,.10);--st-low:rgba(34,50,78,.12)}
+/* 현실 「레버리」 호텔 — 중성의 남청 */
+html[data-stage="hotel"]{--st-bg:#070A12;--st-glow:rgba(96,124,176,.30);--st-wash:rgba(20,32,56,.11);--st-low:rgba(40,60,102,.12)}
+/* 「황금의 순간」·축제의 거리 — 따뜻한 호박빛 */
+html[data-stage="gold"]{--st-bg:#100B06;--st-glow:rgba(216,160,86,.34);--st-wash:rgba(58,38,16,.12);--st-low:rgba(140,92,40,.13)}
+/* 꿈의 변경·원시 꿈세계·기억 — 남보라 */
+html[data-stage="dream"]{--st-bg:#0A0913;--st-glow:rgba(126,104,190,.31);--st-wash:rgba(26,22,52,.12);--st-low:rgba(70,58,124,.13)}
+/* 아침 이슬 공관 — 새벽의 옅은 청록 */
+html[data-stage="pavilion"]{--st-bg:#070C0C;--st-glow:rgba(154,182,156,.24);--st-wash:rgba(20,34,34,.11);--st-low:rgba(50,74,74,.12)}
+/* 「페나코니 대극장」 — 무대의 붉은 조명 */
+html[data-stage="theater"]{--st-bg:#0F0809;--st-glow:rgba(186,84,78,.30);--st-wash:rgba(44,16,20,.12);--st-low:rgba(90,32,36,.13)}
+/* 꿈과 현실의 틈 — 빛을 거두고 더 깊이 가라앉는다 */
+html[data-stage="rift"]{--st-bg:#04060A;--st-glow:rgba(78,100,132,.14);--st-wash:rgba(0,0,0,.16);--st-low:rgba(0,0,0,.26)}
+/* 빛나는 펠드스파호 — 창밖의 물빛 */
+html[data-stage="ship"]{--st-bg:#060C0D;--st-glow:rgba(96,158,168,.28);--st-wash:rgba(14,34,40,.12);--st-low:rgba(26,56,62,.12)}
+@media (prefers-reduced-motion:reduce){html,body{transition:none}}
+
+/* ══════════════════════════════════════════════════════════════════
+   v20 — 표지·막 헤더의 공식 아트, 금빛 오너먼트, 그리고 커튼을 걷은 자리
+   ① 표지(.hart)와 네 막의 시작 헤더(.aart)에만 호요버스 공식 장소 아트를
+      깐다. 위쪽만 남기고 아래로 갈수록 마스크로 지우므로, 본문이 시작되는
+      자리에는 아트가 한 픽셀도 남지 않고 뒤는 --st-bg 단색이 된다.
+   ② 제목 위·아래에 hsr.hoyoverse.com식 얇은 금빛 다이아몬드 구분선(.orn).
+   ③ 황금 커튼(.veil)은 걷어냈다. 여덟째 날은 여백과 큰 타이포로만 열린다.
+   ══════════════════════════════════════════════════════════════════ */
+
+/* ── ① 표지·막 헤더 아트 ─────────────────────────────────────────── */
+/* 아트 상자는 z-index:0에 isolation — 음수 z-index를 쓰면 .page(문서 전체)의
+   음수층이 통째로 합성 레이어가 되어 QHD에서 브라우저가 죽는다(v20 실측).
+   안쪽에는 새 스태킹 컨텍스트를 만들지 않는다(그림에 opacity·z-index를 주면
+   장마다 레이어가 늘어 같은 문제가 된다). 그림은 그대로 두고, 어둡게 누르는
+   일은 상자 전체의 opacity와 ::after 한 겹의 그라데이션으로만 한다. */
+.hero,.actopen{isolation:isolate}
+/* v23 — 아트는 좌우로도 사라진다.
+   마스크를 층별로 나눠 건다. 상자에는 세로 페더(위·아래), 그림과 그 위의
+   어둡게 누르는 겹(::after)에는 같은 가로 페더. 한 요소에 두 마스크를
+   mask-composite로 겹치지 않으므로 어느 브라우저에서도 같은 결과가 나오고,
+   ::after의 좌우 그라데이션이 상자 끝에서 직선으로 끊기는 일도 없다. */
+.hart,.aart{position:absolute;top:0;left:0;right:0;z-index:0;overflow:hidden;pointer-events:none;
+  opacity:.80;--artfx:9%;
+  -webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,.55) 3%,#000 9%,#000 46%,
+    rgba(0,0,0,.52) 72%,rgba(0,0,0,0) 100%);
+  mask-image:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,.55) 3%,#000 9%,#000 46%,
+    rgba(0,0,0,.52) 72%,rgba(0,0,0,0) 100%)}
+.hart img,.aart img,.hart::after,.aart::after{
+  -webkit-mask-image:linear-gradient(90deg,rgba(0,0,0,0) 0%,#000 var(--artfx),
+    #000 calc(100% - var(--artfx)),rgba(0,0,0,0) 100%);
+  mask-image:linear-gradient(90deg,rgba(0,0,0,0) 0%,#000 var(--artfx),
+    #000 calc(100% - var(--artfx)),rgba(0,0,0,0) 100%)}
+.hero>*:not(.hart),.actopen>*:not(.aart){position:relative}
+.hart{height:clamp(300px,33vw,460px)}
+/* 막 헤더는 페이지 중간에서 시작하므로 위도 살짝 열고, 아래는 본문 앞에서 완전히 지운다. */
+.aart{height:100%;
+  -webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,0) 0%,#000 13%,#000 32%,rgba(0,0,0,.44) 62%,rgba(0,0,0,0) 94%);
+  mask-image:linear-gradient(180deg,rgba(0,0,0,0) 0%,#000 13%,#000 32%,rgba(0,0,0,.44) 62%,rgba(0,0,0,0) 94%)}
+.hart img,.aart img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 44%}
+/* 넓은 화면 — 아트를 본문 칼럼보다 좌우로 240px씩 넓혀 페더가 본문 밖 여백에서 끝나게 한다.
+   칼럼이 화면 가운데 서므로 그림도 가운데에서 좌우로 넓어지고, 화면 폭은 넘지 않는다
+   (1400px에서 1300px — 넘치는 화면 없음). */
+@media (min-width:1400px){
+  .hero{overflow:visible}
+  .hart,.aart{left:-240px;right:-240px;--artfx:13%}
+}
+/* 글자는 왼쪽에 서므로 왼쪽을 눌러 대비를 만들고, 오른쪽은 그림을 살려 둔다.
+   아트 자체는 위의 mask가 아래로 갈수록 지우므로 바탕과 이어지는 이음매가 없다. */
+.hart::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+    linear-gradient(90deg,rgba(4,5,9,.86) 0%,rgba(4,5,9,.64) 26%,rgba(4,5,9,.22) 54%,
+      rgba(4,5,9,.02) 72%,rgba(4,5,9,0) 82%),
+    linear-gradient(90deg,rgba(4,5,9,0) 84%,rgba(4,5,9,.42) 95%,rgba(4,5,9,.72) 100%),
+    linear-gradient(180deg,rgba(4,5,9,.92) 0%,rgba(4,5,9,.82) 11%,rgba(4,5,9,.66) 27%,
+      rgba(4,5,9,.28) 40%,rgba(4,5,9,.06) 55%,rgba(4,5,9,0) 70%)}
+.aart::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+    linear-gradient(90deg,rgba(4,5,9,.86) 0%,rgba(4,5,9,.64) 26%,rgba(4,5,9,.22) 54%,
+      rgba(4,5,9,.02) 72%,rgba(4,5,9,0) 82%),
+    linear-gradient(90deg,rgba(4,5,9,0) 84%,rgba(4,5,9,.42) 95%,rgba(4,5,9,.72) 100%),
+    linear-gradient(180deg,rgba(4,5,9,.46) 0%,rgba(4,5,9,.34) 36%,rgba(4,5,9,.10) 66%,
+      rgba(4,5,9,0) 88%)}
+@media (max-width:699px){
+  .hart{height:min(400px,46vh)}
+  .hart,.aart{opacity:.74;--artfx:7%}
+  .hart::after,.aart::after{background:
+    linear-gradient(180deg,rgba(4,5,9,.80) 0%,rgba(4,5,9,.58) 40%,rgba(4,5,9,.19) 76%,rgba(4,5,9,0) 100%),
+    linear-gradient(90deg,rgba(4,5,9,.34) 0%,rgba(4,5,9,0) 16%,rgba(4,5,9,0) 84%,rgba(4,5,9,.34) 100%)}
+}
+/* 아트 위에 서는 작은 글자는 한 단계 밝힌다(대비 확보). */
+.hero .mast-r{color:#BFC3CE}
+.hero .kick{color:#CFC7B4}
+.hero h1 small{color:#D6D0C0}
+.actopen .ao-s{color:#BDB6A3}
+
+/* ── ② 금빛 오너먼트 구분선 ─────────────────────────────────────── */
+.orn{position:relative;display:flex;align-items:center;gap:9px;max-width:250px;height:7px;margin:20px 0 0}
+.orn span{flex:1 1 auto;height:1px}
+.orn span:first-child{background:linear-gradient(90deg,rgba(216,196,158,0),rgba(226,207,167,.78))}
+.orn span:last-child{background:linear-gradient(90deg,rgba(226,207,167,.78),rgba(216,196,158,0))}
+.orn i{flex:0 0 auto;width:6px;height:6px;transform:rotate(45deg);
+  border:1px solid rgba(226,207,167,.95);background:rgba(216,196,158,.30);
+  box-shadow:0 0 10px rgba(216,196,158,.30)}
+.hero .orn{max-width:236px}
+.hero h1 + .orn{margin-top:22px}
+.actopen .orn{max-width:186px;margin-top:15px}
+.actopen .ao-s + .orn{margin-top:17px}
+@media (min-width:1200px){
+  .orn{max-width:290px}
+  .hero .orn{max-width:276px}
+  .actopen .orn{max-width:214px}
+}
+
+/* ── ③ 여덟째 날(11장) — 커튼 대신 여백과 타이포 스케일 ──────────── */
+#realhalf>.vopen{margin-top:0;padding-top:clamp(58px,12vh,126px);border-top:0}
+#realhalf>.vopen .vopen-k{font-size:10px;letter-spacing:.34em}
+#realhalf>.vopen .vopen-t{margin-top:16px;font-size:clamp(35px,5.6vw,60px);line-height:1.06;
+  letter-spacing:-.045em}
+#realhalf>.vopen .vopen-s{margin-top:16px}
+#realhalf>.vopen .vopen-r{width:66px;margin-top:28px}
+@media (min-width:1200px){
+  #realhalf>.vopen{padding-top:clamp(96px,13vh,150px)}
+  #realhalf>.vopen .vopen-k{font-size:12px}
+  #realhalf>.vopen .vopen-t{font-size:clamp(52px,4.4vw,64px)}
+}
+@media (min-width:1920px){
+  #realhalf>.vopen .vopen-t{font-size:72px}
+}
+
+/* ── ④ 여덟째 날 진입 — 연출 없이 11장이 그 자리에서 선다 ────────────────
+   v21의 캔버스 연출(.rift-cv · .rift-dark)은 v22에서 본선에서 걷어내고
+   archive/rift_particle_v21.js에 스타일 주석과 함께 보관했다.              */
+/* ══════════════════════════════════════════════════════════════════
+   v30 — 컷신 자리의 실제 스틸컷 (2.0 ~ 2.3).
+   빈 「CUT XX · 영상 컷신」 점선 상자를 걷어내고, 그 자리에 인게임
+   컷신 화면 한 장을 앉힌다. 액자·테두리·번호·설명 글자는 두지 않는다.
+   그림은 위아래로, 그리고 좌우 끝에서 바탕(#070A13 계열)으로 스며들듯
+   사라져 본문과 이음매가 생기지 않는다.
+   여러 장이면 같은 자리에서 가로로 넘겨 본다(점 인디케이터만).
+   ══════════════════════════════════════════════════════════════════ */
+.still{margin:10px 0 30px}
+.still-f{position:relative;overflow:hidden;
+  -webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,0) 0%,#000 8%,#000 92%,rgba(0,0,0,0) 100%);
+  mask-image:linear-gradient(180deg,rgba(0,0,0,0) 0%,#000 8%,#000 92%,rgba(0,0,0,0) 100%)}
+.still-f img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;
+  -webkit-mask-image:linear-gradient(90deg,rgba(0,0,0,0) 0%,#000 4.5%,#000 95.5%,rgba(0,0,0,0) 100%);
+  mask-image:linear-gradient(90deg,rgba(0,0,0,0) 0%,#000 4.5%,#000 95.5%,rgba(0,0,0,0) 100%)}
+
+/* 여러 장 — 트랙을 옆으로 밀어 넘긴다. 스크롤바는 감춘다. */
+.still.sw .still-f{overflow:hidden}
+.still-track{display:flex;width:100%;overflow-x:auto;overflow-y:hidden;scroll-behavior:smooth;
+  scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
+  scrollbar-width:none;-ms-overflow-style:none;overscroll-behavior-x:contain}
+.still-track::-webkit-scrollbar{display:none}
+.still-track img{flex:0 0 100%;width:100%;scroll-snap-align:center;scroll-snap-stop:always}
+.still-nav{display:flex;align-items:center;justify-content:center;gap:12px;margin:7px 0 0;height:14px}
+.still-nav .sn-b{flex:0 0 auto;padding:0 2px;border:0;background:none;color:#6F6B61;
+  font:400 11px/1 inherit;cursor:pointer;transition:color .18s}
+.still-nav .sn-b:hover{color:#C6B48C}
+.still-dots{display:flex;align-items:center;gap:6px}
+.still-dots i{width:4px;height:4px;border-radius:50%;background:rgba(216,196,158,.24);
+  transition:background .2s,transform .2s}
+.still-dots i.on{background:rgba(216,196,158,.8);transform:scale(1.15)}
+@media (prefers-reduced-motion:reduce){
+  .still-track{scroll-behavior:auto}
+}
+@media (max-width:699px){
+  .still{margin:8px 0 24px}
+  .still-f img{-webkit-mask-image:linear-gradient(90deg,rgba(0,0,0,0) 0%,#000 5%,#000 95%,rgba(0,0,0,0) 100%);
+    mask-image:linear-gradient(90deg,rgba(0,0,0,0) 0%,#000 5%,#000 95%,rgba(0,0,0,0) 100%)}
+  .still-nav{margin-top:6px}
+}
+
+:root{
+  --bg:#070A13; --bg2:#0A101C; --navy:#0E1728;
+  --ink:#F2EDE1; --ink2:#D2CBBC; --ink3:#A29D91; --ink4:#7C7F8E;
+  --champ:#D8C49E; --champ2:#F0E2C2;
+  --rule:rgba(242,237,225,.13); --rule2:rgba(242,237,225,.065);
+  --serif:"Noto Serif CJK KR","Noto Serif KR","AppleMyungjo","Nanum Myeongjo","NanumMyeongjo",Palatino,Georgia,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Noto Sans CJK KR","Apple SD Gothic Neo","Noto Sans KR","Pretendard","Malgun Gothic",sans-serif;
+  --pad:22px; --wrap:764px; --tbh:52px;
+  --ease:cubic-bezier(.2,.75,.2,1);
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{margin:0;padding:0;-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:calc(var(--tbh) + 18px)}
+body{position:relative;margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.86;
+  letter-spacing:-.011em;word-break:keep-all;overflow-wrap:break-word;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;padding-bottom:env(safe-area-inset-bottom)}
+body::before{content:"";position:absolute;left:0;right:0;top:0;height:1120px;z-index:0;pointer-events:none;
+  -webkit-mask-image:linear-gradient(180deg,#000 0%,#000 46%,rgba(0,0,0,0) 94%);
+  mask-image:linear-gradient(180deg,#000 0%,#000 46%,rgba(0,0,0,0) 94%);
+  background:
+    radial-gradient(92% 58% at 50% -6%, #17223C 0%, #0D1526 46%, rgba(7,10,19,0) 80%),
+    radial-gradient(56% 38% at 102% 16%, rgba(112,132,178,.09), rgba(112,132,178,0) 70%),
+    radial-gradient(50% 36% at -4% 42%, rgba(150,124,164,.06), rgba(150,124,164,0) 72%)}
+.wrap{position:relative;z-index:1;max-width:calc(var(--wrap) + var(--pad)*2);margin:0 auto;padding:0 var(--pad)}
+::selection{background:rgba(216,196,158,.26);color:#FFF8E9}
+a{color:inherit;text-decoration:none}
+
+/* ── 상단 바 ── */
+.topbar{position:sticky;top:0;z-index:70;
+  background:linear-gradient(180deg,rgba(7,10,19,.97),rgba(7,10,19,.92));
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--rule2)}
+.topbar-in{display:flex;align-items:center;gap:10px;height:var(--tbh);
+  max-width:calc(var(--wrap) + var(--pad)*2);margin:0 auto;padding:0 var(--pad)}
+.brand{font-family:var(--serif);font-size:9.4px;letter-spacing:.32em;color:var(--champ);white-space:nowrap;flex:0 0 auto}
+.brand i{font-style:normal;color:#5E6274;letter-spacing:.1em;margin-left:7px;font-size:8.4px}
+.pgr{position:relative;display:inline-flex;align-items:stretch;flex:0 0 auto;gap:2px}
+.pgr-ind{position:absolute;left:0;bottom:-1px;height:2px;width:0;z-index:0;border-radius:1px;
+  background:linear-gradient(90deg,rgba(216,196,158,.28),rgba(242,226,192,.96) 50%,rgba(216,196,158,.28));
+  box-shadow:0 0 9px rgba(216,196,158,.42);pointer-events:none}
+.pgr.ready .pgr-ind{transition:transform .34s var(--ease),width .34s var(--ease)}
+.pgr button{position:relative;z-index:1;appearance:none;border:0;background:none;font:inherit;font-size:10px;
+  letter-spacing:.04em;color:#7C7F8E;padding:7px 9px 6px;cursor:pointer;line-height:1;border-radius:2px;
+  transition:color .22s var(--ease)}
+.pgr button::after{content:"";position:absolute;left:2px;right:2px;top:-9px;bottom:-9px}
+.pgr button:hover{color:#EDE6D6}
+.pgr button[aria-selected="true"],.pgr button[aria-pressed="true"]{background:none;color:#FFF8E9}
+.pgr button:focus-visible{outline:1px solid rgba(216,196,158,.8);outline-offset:2px}
+.tb-go{margin-left:auto;flex:0 0 auto;font-size:10.4px;letter-spacing:.04em;color:#A8A294;
+  padding:7px 0;transition:color .22s var(--ease);white-space:nowrap}
+.tb-go:hover{color:var(--champ2)}
+.tb-go i{font-style:normal;color:#676B7A;margin:0 3px}
+@media (max-width:400px){.brand{font-size:8.6px;letter-spacing:.22em}.brand i{display:none}.pgr button{padding:7px 6px 6px}}
+@media (max-width:380px){.topbar-in{gap:8px}.brand{font-size:8.2px;letter-spacing:.18em}.pgr{gap:1px}.pgr button{padding:7px 5px 6px}}
+@media (max-width:339px){.topbar-in:has(.pgr) .brand{display:none}}
+
+/* ── 히어로 ── */
+.hero{position:relative;padding:40px 0 34px}
+.mast{display:flex;align-items:baseline;justify-content:space-between;gap:14px;padding:11px 0;
+  border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.mast-l{font-family:var(--serif);font-size:10.4px;letter-spacing:.46em;color:var(--champ)}
+.mast-r{font-size:8.8px;letter-spacing:.22em;color:#6E7280;white-space:nowrap}
+.kick{margin:clamp(24px,4.6vh,34px) 0 0;font-size:10px;letter-spacing:.22em;color:#9E998C}
+h1{margin:14px 0 0;font-family:var(--serif);font-weight:500;font-size:clamp(42px,11.4vw,66px);
+  line-height:1.06;letter-spacing:-.05em;color:#FCF7EA}
+h1 small{display:block;margin-top:10px;font-family:var(--sans);font-size:10.2px;font-weight:400;
+  letter-spacing:.24em;color:#8F8B7E}
+.lede{margin:22px 0 0;font-size:15.4px;line-height:1.94;color:var(--ink2);max-width:34em}
+.lede + .lede{margin-top:12px}
+.acts{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:26px 0 0;border-top:1px solid var(--rule)}
+.act{display:flex;align-items:baseline;gap:10px;padding:11px 0;border-bottom:1px solid var(--rule2);min-width:0;
+  color:inherit}
+.act:nth-child(odd){padding-right:16px}
+.act:nth-child(even){padding-left:16px;border-left:1px solid var(--rule2)}
+.act-n{font-family:var(--serif);font-size:9.6px;letter-spacing:.1em;color:var(--champ);flex:0 0 auto;white-space:nowrap}
+.act-t{font-family:var(--serif);font-size:14px;line-height:1.45;letter-spacing:-.02em;color:#EDE6D6;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.act a.act-t:hover{color:var(--champ2)}
+@media (max-width:520px){.acts{grid-template-columns:1fr}.act:nth-child(even){padding-left:0;border-left:0}.act:nth-child(odd){padding-right:0}
+  .act-t{white-space:normal;overflow:visible}}
+
+/* ── 섹션 머리 ── */
+.sec{margin:26px 0 0}
+.sec-h{padding:26px 0 20px;border-top:1px solid rgba(216,196,158,.3)}
+.sec-k{margin:0;font-size:9px;letter-spacing:.3em;color:var(--champ)}
+.sec-t{margin:10px 0 0;font-family:var(--serif);font-weight:500;font-size:clamp(22px,5vw,28px);
+  line-height:1.3;letter-spacing:-.035em;color:#F6EFE0}
+.sec-d{margin:10px 0 0;font-size:13.4px;line-height:1.9;color:#8F93A2;max-width:36em}
+
+/* ── 행성 목록 (허브) ── */
+.pl{display:block;padding:34px 0 38px;border-top:1px solid var(--rule)}
+.pl-h{display:flex;align-items:flex-start;gap:16px}
+.pl-n{font-family:var(--serif);font-size:10.6px;letter-spacing:.18em;color:var(--champ);flex:0 0 auto;padding-top:9px}
+.pl-id{min-width:0}
+.pl-t{margin:0;font-family:var(--serif);font-weight:500;font-size:clamp(26px,6vw,34px);line-height:1.24;
+  letter-spacing:-.04em;color:#FBF5E7}
+.pl-t a{transition:color .2s var(--ease)}
+.pl-t a:hover{color:#FFFDF6}
+.pl-l{margin:7px 0 0;font-size:8.8px;letter-spacing:.3em;color:#6E7280}
+.pl-go{margin-left:auto;flex:0 0 auto;padding-top:12px;font-size:10.6px;letter-spacing:.03em;color:#9A9CAA;
+  display:inline-flex;align-items:center;gap:7px;transition:color .2s var(--ease);white-space:nowrap}
+.pl-go:hover{color:var(--champ2)}
+.pl-go i{font-style:normal;font-size:12px;color:#6B6F7E;transition:transform .24s var(--ease),color .2s var(--ease)}
+.pl-go:hover i{transform:translateX(3px);color:var(--champ)}
+.pl-d{margin:14px 0 0;font-size:14.6px;line-height:1.92;color:#B9B3A6;max-width:42em}
+.pl-ch{margin:20px 0 0}
+.pl-gk{margin:0 0 2px;font-size:9.2px;letter-spacing:.16em;color:#9C8F73;line-height:1.7}
+.pl-gk + .chlist{margin-bottom:19px}
+.chlist{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;column-gap:34px}
+.chlist li{min-width:0}
+.chlist a{display:flex;align-items:baseline;gap:10px;padding:9px 0;border-top:1px solid var(--rule2);
+  transition:color .18s var(--ease)}
+.chlist b{font-family:var(--serif);font-weight:400;font-size:9.4px;letter-spacing:.08em;color:#8E8368;flex:0 0 auto;
+  min-width:16px}
+.chlist span{font-size:13.4px;line-height:1.5;color:#CFC8BA;min-width:0;overflow-wrap:break-word}
+.chlist a:hover span{color:#FFF8E9}
+.chlist a:hover b{color:var(--champ)}
+@media (max-width:600px){.chlist{grid-template-columns:1fr}.pl-go span{display:none}}
+
+/* 페나코니 완주본 행 */
+.pl.pen .pl-t a{color:#F0E0BC}
+
+/* ── 횡단 단서 ── */
+.thl{list-style:none;margin:6px 0 0;padding:0}
+.thl li{display:grid;grid-template-columns:24px 1fr auto;gap:0 14px;padding:15px 0;border-top:1px solid var(--rule2);
+  align-items:start}
+.thl li:last-child{border-bottom:1px solid var(--rule2)}
+.th-l{font-family:var(--serif);font-size:11.4px;letter-spacing:.08em;color:var(--champ);line-height:1.9}
+.th-n{margin:0;font-family:var(--serif);font-size:15.4px;line-height:1.6;letter-spacing:-.02em;color:#EFE7D6}
+.th-d{margin:4px 0 0;font-size:12.8px;line-height:1.86;color:#8F93A2}
+.th-v{font-size:9.6px;letter-spacing:.08em;color:#6E7280;white-space:nowrap;padding-top:4px}
+@media (max-width:600px){
+  .thl li{grid-template-columns:20px 1fr}
+  .th-v{grid-column:2;padding-top:8px;color:#5F6372}
+}
+
+/* ── 목차 끝 안내 ── */
+.endnote{margin:30px 0 0;padding:24px 0 0;border-top:1px solid rgba(216,196,158,.3)}
+.endnote p{margin:0;font-size:12.8px;line-height:1.9;color:#868A99}
+
+/* ── 행성 페이지: 버전 패널 ── */
+.vp{padding-top:10px}
+.vp-h{padding:26px 0 4px;border-top:1px solid rgba(216,196,158,.3)}
+.vp-k{margin:0;font-size:9px;letter-spacing:.26em;color:var(--champ)}
+.vp-t{margin:11px 0 0;font-family:var(--serif);font-weight:500;font-size:clamp(23px,5.2vw,30px);
+  line-height:1.3;letter-spacing:-.035em;color:#F7F0E1}
+.vp-h .vp-t:first-child{margin-top:1px}
+.vp-s{margin:8px 0 0;font-size:11.2px;letter-spacing:.06em;color:#7C7F8E}
+.vp-note{margin:16px 0 6px;font-size:13.6px;line-height:1.92;color:#9FA2B0;max-width:36em}
+
+.ch{padding:30px 0 32px;border-top:1px solid var(--rule2)}
+.ch:first-of-type{border-top:0;padding-top:22px}
+.ch-k{display:flex;align-items:baseline;gap:11px;margin:0;font-size:9.4px;letter-spacing:.2em;color:#85889A}
+.ch-k b{font-family:var(--serif);font-weight:400;font-size:11px;letter-spacing:.1em;color:var(--champ)}
+.ch-t{margin:11px 0 0;font-family:var(--serif);font-weight:500;font-size:clamp(21px,4.8vw,26px);
+  line-height:1.36;letter-spacing:-.035em;color:#F8F1E3}
+.ch-s{margin:8px 0 0;font-size:10.4px;letter-spacing:.08em;color:#717585}
+.ch-b{margin:15px 0 0;font-size:15px;line-height:1.98;color:#C9C3B6}
+.ch-b p{margin:0}
+.ch-b p + p{margin-top:.72em}
+.cue{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 16px;margin:16px 0 0;font-size:11.2px;color:#7C7F8E}
+.cue-k{font-size:8.8px;letter-spacing:.24em;color:#9C8F73}
+.cue a{color:#C4B79A;border-bottom:1px solid rgba(216,196,158,.22);padding-bottom:1px;
+  transition:color .18s var(--ease),border-color .18s var(--ease)}
+.cue a:hover{color:var(--champ2);border-color:rgba(216,196,158,.6)}
+
+.src{margin:18px 0 0}
+.src-k{margin:0 0 6px;font-size:8.6px;letter-spacing:.3em;color:#6E7280}
+.src ol{list-style:none;margin:0;padding:0}
+.src li{padding:9px 0 10px;border-top:1px solid var(--rule2)}
+.src .q{margin:0;font-family:var(--serif);font-size:14.4px;line-height:1.92;color:#E2D8C4;
+  letter-spacing:-.01em}
+.src cite{display:block;margin-top:6px;font-style:normal;font-size:9.8px;letter-spacing:.1em;color:#797C8B}
+.src cite b{font-weight:400;color:#9C8F73}
+.src cite b::before{content:"·";margin:0 6px;color:#565A6B}
+
+/* ── 다음 행성 ── */
+.pn{display:flex;align-items:flex-end;gap:16px;margin:52px 0 0;padding:26px 0 28px;
+  border-top:1px solid rgba(216,196,158,.3);border-bottom:1px solid var(--rule2)}
+.pn-id{min-width:0}
+.pn-k{margin:0;font-size:8.8px;letter-spacing:.28em;color:#9C8F73}
+.pn-t{margin:10px 0 0;font-family:var(--serif);font-weight:500;font-size:clamp(24px,5.6vw,30px);
+  letter-spacing:-.035em;color:#F7F0E1;transition:color .2s var(--ease)}
+.pn-d{margin:7px 0 0;font-size:12.4px;line-height:1.8;color:#8B8E9C}
+.pn-a{margin-left:auto;flex:0 0 auto;font-size:20px;color:#7C7F8E;transition:transform .26s var(--ease),color .2s var(--ease);
+  padding-bottom:4px}
+.pn:hover .pn-t{color:#FFFDF6}
+.pn:hover .pn-a{transform:translateX(4px);color:var(--champ)}
+
+.foot{padding:26px 0 46px}
+.foot p{margin:0;font-size:10.4px;line-height:1.9;color:#63677A;letter-spacing:.02em}
+.foot p + p{margin-top:4px}
+.foot a{color:#8E8368}
+.foot a:hover{color:var(--champ)}
+
+[hidden]{display:none !important}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .pgr.ready .pgr-ind{transition:none}
+  .pl-go i,.pn-a{transition:none}
+}
+
+/* ── 상단 바 홈 버튼 (v36) — 「← 목차」 텍스트 대신 아이콘 하나 ────────── */
+.tb-home{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;
+  width:30px;height:30px;margin-left:-7px;color:#9C9688;transition:color .22s var(--ease)}
+.tb-home:hover{color:var(--champ2)}
+.tb-home svg{width:15.5px;height:15.5px;fill:none;stroke:currentColor;stroke-width:1.25;
+  stroke-linejoin:round;stroke-linecap:round}
+.tb-home:focus-visible{outline:1px solid rgba(216,196,158,.8);outline-offset:2px}
+.topbar-in .pgr{margin-left:2px}
+
+
+/* ── 헤르타 페이지 전용 ───────────────────────────────────────────── */
+.hero{min-height:0;padding:38px 0 34px}
+.page,.wrap{position:relative;z-index:1;max-width:calc(764px + 44px);margin:0 auto;padding:0 22px}
+.vp[hidden]{display:none}
+.act-block{display:block}
+.bt-head{grid-template-columns:64px minmax(0,1fr);column-gap:14px}
+.bt-n{font-size:clamp(20px,2.2vw,26px);letter-spacing:-.02em;white-space:nowrap}
+.vopen{margin:34px 0 0}
+.vopen-k{font-size:9px;letter-spacing:.24em;color:var(--champ)}
+.vopen-r{display:block;width:100%;height:1px;margin:14px 0 0;
+  background:linear-gradient(90deg,rgba(216,196,158,.28),rgba(216,196,158,0) 92%)}
+.ch-lede{margin:14px 0 0}
+.beat:first-of-type{padding-top:26px}
+.bt-p{margin:6px 0 0;font-size:10px;letter-spacing:.1em;color:#717585}
+.dq{margin:0 0 26px}
+.prose.rest+.dq{margin-top:26px}
+.dq figcaption,.pull figcaption{display:block;margin-top:10px;padding-left:18px;
+  font-style:normal;font-size:9.8px;letter-spacing:.1em;color:#7C7F8E}
+.pull figcaption{padding-left:24px}
+.dq blockquote p{margin:0 0 6px}
+.prose.lead+.dq{margin-top:2px}
+.ch-b .q{font-family:var(--serif)}
+.shf{display:flex;flex-wrap:wrap;gap:4px 20px;margin:14px 0 0;padding:0 0 10px;
+  border-bottom:1px solid rgba(242,237,225,.065)}
+.shf div{display:flex;align-items:baseline;gap:7px;min-width:0}
+.shf dt{font-size:8.6px;letter-spacing:.18em;color:#7E808E;flex:0 0 auto}
+.shf dd{margin:0;font-size:11.2px;line-height:1.55;color:#C9C3B5}
+.shb{margin:16px 0 0}
+.shb p{margin:0 0 12px;font-size:12.6px;line-height:1.92;color:#CFC8B8;letter-spacing:-.005em}
+.shb p:last-child{margin-bottom:0}
+.shq-k{margin:18px 0 4px;font-size:8.6px;letter-spacing:.26em;color:var(--champ)}
+.pqs{margin:0}
+.pq{margin:0;padding:11px 0 12px;border-top:1px solid rgba(242,237,225,.065)}
+.pq blockquote{margin:0;font-family:var(--serif);font-size:12.4px;line-height:1.86;color:#E7DFCE}
+.pq figcaption{display:block;margin-top:6px;font-style:normal;font-size:9.4px;letter-spacing:.08em;color:#797C8B}
+body.locked{overflow:hidden}
+@media (max-width:899px){
+  .popx-card .shx{display:none}
+}
+@media (max-width:520px){
+  .vopen-t{font-size:26px}
+  .bt-head{grid-template-columns:50px minmax(0,1fr);column-gap:12px}
+  .bt-n{font-size:21px}
+}
+
+/* ── 상단 바 — 홈으로 가는 버튼 하나 ─────────────────────────────── */
+.tb-home{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;
+  width:30px;height:30px;margin-left:-7px;color:#9C9688;
+  transition:color .22s var(--ease)}
+.tb-home:hover{color:var(--champ2)}
+.tb-home svg{width:15.5px;height:15.5px;fill:none;stroke:currentColor;stroke-width:1.25;
+  stroke-linejoin:round;stroke-linecap:round}
+.tb-home:focus-visible{outline:1px solid rgba(216,196,158,.8);outline-offset:2px}
+.topbar-in .pgr{margin:0 auto}
+
+/* 장 머리 아트는 표지보다 어두운 장면이 섞여 있다 — 누르는 정도를 한 단계 낮춘다.
+   (웰컴 센터는 밝고, 서포트 캐빈 플랫폼은 어두워서 같은 겹으로는 묻힌다.) */
+.aart{opacity:.86}
+.aart::after{background:
+  linear-gradient(90deg,rgba(4,5,9,.74) 0%,rgba(4,5,9,.46) 26%,rgba(4,5,9,.13) 54%,rgba(4,5,9,0) 74%),
+  linear-gradient(180deg,rgba(4,5,9,.34) 0%,rgba(4,5,9,.22) 40%,rgba(4,5,9,.06) 72%,rgba(4,5,9,0) 92%)}
+@media (max-width:699px){
+  .aart::after{background:
+    linear-gradient(180deg,rgba(4,5,9,.40) 0%,rgba(4,5,9,.26) 42%,rgba(4,5,9,.06) 74%,rgba(4,5,9,0) 94%)}
+}
+
+/* 좁은 화면 — 표지 아트 위 글자가 묻히지 않게 조금 더 눌러 둔다. */
+@media (max-width:699px){
+  .hart::after{background:
+    linear-gradient(180deg,rgba(4,5,9,.82) 0%,rgba(4,5,9,.64) 38%,rgba(4,5,9,.30) 70%,rgba(4,5,9,0) 98%)}
+}
+
+/* ── 막 머리 아트 — 장을 여는 자리 ──────────────────────────────── */
+.chead{position:relative;isolation:isolate;overflow:visible;margin:42px 0 0;padding:34px 0 14px}
+.chead>*:not(.aart){position:relative;z-index:1}
+.vopen{margin:0}
+.act-block:first-of-type .chead{margin-top:16px}
+@media (max-width:699px){
+  .chead{margin-top:30px;padding-top:22px}
+  .act-block:first-of-type .chead{margin-top:10px}
+}
+
+/* ── 여백 곁가지(사이드노트) ────────────────────────────────────────
+   본선은 한 줄로 이어지고, 갈라지는 결말만 얇은 실선 하나로 옆에 붙인다.
+   좁은 화면에서는 본문 사이에 한 줄로 접혀 있다가 눌러서 펼친다.
+   상자·테두리·배지는 두지 않는다 — 머리카락 굵기의 선과 여백뿐. */
+.side{position:relative;margin:20px 0 8px;padding:0 0 0 15px}
+.side::before{content:"";position:absolute;left:0;top:4px;bottom:4px;width:1px;
+  background:linear-gradient(180deg,rgba(216,196,158,0),rgba(216,196,158,.30) 16%,
+    rgba(216,196,158,.30) 84%,rgba(216,196,158,0))}
+.side-t{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 6px;width:100%;
+  appearance:none;border:0;background:none;margin:0;padding:6px 0;font:inherit;
+  font-size:11.6px;line-height:1.55;letter-spacing:.02em;color:#948E7F;text-align:left;cursor:pointer;
+  transition:color .22s var(--ease)}
+.side-t:hover{color:#E4DCC9}
+.side-t:focus-visible{outline:1px solid rgba(216,196,158,.7);outline-offset:3px}
+.side-m{font-style:normal;font-size:9px;line-height:1.5;color:#9C8F73;
+  transition:transform .3s var(--ease)}
+.side.open .side-m{transform:rotate(90deg)}
+.side-k{font-size:8.4px;letter-spacing:.26em;color:#9C8F73}
+.side-k::after{content:"·";margin-left:6px;letter-spacing:0;color:#5F6374}
+.side-l{color:#CBC3B2}
+.side-e{font-size:9px;letter-spacing:.1em;color:#6E7285}
+.side-e::before{content:"("}
+.side-e::after{content:")"}
+.side-b{height:0;overflow:hidden;transition:height .38s var(--ease)}
+.side-in{overflow:hidden}
+.side .side-in p{margin:0 0 9px;font-size:clamp(11.8px,.52vw,13.4px);line-height:1.88;
+  color:#A9A394;letter-spacing:-.005em}
+.side .side-in p:first-child{margin-top:11px}
+.side .side-in p:last-child{margin-bottom:0}
+@media (prefers-reduced-motion:reduce){.side-b,.side-m{transition:none}}
+/* 넓은 화면 — 본문 오른쪽 여백으로 나가 본선 문단과 나란히 선다. */
+@media (min-width:1320px){
+  .prose.has-branch{position:relative}
+  .prose.has-branch>.side{position:absolute;left:calc(100% + 34px);top:-3px;width:206px;
+    margin:0;padding:0 0 0 14px}
+  .prose.has-branch>.side::after{content:"";position:absolute;left:-34px;top:11px;width:34px;height:1px;
+    background:linear-gradient(90deg,rgba(216,196,158,.24),rgba(216,196,158,.08))}
+  .side-t{display:grid;grid-template-columns:9px minmax(0,1fr);column-gap:7px;row-gap:1px;
+    align-items:start;padding:2px 0}
+  .side-m{grid-column:1;grid-row:1;margin-top:4px;font-size:8.5px}
+  .side-k{grid-column:2;font-size:8px;letter-spacing:.24em;line-height:1.4}
+  .side-k::after,.side-e::before,.side-e::after{content:none}
+  .side-l{grid-column:2;font-size:clamp(11.4px,.5vw,12.8px);line-height:1.5;color:#CFC7B5}
+  .side-e{grid-column:2;font-size:8.8px;letter-spacing:.09em;line-height:1.5}
+  .side .side-in p{font-size:clamp(11.2px,.52vw,13.4px);line-height:1.86;color:#A9A394}
+}
+
+/* ── 막 이동 — 테두리 없는 텍스트 한 줄 ─────────────────────────── */
+#v-16 .actnav{margin-bottom:28px}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="topbar-in">
+  <a class="tb-home" href="../" aria-label="홈 — 전체 목차"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10.6 12 4l8 6.6V20h-5.4v-5.2h-5.2V20H4z"/></svg></a>
+  <div class="pgr" role="tablist" aria-label="막 선택">
+    <span class="pgr-ind" aria-hidden="true"></span>
+    <button type="button" role="tab" id="tab-10" data-v="1.0" aria-controls="v-10" aria-selected="true" tabindex="0">프롤로그</button>
+    <button type="button" role="tab" id="tab-16" data-v="1.6" aria-controls="v-16" aria-selected="false" tabindex="-1">개척 후문</button>
+  </div>
+</div></div>
+<div class="wrap">
+<header class="hero">
+  <div class="hart" aria-hidden="true"><img src="assets/art-cover.webp" alt="" width="1500" height="750" fetchpriority="high"></div>
+  <div class="mast"><span class="mast-l">HERTA SPACE STATION</span></div>
+  <p class="kick">프롤로그 · 개척 임무</p>
+  <h1>우주정거장 헤르타</h1>
+  <div class="acts">
+<div class="act"><span class="act-n">프롤로그</span><span class="act-t">더 블루</span></div><div class="act"><span class="act-n">개척 후문</span><span class="act-t">평범한 것들의 신성한 왕관</span></div>
+  </div>
+<p class="lede">은하열차가 처음 멈춘 정거장. 「더 블루」 궤도의 이 정거장은 헤르타가 활성화되지 않은 스텔라론 하나를 붙잡아 두려고 지은 창고이자 연구 기지다. 카프카와 은랑이 감시실의 봉인을 풀고, 카프카가 꺼낸 스텔라론을 개척자의 몸에 넣는다.</p><p class="lede">반물질 군단이 정거장을 휩쓸고 종말 괴수가 도착한 뒤, 개척자는 사건의 「키포인트」로 지목된다. 사건이 끝나면 세 갈래 선택이 남는다. 정거장에 남거나, 열차에 타거나, 그 밖의 어딘가로 가거나.</p>
+</header>
+<main>
+<section class="vp" id="v-10" data-v="1.0" role="tabpanel" aria-labelledby="tab-10">
+  <header class="vp-h"><h2 class="vp-t">프롤로그 「더 블루」</h2><p class="vp-s">웰컴 센터 · 감시실 · 메인 컨트롤 캐빈 · 은하열차</p></header>
+<section class="act-block" id="h01"><div class="chead"><div class="aart" aria-hidden="true"><img src="assets/art-01.webp" alt="" width="1500" height="750"></div><div class="vopen" id="h01-h"><span class="vopen-k">프롤로그 · 01</span><h2 class="vopen-t">더 블루</h2><span class="vopen-s">웰컴 센터 · 감시실</span><i class="vopen-r" aria-hidden="true"></i></div><p class="ch-lede">위조 신분으로 들어온 두 사람과, 정거장 책임자가 감춰 둔 스텔라론 하나.</p></div><section class="beat" id="h01-s1"><header class="bt-head"><b class="bt-n">01·1</b><div class="bt-tx"><p class="bt-k">「깊은 곳에 이른 혼란」</p><h3 class="bt-t">보안 인증</h3><p class="bt-p">웰컴 센터 · 보안 게이트</p></div></header><dl class="meta"><div><dt>상태</dt><dd>군단 습격 직후 · 직원 대피</dd></div><div><dt>등장</dt><dd>카프카 · 은랑</dd></div></dl><div class="prose lead"><p id="h01-s1-p1">우주정거장 「<button class="kw" type="button" data-k="herta" aria-haspopup="dialog">헤르타</button>」의 웰컴 센터에 <button class="kw" type="button" data-k="hunter" aria-haspopup="dialog">스텔라론 헌터</button> <button class="kw" type="button" data-k="kafka" aria-haspopup="dialog">카프카</button>와 은랑이 위조 신분으로 들어온다. 정거장은 이미 <button class="kw" type="button" data-k="legion" aria-haspopup="dialog">반물질 군단</button>의 습격을 받은 뒤다. 안내 음성은 긴급 대피를 반복하고, 복도에는 부서진 진열대와 연기만 남아 있다. 위조 신분은 보안 게이트의 인증을 통과하는 데 쓰인다.</p></div><figure class="still"><div class="still-f"><img src="assets/stills/still-01-1.webp" alt="웰컴 센터 복도에서 반물질 군단과 마주선 카프카와 은랑" width="1024" height="576"></div></figure><div class="prose rest"><p id="h01-s1-p2">입구에서 몬스터가 연구원을 덮치자 카프카가 총으로 처리한다. 두 사람에게 정거장의 비상 사태는 침입을 가려 주는 덮개이고, 습격으로 비어 버린 경비는 오히려 일정을 앞당기는 조건이 된다.</p><p id="h01-s1-p3"><button class="kw" type="button" data-k="silverwolf" aria-haspopup="dialog">은랑</button>은 단말로 보안 권한을 훔치고, 카프카는 안내판을 확인한다. 안내판의 환영 문구는 지식의 바다가 주는 선물을 권하는 한편 익사 위험을 함께 경고한다. 두 사람은 이 문구에서 쓸 만한 단서를 얻지 못한다. 이 정거장의 주인은 <button class="kw" type="button" data-k="genius" aria-haspopup="dialog">지니어스 클럽</button> #83 헤르타이고, 두 사람의 목적은 관람이 아니라 감시실에 봉인된 <button class="kw" type="button" data-k="stellaron" aria-haspopup="dialog">스텔라론</button>이다. 두 사람의 행동은 <button class="kw" type="button" data-k="elio" aria-haspopup="dialog">엘리오</button>의 각본을 따르고, 각본에 적히지 않은 일은 중요하게 다루지 않는다.</p></div><figure class="dq" id="h01-s1-q1"><blockquote><p>——결국엔, 엘리오께서 각본에 적지 않으셨으니까. 중요치 않겠지</p></blockquote><figcaption>은랑 · 「깊은 곳에 이른 혼란」</figcaption></figure><figure class="pull" id="h01-s1-pull"><blockquote><p>뒷바라지는 내 일이 아니야. 어떻게 생각해, 카프카?</p></blockquote><figcaption>은랑 · 「깊은 곳에 이른 혼란」</figcaption></figure></section><section class="beat" id="h01-s2"><header class="bt-head"><b class="bt-n">01·2</b><div class="bt-tx"><p class="bt-k">「깊은 곳에 이른 혼란」</p><h3 class="bt-t">천재들의 복도</h3><p class="bt-p">웰컴 센터 · 초상화 회랑</p></div></header><dl class="meta"><div><dt>배경</dt><dd>지니어스 클럽 회원 초상화 전시</dd></div><div><dt>등장</dt><dd>카프카 · 은랑</dd></div></dl><div class="prose lead"><p id="h01-s2-p1">회랑 벽에는 <button class="kw" type="button" data-k="genius" aria-haspopup="dialog">지니어스 클럽</button> 회원들의 초상이 걸려 있고, 안내 음성이 한 사람씩 소개한다. #83 <button class="kw" type="button" data-k="herta" aria-haspopup="dialog">헤르타</button>는 어린 시절 솔리톤 난제와 스파크 모형 가설을 풀고, 시그마 중입자 변환법을 발견하고, 헤르타 서열을 제안하고, 회춘 논문까지 발표한 인물이다. 노년에 다시 젊어진 뒤에는 허수 범람의 비밀을 파고들어 천외의 <button class="kw" type="button" data-k="stellaron" aria-haspopup="dialog">스텔라론</button>을 포획해 봉인했고, 행성 열아홉 개를 파멸의 위기에서 구하고 <button class="kw" type="button" data-k="aeon" aria-haspopup="dialog">에이언즈</button>를 두 번 알현했다. 이 정거장도 그녀의 재산이다.</p></div><div class="prose rest"><p id="h01-s2-p2"><button class="kw" type="button" data-k="silverwolf" aria-haspopup="dialog">은랑</button>은 헤르타의 정체를 지니어스 클럽 회원이자 「지식」 누스의 사도로 정리한다. 불로장생이나 역성장은 「지식」의 사도라는 소속으로 설명된다. 클럽 회원 절반 이상은 이미 죽은 사람이고, 자기 이름을 정거장에 붙인 사람의 취향은 <button class="kw" type="button" data-k="kafka" aria-haspopup="dialog">카프카</button>가 따로 짚는 지점이다.</p></div><figure class="dq" id="h01-s2-q1"><blockquote><p>「지니어스 클럽」 사람이고 「지식」 누스의 사도잖아. 불로장생에 나이를 거꾸로 먹는대도 문제될 건 없지</p></blockquote><figcaption>은랑 · 「깊은 곳에 이른 혼란」</figcaption></figure><div class="prose rest"><p id="h01-s2-p3">초상화는 클럽의 계보를 그대로 늘어놓는다. 클럽을 세운 #1 잔다르•원•쿠와바라에는 우주 나무 가설과 누스 창조의 전설이 붙는다. #4 폴카•카카몬드는 얼굴 자리가 비어 있는데, 자신의 초상과 조각상을 우주에서 지워 버린 천재다. 평생 남을 도운 #22 에이든, 공감각 비콘과 초원격 감지를 발명한 #56 엘리야 살라스, 기계 두뇌의 신사 #76 스크루룸도 같은 회랑에 있다.</p><p id="h01-s2-p4">스크루룸과 은랑은 오랜 라이벌 관계다. 은랑은 그때 상대가 스크루룸인 줄 몰랐고, <button class="kw" type="button" data-k="elio" aria-haspopup="dialog">엘리오</button>가 은랑을 눈여겨본 계기가 바로 그 싸움이다. 짧은 시간에 스크루룸과 헤르타를 연달아 건드린 사람은 없다는 것이 카프카의 평가다. 은랑이 스스로에게 붙인 별칭은 「운명의 노예」다.</p></div><figure class="pull" id="h01-s2-pull"><blockquote><p>재밌네, 역시 지니어스 클럽 사람다워</p></blockquote><figcaption>카프카 · 「깊은 곳에 이른 혼란」</figcaption></figure></section><section class="beat" id="h01-s3"><header class="bt-head"><b class="bt-n">01·3</b><div class="bt-tx"><p class="bt-k">「깊은 곳에 이른 혼란」</p><h3 class="bt-t">기물로 기물을 숨긴다</h3><p class="bt-p">감시실</p></div></header><dl class="meta"><div><dt>상태</dt><dd>자체 보호 시스템 가동</dd></div><div><dt>등장</dt><dd>카프카 · 은랑</dd></div></dl><div class="prose lead"><p id="h01-s3-p1">감시실은 비어 있다. 정거장 주인은 떠나면서 방을 잠그고, 그 잠금을 정거장의 기물들 사이에 위장해 두었다. 감시 화면에는 사각지대 영상과 연구원들의 잡무가 뒤섞여 있고, 봉인 절차는 그 아래에 숨어 있다.</p></div><figure class="still"><div class="still-f"><img src="assets/stills/still-01-3.webp" alt="감시실의 봉인 앞에 선 카프카, 화면을 채운 빛" width="1024" height="576"></div></figure><div class="prose rest"><p id="h01-s3-p2">봉인은 자체 보호 시스템이 지키고, 그것이 <button class="kw" type="button" data-k="herta" aria-haspopup="dialog">헤르타</button>가 <button class="kw" type="button" data-k="stellaron" aria-haspopup="dialog">스텔라론</button>에 붙여 둔 마지막 장치다. 해제는 <button class="kw" type="button" data-k="silverwolf" aria-haspopup="dialog">은랑</button>이 맡는다. 스크루룸과 비등한 해커에게 정거장 하나의 잠금장치는 통과 절차에 가깝다.</p></div><figure class="dq" id="h01-s3-q1"><blockquote><p>자체 보호 시스템이 있어…. 헤르타에게도 「스텔라론」은 특별한 소장품인가 봐</p></blockquote><figcaption>은랑 · 「깊은 곳에 이른 혼란」</figcaption></figure><div class="prose rest"><p id="h01-s3-p3">꺼낼 것은 봉인된 스텔라론 하나이고, 운반체는 정거장 어딘가에 누워 있는 한 사람이다. 스텔라론을 견딜 몸이 이미 준비되어 있다는 것이 <button class="kw" type="button" data-k="kafka" aria-haspopup="dialog">카프카</button>가 확인하는 조건이다. 봉인 해제와 운반체 준비는 같은 임무의 두 몫으로 묶인다.</p></div><figure class="dq" id="h01-s3-q2"><blockquote><p>좋아, 그럼 운반체 준비도 부탁할게~</p></blockquote><figcaption>카프카 · 「깊은 곳에 이른 혼란」</figcaption></figure></section><section class="beat" id="h01-s4"><header class="bt-head"><b class="bt-n">01·4</b><div class="bt-tx"><p class="bt-k">「깊은 곳에 이른 혼란」</p><h3 class="bt-t">수용체</h3><p class="bt-p">감시실 · 봉인실</p></div></header><dl class="meta"><div><dt>상태</dt><dd>스텔라론 이식</dd></div><div><dt>등장</dt><dd>카프카 · 은랑 · 개척자</dd></div></dl><div class="prose lead"><p id="h01-s4-p1">봉인이 열리자 <button class="kw" type="button" data-k="stellaron" aria-haspopup="dialog">스텔라론</button>이 모습을 드러낸다. 운반체가 준비된 상태에서 <button class="kw" type="button" data-k="kafka" aria-haspopup="dialog">카프카</button>가 이식을 결정하고, <button class="kw" type="button" data-k="trailblazer" aria-haspopup="dialog">개척자</button>의 의식은 그 자리에서 끊긴다. 이식 뒤 개척자에게 남는 것은 이름 하나라는 것이 카프카의 설명이다.</p></div><figure class="still"><div class="still-f"><img src="assets/stills/still-01-4.webp" alt="스텔라론을 옮긴 직후의 카프카와 은랑" width="1024" height="576"></div></figure><div class="prose rest"><p id="h01-s4-p2">개척자가 눈을 뜬 뒤 카프카는 처지를 정리해 준다. 기억이 뒤죽박죽이고, 자신이 누구인지, 왜 이곳에 있는지, 무엇을 해야 하는지 알 수 없으며, 카프카가 낯익으면서도 믿을 만한 사람인지 확신할 수 없는 상태다. 중요한 사실은 카프카가 곧 이 정거장을 떠난다는 것이다.</p><p id="h01-s4-p3">카프카는 예정된 미래도 함께 알려 준다. 많은 위험과 끔찍한 곤경, 그만큼의 아름다운 일, 가족 같은 동료와 시작하는 상상치도 못한 모험, 여행이 끝나면 풀리는 수수께끼다. <button class="kw" type="button" data-k="elio" aria-haspopup="dialog">엘리오</button>가 예견한 미래이고, 선택지에 상관없이 카프카의 태도는 같다. 방향만 마음속에 간직하면 이야기 속 결말에 도달할 수 있다는 것이다.</p></div><figure class="dq" id="h01-s4-q1"><blockquote><p>적어도 네 이름은 기억할 거야</p></blockquote><figcaption>카프카 · 「깊은 곳에 이른 혼란」</figcaption></figure><div class="prose rest"><p id="h01-s4-p4"><button class="kw" type="button" data-k="silverwolf" aria-haspopup="dialog">은랑</button>이 자리를 떠야 하는 이유는 각본이다. 각본대로라면 <button class="kw" type="button" data-k="express" aria-haspopup="dialog">은하열차</button> 사람들이 곧 도착하고, 그들과 마주치면 안 된다. 카프카가 남기는 것은 기억을 지우는 대신 주는 한 문장의 당부와, 곧 찾아올 사람들을 따라가라는 지시다. 개척자는 카프카에 대한 기억을 빼고 모두 잃는다.</p></div><figure class="dq" id="h01-s4-q2"><blockquote><p>네 의지로 결말에 도달해 봐, 난 네 이런 점이 맘에 들더라~</p></blockquote><figcaption>카프카 · 「깊은 곳에 이른 혼란」</figcaption></figure><figure class="pull" id="h01-s4-pull"><blockquote><p>선택의 기회가 주어지면 후회할 짓은 하지 말렴……</p></blockquote><figcaption>카프카 · 「깊은 곳에 이른 혼란」</figcaption></figure></section></section><section class="act-block" id="h02"><div class="chead"><div class="aart" aria-hidden="true"><img src="assets/art-02.webp" alt="" width="1500" height="750"></div><div class="vopen" id="h02-h"><span class="vopen-k">프롤로그 · 02</span><h2 class="vopen-t">중심에 멈춘 소용돌이</h2><span class="vopen-s">보관 캐빈 · 감시실 · 메인 컨트롤 캐빈</span><i class="vopen-r" aria-hidden="true"></i></div><p class="ch-lede">눈을 뜬 자리에 남은 두 사람, 열계에 갉아먹힌 회랑, 그리고 습격의 목적을 밝히는 방위과 책임자.</p></div><section class="beat" id="h02-s1"><header class="bt-head"><b class="bt-n">02·1</b><div class="bt-tx"><p class="bt-k">「중심에 멈춘 소용돌이」</p><h3 class="bt-t">세 사람의 심장</h3><p class="bt-p">보관 캐빈</p></div></header><dl class="meta"><div><dt>상태</dt><dd>스텔라론 이식 직후</dd></div><div><dt>등장</dt><dd>개척자 · Mar. 7th · 단항</dd></div></dl><div class="prose lead"><p id="h02-s1-p1"><button class="kw" type="button" data-k="trailblazer" aria-haspopup="dialog">개척자</button>가 눈을 뜬 곳은 정거장의 보관 캐빈 바닥이다. 곁에서 <button class="kw" type="button" data-k="danheng" aria-haspopup="dialog">단항</button>과 <button class="kw" type="button" data-k="march7" aria-haspopup="dialog">Mar. 7th</button>가 인공호흡을 준비한다. 두 사람이 확인한 개척자의 심박동과 맥박은 약하다.</p></div><figure class="still"><div class="still-f"><img src="assets/stills/still-02-1.webp" alt="보관 캐빈에서 개척자를 내려다보는 Mar. 7th와 단항" width="1024" height="576"></div></figure><div class="prose rest"><p id="h02-s1-p2">단항은 남자, Mar. 7th는 여자로 둘 다 <button class="kw" type="button" data-k="express" aria-haspopup="dialog">은하열차</button> 탑승자다. 두 사람은 정거장 책임자 아스타의 의뢰를 받고 연구원 구조에 나섰다. 정거장을 습격한 것은 <button class="kw" type="button" data-k="destruction" aria-haspopup="dialog">「파멸」</button> <button class="kw" type="button" data-k="nanook" aria-haspopup="dialog">나누크</button>를 따르는 <button class="kw" type="button" data-k="legion" aria-haspopup="dialog">반물질 군단</button>이고, 그 규모는 절멸 대군이 아니라 도처에서 악행을 저지르는 패잔병 수준이다.</p></div><figure class="dq" id="h02-s1-q1"><blockquote><p>이 우주정거장은 반물질 군단의 습격을 받았고 우린 정거장 책임자 아스타의 의뢰로 구조하러 왔어</p></blockquote><figcaption>단항 · 「중심에 멈춘 소용돌이」</figcaption></figure><div class="prose rest"><p id="h02-s1-p3">정거장의 지도는 이렇게 정리된다. 메인 컨트롤 캐빈에 <button class="kw" type="button" data-k="asta" aria-haspopup="dialog">아스타</button>와 대피한 연구원들이 있고, 은하열차는 그 근처 플랫폼에 서 있다. 열차와 <button class="kw" type="button" data-k="herta" aria-haspopup="dialog">헤르타</button>가 왕래하던 인연으로 두 사람은 이곳에 머물다 습격을 마주쳤고, 연구원들을 돕는 이유는 정의로운 열차 팀이 지켜볼 수 없다는 데 있다.</p></div><figure class="dq" id="h02-s1-q2"><blockquote><p>「파멸」, 나누크의 졸개야. 운이 좋네, 주변에 제일 위험한 절멸 대군은 없고 도처에서 악행을 저지르는 패잔병만 있거든</p></blockquote><figcaption>Mar. 7th · 「중심에 멈춘 소용돌이」</figcaption></figure><div class="prose rest"><p id="h02-s1-p4">단항은 방위과의 <button class="kw" type="button" data-k="arlan" aria-haspopup="dialog">아를란</button>과 연락이 끊겼다며 자리를 뜬다. 개척자의 호신용 무기는 Mar. 7th가 권한 야구 방망이다. Mar. 7th는 정거장의 기물과 창고의 성격도 함께 설명한다. 이 정거장은 헤르타가 모은 물건을 쓰지도 않고 쌓아 두는 창고이고, 그 창고를 지키는 것은 방위과와 책임자 대행 아스타다.</p></div></section><section class="beat" id="h02-s2"><header class="bt-head"><b class="bt-n">02·2</b><div class="bt-tx"><p class="bt-k">「중심에 멈춘 소용돌이」</p><h3 class="bt-t">열차 팀</h3><p class="bt-p">보관 캐빈 → 회랑</p></div></header><dl class="meta"><div><dt>동행</dt><dd>Mar. 7th</dd></div><div><dt>경유</dt><dd>기물 진열대 · 회랑</dd></div></dl><div class="prose lead"><p id="h02-s2-p1">보관 캐빈을 나서면 정거장의 손상이 드러난다. 진열대는 깨져 있고, 바닥에는 기형의 석탄색 물질이 꿈틀댄다. <button class="kw" type="button" data-k="fragmentum" aria-haspopup="dialog">열계</button> 침식이다. <button class="kw" type="button" data-k="stellaron" aria-haspopup="dialog">스텔라론</button>의 폭발이 열계를 만들고, 그 열계가 정거장의 지면을 갉아먹는다. <button class="kw" type="button" data-k="trailblazer" aria-haspopup="dialog">개척자</button>의 몸속에 들어간 스텔라론과 무관하지 않은 현상이다.</p></div><div class="prose rest"><p id="h02-s2-p2"><button class="kw" type="button" data-k="march7" aria-haspopup="dialog">Mar. 7th</button>의 과거는 세 가지로 정리된다. 얼음에서 깨어났을 때 눈을 떠 보니 별빛이 보였고, 본능적으로 손을 뻗은 것이 방 천장의 등불이었다. 열차가 구해 주기 전까지는 커다란 얼음에 봉인된 채 우주를 떠돌았다. 얼려지기 전의 일은 하나도 기억나지 않고, 「Mar. 7th」라는 이름은 깨어난 날을 기념해 스스로 붙인 것이다.</p><p id="h02-s2-p3">회랑에서 <button class="kw" type="button" data-k="legion" aria-haspopup="dialog">반물질 군단</button>의 패잔병과 마주치면 Mar. 7th가 먼저 뛰어들고, 개척자는 방망이로 전투에 가담한다. 정거장 제복이 아닌 옷을 본 Mar. 7th는 개척자가 이곳 사람인지 확인하지만, 기억이 나지 않는다는 답 이상은 캐묻지 않는다.</p></div><figure class="pull" id="h02-s2-pull"><blockquote><p>난 위험하면 무의식적으로 얼음을 만들어 몸을 받치거든</p></blockquote><figcaption>Mar. 7th · 「중심에 멈춘 소용돌이」</figcaption></figure></section><section class="beat" id="h02-s3"><header class="bt-head"><b class="bt-n">02·3</b><div class="bt-tx"><p class="bt-k">「중심에 멈춘 소용돌이」</p><h3 class="bt-t">최상층</h3><p class="bt-p">감시실 · 메인 컨트롤 캐빈</p></div></header><dl class="meta"><div><dt>상태</dt><dd>방어 시스템 부분 손상</dd></div><div><dt>등장</dt><dd>아를란 · 히메코 · Mar. 7th · 단항</dd></div></dl><div class="prose lead"><p id="h02-s3-p1">감시실에서 방위과 책임자 <button class="kw" type="button" data-k="arlan" aria-haspopup="dialog">아를란</button>이 합류한다. 대피를 지휘하다 다리와 손을 다쳤지만 위독한 정도는 아니고, 대피가 끝난 뒤 승강기 권한을 잠가 군단이 최상층으로 올라오지 못하게 해 둔 사람도 아를란이다.</p></div><figure class="still"><div class="still-f"><img src="assets/stills/still-02-3.webp" alt="빛을 등진 채 서 있는 은하열차 항법사 히메코" width="1024" height="576"></div></figure><div class="prose rest"><p id="h02-s3-p2">습격의 목적에 대한 정황은 아를란에게서 나온다. 선별분석실이 급히 봉쇄되어 지나갈 수 없고, <button class="kw" type="button" data-k="legion" aria-haspopup="dialog">반물질 군단</button>이 노리는 것은 <button class="kw" type="button" data-k="herta" aria-haspopup="dialog">헤르타</button>가 모아 둔 소장품이라는 것이다.</p><p id="h02-s3-p3">메인 컨트롤 캐빈으로 가는 길은 군단으로 가득하고, 정거장의 방어 시스템은 이미 절반 넘게 무너져 있다. <button class="kw" type="button" data-k="danheng" aria-haspopup="dialog">단항</button>이 앞을 열고 <button class="kw" type="button" data-k="march7" aria-haspopup="dialog">Mar. 7th</button>가 활로 길을 만든다.</p><p id="h02-s3-p4">메인 컨트롤 캐빈 앞에서 <button class="kw" type="button" data-k="express" aria-haspopup="dialog">은하열차</button>의 항법사 <button class="kw" type="button" data-k="himeko" aria-haspopup="dialog">히메코</button>가 합류한다. 레일건 한 방이면 정리되지만 정거장 주인의 배상 요구가 돌아온다는 것이 히메코의 계산이다.</p><p id="h02-s3-p5">아를란은 <button class="kw" type="button" data-k="asta" aria-haspopup="dialog">아스타</button>에게 상황을 보고하러 먼저 간다. 남은 히메코는 처음 보는 얼굴인 <button class="kw" type="button" data-k="trailblazer" aria-haspopup="dialog">개척자</button>에게 자신이 은하열차의 항법사임을 소개하고, 열차의 모든 움직임이 히메코의 판단을 따른다는 점은 Mar. 7th가 곁에서 보탠다. 세 사람은 이렇게 한 팀이 되고, 정거장의 위기는 아직 끝나지 않았다.</p></div><figure class="dq" id="h02-s3-q1"><blockquote><p>안녕, 처음 보네. 난 은하열차의 항법사, 히메코라고 해</p></blockquote><figcaption>히메코 · 「중심에 멈춘 소용돌이」</figcaption></figure></section></section><section class="act-block" id="h03"><div class="chead"><div class="aart" aria-hidden="true"><img src="assets/art-03.webp" alt="" width="1500" height="750"></div><div class="vopen" id="h03-h"><span class="vopen-k">프롤로그 · 03</span><h2 class="vopen-t">종말 괴수</h2><span class="vopen-s">메인 컨트롤 캐빈 · 플랫폼 · 헤르타의 사무실</span><i class="vopen-r" aria-hidden="true"></i></div><p class="ch-lede">배리어가 뚫린 정거장, 천체를 상대하기 위해 만들어진 병기, 그리고 개척자를 보는 에이언즈의 눈.</p></div><section class="beat" id="h03-s1"><header class="bt-head"><b class="bt-n">03·1</b><div class="bt-tx"><p class="bt-k">「찰나의 우주 평화」</p><h3 class="bt-t">정거장 책임자</h3><p class="bt-p">메인 컨트롤 캐빈</p></div></header><dl class="meta"><div><dt>상태</dt><dd>연속 습격 경계</dd></div><div><dt>등장</dt><dd>아스타 · 히메코 · 아를란</dd></div></dl><div class="prose lead"><p id="h03-s1-p1">메인 컨트롤 캐빈에서 <button class="kw" type="button" data-k="asta" aria-haspopup="dialog">아스타</button>가 발사 레이더를 붙잡고 지휘하고, 군단이 곧 10차례 이상의 연속 습격을 수행해 올 것이라는 경고가 내려온다. 아스타는 세 사람이 무사히 돌아온 것과 <button class="kw" type="button" data-k="arlan" aria-haspopup="dialog">아를란</button>이 다친 것을 함께 확인하고, 재난 앞에서 연구원이야말로 정거장의 귀중한 자산이라는 결론을 남긴다.</p></div><div class="prose rest"><p id="h03-s1-p2">정거장의 시설 피해는 크지 않다. 보안 시스템의 손상은 미미하고, 침입자가 건드린 것은 소수의 핵심 데이터뿐이라 복구도 어렵지 않다. 손상이 남는 곳은 사람 쪽이다.</p></div><figure class="dq" id="h03-s1-q1"><blockquote><p>진짜 문제는 연구원들이지…. 헤르타 님을 전적으로 신뢰해서 우주정거장이 군단한테 파괴될 거라곤 생각도 못 했을 텐데. 육체적인 부상보다는 정신적인 공포가 더 무섭잖아……</p></blockquote><figcaption>아스타 · 「찰나의 우주 평화」</figcaption></figure><div class="prose rest"><p id="h03-s1-p3"><button class="kw" type="button" data-k="herta" aria-haspopup="dialog">헤르타</button>에게는 편지를 많이 보냈지만 답이 없다는 것이 아스타의 설명이다. 이 정거장은 헤르타의 추종자와 기물을 보관하는 창고이고, 주인은 그곳에 마음을 두지 않는다. <button class="kw" type="button" data-k="himeko" aria-haspopup="dialog">히메코</button>는 자기가 가져온 기물을 언급한 편지를 쓰겠다며, 연구원 위로는 세 사람에게 맡긴다.</p><p id="h03-s1-p4">아를란은 세 사람에게 <button class="kw" type="button" data-k="lightcone" aria-haspopup="dialog">광추</button> 하나를 건넨다. 기억의 정원의 기술로 추억을 지니고 강화의 힘을 내는 기물이고, <button class="kw" type="button" data-k="ipc" aria-haspopup="dialog">스타피스 컴퍼니</button>가 사용권을 얻는 데 큰돈을 지불한 물건이다. 아를란은 정당한 경로로 왔다고만 밝히고, 전투에 도움이 될 것이라는 한마디를 남긴다.</p></div><figure class="dq" id="h03-s1-q2"><blockquote><p>이 광추는 정당한 루트로 왔어, 여기까지만 말할게. 먼저 가져가, 전투에 큰 도움이 될 거야</p></blockquote><figcaption>아를란 · 「찰나의 우주 평화」</figcaption></figure><div class="prose rest"><p id="h03-s1-p5">대피한 연구원들을 둘러보며 수습을 돕는 사이, 정거장 배리어에 다시 경고음이 울린다.</p></div></section><section class="beat" id="h03-s2"><header class="bt-head"><b class="bt-n">03·2</b><div class="bt-tx"><p class="bt-k">「찰나의 우주 평화」</p><h3 class="bt-t">종말 괴수</h3><p class="bt-p">메인 컨트롤 캐빈 → 서포트 캐빈 · 플랫폼</p></div></header><dl class="meta"><div><dt>상태</dt><dd>배리어 55% → 73% 손상</dd></div><div><dt>등장</dt><dd>히메코 · 단항 · Mar. 7th</dd></div></dl><div class="prose lead"><p id="h03-s2-p1">안내방송이 배리어 손상을 55%, 73%로 알리고 메인 컨트롤 캐빈의 통로가 곧 폐쇄된다. <button class="kw" type="button" data-k="asta" aria-haspopup="dialog">아스타</button>의 지시는 남은 사람들을 신경 쓰지 말고 떠나라는 것이고, <button class="kw" type="button" data-k="himeko" aria-haspopup="dialog">히메코</button>가 이동을 서두른다. 아스타의 마지막 통신은 이곳을 누군가에게 맡기라는 말의 중간에서 끊긴다.</p></div><figure class="still"><div class="still-f"><img src="assets/stills/still-03-2.webp" alt="정거장 앞에 모습을 드러낸 종말 괴수와 맞서는 네 사람" width="1024" height="576"></div></figure><div class="prose rest"><p id="h03-s2-p2">정거장으로 오는 것은 <button class="kw" type="button" data-k="beast" aria-haspopup="dialog">종말 괴수</button>, 군단이 천체에 대항하기 위해 만든 병기다. 배리어를 손쉽게 찢고, 헤르타가 없는 정거장의 방어 시스템으로는 <button class="kw" type="button" data-k="legion" aria-haspopup="dialog">반물질 군단</button>을 상대로 버티기 어렵다. 군단은 <button class="kw" type="button" data-k="aeon" aria-haspopup="dialog">에이언즈</button> <button class="kw" type="button" data-k="nanook" aria-haspopup="dialog">나누크</button>의 축복을 받은 상태이고, 작정하고 온 이상 이곳 사람들만으로는 막을 수 없다.</p></div><figure class="dq" id="h03-s2-q1"><blockquote><p>군단은 에이언즈 나누크의 축복을 받았지. 작정하고 왔을 테니 이곳 사람들은 절대 방어할 수 없어</p></blockquote><figcaption>단항 · 「맴도는 그림자」</figcaption></figure><div class="prose rest"><p id="h03-s2-p3">히메코의 판단은 철수다. 정거장은 <button class="kw" type="button" data-k="herta" aria-haspopup="dialog">헤르타</button>가 만들었으니 절멸 대군이 나서지 않는 한 큰 문제는 없지만, 지금은 떠나야 하고 <button class="kw" type="button" data-k="trailblazer" aria-haspopup="dialog">개척자</button>도 함께 가야 한다. 종말 괴수를 풀 수 있는 사람이 개척자이며, 물론 자기가 틀렸을 수도 있다는 것이 히메코의 덧붙임이다. <button class="kw" type="button" data-k="danheng" aria-haspopup="dialog">단항</button>은 그 말의 의미를 눈치챈다. <button class="kw" type="button" data-k="stellaron" aria-haspopup="dialog">스텔라론</button>을 몸에 지닌 사람이 종말 괴수 앞에서 어떤 역할을 맡는지에 대한 발언이기 때문이다.</p></div><figure class="dq" id="h03-s2-q2"><blockquote><p>지금은 종말 괴수뿐이라 어떻게든 상대할 순 있지만, 「파멸」의 사도까지 온다면……</p></blockquote><figcaption>히메코 · 「맴도는 그림자」</figcaption></figure><div class="prose rest"><p id="h03-s2-p4">플랫폼으로 가는 길에 괴수가 따라붙고, 단항은 괴수의 오른손에 무언가 있다고 경고한다. 한 차례 공격을 흘려낸 뒤 괴수의 파괴력이 본격화되고, 마지막 공격이 오기 전 플랫폼에 <button class="kw" type="button" data-k="welt" aria-haspopup="dialog">웰트</button>가 도착한다.</p></div></section><section class="beat" id="h03-s3"><header class="bt-head"><b class="bt-n">03·3</b><div class="bt-tx"><p class="bt-k">「맴도는 그림자」</p><h3 class="bt-t">나누크의 시선</h3><p class="bt-p">허수 공간</p></div></header><dl class="meta"><div><dt>상태</dt><dd>의식 단절 → 각성</dd></div><div><dt>등장</dt><dd>개척자 · 웰트</dd></div></dl><div class="prose lead"><p id="h03-s3-p1"><button class="kw" type="button" data-k="beast" aria-haspopup="dialog">종말 괴수</button>의 마지막 공격이 <button class="kw" type="button" data-k="trailblazer" aria-haspopup="dialog">개척자</button>를 덮치고, 정신이 끊긴 자리에서 낯선 목소리가 목적지를 종착지로 못박는다. 그 목소리는 개척자를 이미 지켜보고 있다고 밝힌다.</p></div><figure class="still"><div class="still-f"><img src="assets/stills/still-03-3.webp" alt="황금빛 속에서 「파멸」의 시선을 받는 개척자" width="1024" height="576"></div></figure><div class="prose rest"><p id="h03-s3-p2">그 자리에서 개척자가 마주한 것은 군단이 섬기는 <button class="kw" type="button" data-k="aeon" aria-haspopup="dialog">에이언즈</button>, <button class="kw" type="button" data-k="destruction" aria-haspopup="dialog">「파멸」</button>의 <button class="kw" type="button" data-k="nanook" aria-haspopup="dialog">나누크</button>다. 눈여겨보고 있다는 그 한마디는 축복이라기보다 지목에 가깝다. <button class="kw" type="button" data-k="stellaron" aria-haspopup="dialog">스텔라론</button>을 몸에 넣은 지 얼마 되지 않은 사람을 에이언즈가 직접 불러 세운 것이다.</p><p id="h03-s3-p3">정신을 차렸을 때 곁에 있는 것은 <button class="kw" type="button" data-k="welt" aria-haspopup="dialog">웰트</button>다. 웰트는 자기 블랙홀로 괴수를 삼켜 <button class="kw" type="button" data-k="march7" aria-haspopup="dialog">Mar. 7th</button>를 구한 사람이고, 개척자의 몸속 스텔라론을 잠시 안정시킨 사람이기도 하다.</p></div><figure class="dq" id="h03-s3-q1"><blockquote><p>이제 괜찮아. 다른 곳에서 얘기하지</p></blockquote><figcaption>웰트 · 「맴도는 그림자」</figcaption></figure><div class="prose rest"><p id="h03-s3-p4">전투가 끝난 자리에서 Mar. 7th는 승리의 일등 공신을 개척자로 꼽는다. <button class="kw" type="button" data-k="danheng" aria-haspopup="dialog">단항</button>의 정리에 따르면 군단은 종말 괴수가 쓰러지자마자 퇴각했다. 단항은 개척자에게 종말 괴수를 이긴 강함을 입에 올리지 말 것을 권한다. 불필요한 이목을 끌 이유가 없다는 것이다.</p></div><figure class="pull" id="h03-s3-pull"><blockquote><p>네 의지로 그 결말에 도달해 봐. 봐, 이미 널 눈여겨보고 있어</p></blockquote><figcaption>나누크 · 「맴도는 그림자」</figcaption></figure></section><section class="beat" id="h03-s4"><header class="bt-head"><b class="bt-n">03·4</b><div class="bt-tx"><p class="bt-k">「맴도는 그림자」</p><h3 class="bt-t">헤르타</h3><p class="bt-p">메인 컨트롤 캐빈</p></div></header><dl class="meta"><div><dt>등장</dt><dd>헤르타 · 히메코</dd></div><div><dt>상태</dt><dd>정거장 복구 착수</dd></div></dl><div class="prose lead"><p id="h03-s4-p1"><button class="kw" type="button" data-k="trailblazer" aria-haspopup="dialog">개척자</button>가 다시 눈을 뜬 곳은 정거장이다. <button class="kw" type="button" data-k="march7" aria-haspopup="dialog">Mar. 7th</button>와 단항은 <button class="kw" type="button" data-k="himeko" aria-haspopup="dialog">히메코</button>의 지시로 열차 근처를 지키고 있고, 곧 <button class="kw" type="button" data-k="herta" aria-haspopup="dialog">헤르타</button>가 도착한다. 자리를 비운 지 몇 달 만에 정거장이 이 꼴이 된 이유를 묻는 것이 헤르타의 첫마디다.</p></div><div class="prose rest"><p id="h03-s4-p2">헤르타의 몸은 본체가 아니라 원격 조종 인형이다. 히메코가 회원 번호로 소개를 시작하자 헤르타는 #83 회원이라는 표제보다 뛰어난 업적이 얼마나 많은지를 되묻고, 개척자를 보자마자 그 몸에 <button class="kw" type="button" data-k="stellaron" aria-haspopup="dialog">스텔라론</button>이 들어 있다는 사실을 알아본다.</p></div><figure class="dq" id="h03-s4-q1"><blockquote><p>지금 이 꼬마한테 「스텔라론」이 있다는 거야?</p></blockquote><figcaption>헤르타 · 「계속되는 여정」</figcaption></figure><div class="prose rest"><p id="h03-s4-p3">헤르타의 관심은 즉시 연구로 바뀐다. 이 정거장은 활성화되지 않은 스텔라론을 붙잡아 「더 블루」를 재난에서 구하기 위해 지은 시설인데, 누군가가 그것을 육체 하나에 넣어 안정시킨 것이다. 채혈은 혈관을 상하게 하지 않을 정도로 하겠다는 것이 조건이고, 거절하면 열정이 식은 뒤에는 연구해 달라고 빌어도 해 주지 않는다는 경고가 붙는다.</p><p id="h03-s4-p4">히메코는 다른 선택권을 꺼낸다. 플랫폼에 <button class="kw" type="button" data-k="express" aria-haspopup="dialog">은하열차</button>가 서 있으니 원하면 함께 가도 된다는 것이다. 열차는 스텔라론과 적잖이 접촉해 왔고, 개척자가 걱정하는 것이 열차가 찾는 답이기도 하다. 헤르타도 열차 쪽을 권한다. 정거장에 남으면 자기에게 일말의 도움은 되겠지만 큰 도움은 되지 않는다는 이유다.</p></div><figure class="dq" id="h03-s4-q2"><blockquote><p>개척자… 다른 선택권도 있어, 플랫폼에 은하열차가 서 있거든. 원한다면 우리랑 같이 가도 돼</p></blockquote><figcaption>히메코 · 「계속되는 여정」</figcaption></figure></section><section class="beat" id="h03-s5"><header class="bt-head"><b class="bt-n">03·5</b><div class="bt-tx"><p class="bt-k">「맴도는 그림자」</p><h3 class="bt-t">시뮬레이션 우주</h3><p class="bt-p">헤르타의 사무실</p></div></header><dl class="meta"><div><dt>프로젝트</dt><dd>지니어스 클럽 회원 네 명</dd></div><div><dt>등장</dt><dd>헤르타</dd></div></dl><div class="prose lead"><p id="h03-s5-p1"><button class="kw" type="button" data-k="herta" aria-haspopup="dialog">헤르타</button>의 사무실에는 커다란 기계가 있다. 클럽의 천재 네 명이 힘을 합쳐 만든 프로그램이고, 안에는 이 세계를 간략하게 본뜬 우주가 들어 있다. 헤르타가 처음 붙이려 했던 이름은 「메타버스」였지만 파트너들의 반대로 「<button class="kw" type="button" data-k="simuniverse" aria-haspopup="dialog">시뮬레이션 우주</button>」로 정해진다.</p></div><div class="prose rest"><p id="h03-s5-p2">목적은 <button class="kw" type="button" data-k="aeon" aria-haspopup="dialog">에이언즈</button>의 비밀이다. 에이언즈가 어떻게, 왜, 무엇을 위해 탄생했는지는 몇천 앰버기원 동안 풀리지 않은 난제다. 시뮬레이션 우주 안에는 허구의 에이언즈가 있고, 그들은 본체와 연결되어 있되 힘은 없는 작은 신이다. 그들을 만나 직접 질문을 던지는 것이 프로젝트의 방식이다.</p><p id="h03-s5-p3">역할도 나뉜다. 완•매는 영역을 창조해 시뮬레이션 에이언즈의 본체를 키우고, 스크루룸은 프로그램의 기본 메커니즘과 은하 연산을 맡고, 헤르타는 장소와 인력과 자원, 그리고 흥미로운 시스템을 얹는다. 나머지 한 명은 스티븐이지만 비밀로 해달라는 요청을 받은 이름이고, 헤르타는 그 이름을 결국 흘리고 만다.</p><p id="h03-s5-p4"><button class="kw" type="button" data-k="trailblazer" aria-haspopup="dialog">개척자</button>가 필요한 이유는 에이언즈의 성질에 있다. 에이언즈는 자유 의지가 없고 운명의 길 외에는 원하는 것이 없어서, 질문을 던져도 거들떠보지 않는다. 스크루룸이 가상 인격과 사교성을 부여해도 소용이 없었다. 개척자는 몸에 <button class="kw" type="button" data-k="stellaron" aria-haspopup="dialog">스텔라론</button>을 지니고 <button class="kw" type="button" data-k="trailblaze" aria-haspopup="dialog">「개척」</button>의 길을 걸으면서 <button class="kw" type="button" data-k="nanook" aria-haspopup="dialog">나누크</button>의 눈길까지 받아, 에이언즈의 인정을 받을 조건을 이미 갖춘 사람이다.</p></div><figure class="dq" id="h03-s5-q1"><blockquote><p>네 몸에는 스텔라론이 있고, 「개척」 운명의 길을 걸으면서도 나누크의 눈길을 받았잖아. 그러니까 더 쉽게 에이언즈의 인정을 받을 수 있을지도 모르지</p></blockquote><figcaption>헤르타 · 「계속되는 여정」</figcaption></figure><figure class="pull" id="h03-s5-pull"><blockquote><p>이 헤르타의 포용력은 하해와 같으니 「시뮬레이션 우주」라고 부를게</p></blockquote><figcaption>헤르타 · 「계속되는 여정」</figcaption></figure></section></section><section class="act-block" id="h04"><div class="chead"><div class="aart" aria-hidden="true"><img src="assets/art-04.webp" alt="" width="1500" height="750"></div><div class="vopen" id="h04-h"><span class="vopen-k">프롤로그 · 04</span><h2 class="vopen-t">무명객의 길</h2><span class="vopen-s">은하열차 · 관람 칸</span><i class="vopen-r" aria-hidden="true"></i></div><p class="ch-lede">남을 것인가, 타고 갈 것인가. 은하열차의 문이 열리고, 다음 정거장은 얼음 행성이다.</p></div><section class="beat has-side" id="h04-s1"><header class="bt-head"><b class="bt-n">04·1</b><div class="bt-tx"><p class="bt-k">「계속되는 여정」</p><h3 class="bt-t">세 갈래의 대답</h3><p class="bt-p">메인 컨트롤 캐빈 · 정거장</p></div></header><dl class="meta"><div><dt>선택</dt><dd>열차 탑승 · 정거장 잔류 · 유예</dd></div><div><dt>등장</dt><dd>헤르타 · 아스타 · 히메코</dd></div></dl><div class="prose lead has-branch"><p id="h04-s1-p1">선택지는 세 갈래다. 열차에 타서 <button class="kw" type="button" data-k="stellaron" aria-haspopup="dialog">스텔라론</button>의 답을 찾으러 가거나, 정거장에 남아 <button class="kw" type="button" data-k="herta" aria-haspopup="dialog">헤르타</button>의 연구 대상이 되거나, 둘 다 미루고 더 생각하는 길이다. 헤르타는 잔류에 조건을 붙인다. <button class="kw" type="button" data-k="asta" aria-haspopup="dialog">아스타</button>의 동의가 필요하고, 오래 머무는 것은 스텔라론 때문에 위험하므로 가끔 돌아오는 정도가 좋다는 것이다.</p><aside class="side" id="h04-s1-side"><button class="side-t" type="button" aria-expanded="false" aria-controls="h04-s1-sideb"><i class="side-m" aria-hidden="true">▸</i><span class="side-k">분기</span><span class="side-l">정거장에 남는다</span><span class="side-e">조기 엔딩</span></button><div class="side-b" id="h04-s1-sideb"><div class="side-in"><p>정거장에 남는 쪽을 고르면 이야기는 다른 결말로 접힌다. 열차가 떠나고, 헤르타는 곧 개척자와 스텔라론에 대한 흥미를 모두 잃는다.</p><p>아스타의 주선으로 개척자는 평범한 연구원이 된다. 은하열차는 수차례 돌아오지만 그 뒤로 소식이 끊기고, 개척자는 오가는 여행자에게서 열차와 스텔라론 헌터의 결말을 전해 듣는다.</p><p>그때 열차에 올랐다면 그들의 미래가 바뀌지 않았을까 하는 생각이 남는 것으로 이 갈래는 닫힌다.</p></div></div></aside><p id="h04-s1-p2">아스타의 답은 더 분명하다. <button class="kw" type="button" data-k="trailblazer" aria-haspopup="dialog">개척자</button>가 마음에 들기는 하지만 몸속에 아직 스텔라론이 남아 있다. 구경만 하거나 실험실에 머무는 것은 문제가 없지만, 연구원으로 장기 거주하며 일하는 것은 스텔라론이 정거장의 <button class="kw" type="button" data-k="fragmentum" aria-haspopup="dialog">열계</button>화를 앞당길 수 있어 책임자로서 허락할 수 없다. 대신 도움이 필요하면 언제든 돌아오라는 것이 아스타의 제안이다. <button class="kw" type="button" data-k="danheng" aria-haspopup="dialog">단항</button>이 기물을 집계했고 <button class="kw" type="button" data-k="march7" aria-haspopup="dialog">Mar. 7th</button>가 전력실의 전선 오십여 개를 이어 줬다는 이야기가 열차 사람들의 성실함에 대한 평가로 붙는다.</p></div><figure class="dq" id="h04-s1-q1"><blockquote><p>네가 마음에 들긴 하지만… 네 몸속엔 아직 「스텔라론」이 있잖아</p></blockquote><figcaption>아스타 · 「계속되는 여정」</figcaption></figure><figure class="still"><div class="still-f"><img src="assets/stills/still-04-1.webp" alt="은하열차 플랫폼에 모인 열차 팀과 정거장 사람들" width="1280" height="720"></div></figure><div class="prose rest"><p id="h04-s1-p3">열차를 고르면 <button class="kw" type="button" data-k="himeko" aria-haspopup="dialog">히메코</button>가 개척자를 데려간다. 히메코의 기준은 이미 함께 <button class="kw" type="button" data-k="beast" aria-haspopup="dialog">종말 괴수</button>를 무찔렀다는 데 있다. 인사치레를 하면 하루가 금방 저문다는 말, 나중에 부탁을 거절하지는 않겠다는 말, 정거장 기물 하나쯤은 문제없다는 말이 그 위에 붙는다.</p></div></section><section class="beat" id="h04-s2"><header class="bt-head"><b class="bt-n">04·2</b><div class="bt-tx"><p class="bt-k">「계속되는 여정」</p><h3 class="bt-t">관람 칸</h3><p class="bt-p">은하열차 · 관람 칸</p></div></header><dl class="meta"><div><dt>승객</dt><dd>히메코 · 웰트 · Mar. 7th · 단항 · 폼폼</dd></div><div><dt>등장</dt><dd>폼폼 · 웰트</dd></div></dl><div class="prose lead"><p id="h04-s2-p1"><button class="kw" type="button" data-k="express" aria-haspopup="dialog">은하열차</button>의 첫인상은 낯설 만큼 평범하다. 천장에 매달린 등, 소파, 축음기, 자판기가 전부다. <button class="kw" type="button" data-k="himeko" aria-haspopup="dialog">히메코</button>는 열차에 온 모든 사람이 이곳 승객이며 모두가 미지의 종점을 향해 간다거나, <button class="kw" type="button" data-k="trailblaze" aria-haspopup="dialog">「개척」</button>이 이런 외관을 고른 이유도 그런 것일 수 있다고 정리한다.</p></div><figure class="still"><div class="still-f"><img src="assets/stills/still-04-2.webp" alt="관람 칸에서 새 승객을 맞는 차장 폼폼" width="1024" height="576"></div></figure><div class="prose rest"><p id="h04-s2-p2">차장 <button class="kw" type="button" data-k="pompom" aria-haspopup="dialog">폼폼</button>은 새 승객에게 열차의 규칙을 알려 준다. 승객은 누구나 말할 수 없는 비밀 한두 개를 숨기고 있고, 열차에 탄 이상 열차의 룰을 따라야 한다. 문제가 생기면 언제든 자기를 찾아오라는 안내가 붙는다.</p><p id="h04-s2-p3"><button class="kw" type="button" data-k="welt" aria-haspopup="dialog">웰트</button>는 <button class="kw" type="button" data-k="trailblazer" aria-haspopup="dialog">개척자</button>의 몸 상태를 묻고 진찰을 약속한다. <button class="kw" type="button" data-k="march7" aria-haspopup="dialog">Mar. 7th</button>를 구해 준 것에 대한 고마움도 전한다. 개척자가 셋 모두가 서로를 구한 셈이라고 하자 웰트는 그 공을 받지 않는다. 몸속의 것을 잠시 안정시켰을 뿐이고, 그것이 남아 있는 이상 구했다고 할 수는 없다는 것이 그의 정확한 판단이다.</p></div><figure class="dq" id="h04-s2-q1"><blockquote><p>겁줄 생각은 아니지만, 솔직히 그게 몸 안에 남아있는 이상 구했다고 할 순 없지</p></blockquote><figcaption>웰트 · 「계속되는 여정」</figcaption></figure><div class="prose rest"><p id="h04-s2-p4"><button class="kw" type="button" data-k="danheng" aria-haspopup="dialog">단항</button>은 뒤쪽 칸의 자료실에서 은하열차의 첫 운행부터 지금까지의 기록을 정리하고, 열차가 지나온 곳의 문화와 생태계를 과거 데이터와 대조해 검증한다.</p></div><figure class="dq" id="h04-s2-q2"><blockquote><p>내 생각에 「미지」는 「기지」보다 두려울 게 없는 것 같아, 「미지」는… 제어할 수 있거나 변할 수 있는 걸 뜻하기도 하거든</p></blockquote><figcaption>단항 · 「계속되는 여정」</figcaption></figure><figure class="pull" id="h04-s2-pull"><blockquote><p>특별한 건 너뿐이 아니거든! 이점 꼭 기억하도록</p></blockquote><figcaption>폼폼 · 「계속되는 여정」</figcaption></figure></section><section class="beat" id="h04-s3"><header class="bt-head"><b class="bt-n">04·3</b><div class="bt-tx"><p class="bt-k">「계속되는 여정」</p><h3 class="bt-t">더 블루를 떠나다</h3><p class="bt-p">은하열차 · 관람 칸 → 야릴로-Ⅵ 궤도</p></div></header><dl class="meta"><div><dt>항로</dt><dd>야릴로-Ⅵ · 스텔라론으로 궤도 폐쇄</dd></div><div><dt>등장</dt><dd>히메코 · 웰트 · 폼폼</dd></div></dl><div class="prose lead"><p id="h04-s3-p1">히메코는 열차의 과거를 정리한다. <button class="kw" type="button" data-k="express" aria-haspopup="dialog">은하열차</button>는 <button class="kw" type="button" data-k="trailblaze" aria-haspopup="dialog">「개척」</button>의 <button class="kw" type="button" data-k="akivili" aria-haspopup="dialog">아키비리</button>가 만든 도구로, 그와 무명객을 태우고 우주를 여행했다. 열차는 아키비리의 과거 항로를 따라가고, 출발역과 종착역의 이름은 그의 고향 「페가나」다. <button class="kw" type="button" data-k="stellaron" aria-haspopup="dialog">스텔라론</button>이 등장한 뒤로는 각 역마다 연착이 생긴다.</p></div><figure class="still sw" data-n="2"><div class="still-f"><div class="still-track"><img src="assets/stills/still-04-3a.webp" alt="행성 궤도를 벗어나 워프하는 은하열차" width="1280" height="720"><img src="assets/stills/still-04-3b.webp" alt="새하얀 얼음에 덮인 야릴로-Ⅵ" width="1280" height="720"></div></div><div class="still-nav" role="group" aria-label="그림 넘기기"><button class="sn-b" type="button" data-d="-1" aria-label="이전 그림">‹</button><span class="still-dots"><i class="on"></i><i class=""></i></span><button class="sn-b" type="button" data-d="1" aria-label="다음 그림">›</button></div></figure><div class="prose rest"><p id="h04-s3-p2"><button class="kw" type="button" data-k="nameless" aria-haspopup="dialog">무명객</button>의 네 가지도 여기서 나온다. 세계에 도착할 때마다 해야 할 일은 「탐사」, 「이해」, 「수립」, 「연결」이다. 미지의 세계로 전진하고, 현지의 문화와 생태계를 이해해 녹아들고, 세계 사이의 관계를 세우고, 세계와 세계를 잇는 길을 내딛는 것이다.</p><p id="h04-s3-p3"><button class="kw" type="button" data-k="pompom" aria-haspopup="dialog">폼폼</button>이 워프 카운트다운을 시작하고, <button class="kw" type="button" data-k="welt" aria-haspopup="dialog">웰트</button>는 눈을 감고 있으면 어지러움이 덜하다고 알려 준다. 다음 목적지는 작은 행성 「야릴로-Ⅵ」다. 열차가 그곳에 간 것은 수천 년 전이고, 기록에 따르면 초목이 울창하고 아름다운 행성이었다.</p><p id="h04-s3-p4">워프가 끝나자 행성은 새하얀 얼음으로 덮여 있다. 폼폼은 궤도 안정 계수가 12%까지 떨어졌다며 정차 기간을 7일에서 무기한으로 연장한다. 원인은 스텔라론이다. 레일이 끊기고 땅이 꺼진 것과 같아 강행할 수 없다.</p></div><figure class="dq" id="h04-s3-q1"><blockquote><p>수천 년이 지나 야릴로-Ⅵ는 결국 이런 모습으로 변해버렸네……</p></blockquote><figcaption>히메코 · 「계속되는 여정」</figcaption></figure><div class="prose rest"><p id="h04-s3-p5"><button class="kw" type="button" data-k="himeko" aria-haspopup="dialog">히메코</button>는 이번 「개척 여정」을 개척자와 <button class="kw" type="button" data-k="march7" aria-haspopup="dialog">Mar. 7th</button>, 단항 세 사람에게 맡긴다. 목적은 이 세계에 재난을 불러온 스텔라론을 찾아 열차에 가져오는 것이다. 누군가는 열차에 남아야 하고, 방금 <button class="kw" type="button" data-k="nanook" aria-haspopup="dialog">나누크</button>의 눈에 든 개척자가 <button class="kw" type="button" data-k="legion" aria-haspopup="dialog">반물질 군단</button>의 표적이 되면 곤란하다. 웰트는 이번에도 자기 차례는 아니라는 듯 물러선다. 세 사람은 그렇게 얼음 행성을 향해 내려간다.</p></div></section></section>
+  <nav class="actnav" aria-label="막 이동"><span class="anv is-off" aria-hidden="true"></span><button class="anv anv-n" type="button" data-act="1.6">개척 후문<i aria-hidden="true">→</i></button></nav>
+</section>
+<section class="vp" id="v-16" data-v="1.6" role="tabpanel" aria-labelledby="tab-16" hidden>
+  <header class="vp-h"><h2 class="vp-t">개척 후문 「평범한 것들의 신성한 왕관」</h2><p class="vp-s">세차 행성 · 우주정거장 헤르타</p></header>
+  <article class="ch" id="h05">
+    <p class="ch-k"><b>05</b>개척 후문</p>
+    <h3 class="ch-t">세차 행성의 충돌</h3>
+    <p class="ch-s">「스스로 부른 화」</p>
+    <div class="ch-b">
+      <p>열차가 세차 행성에서 정체불명의 우주선과 충돌하고, 미의 기사 아젠티와 컴퍼니 직원 벨라이트가 열차에 오른다. 완전체 칩충에 휩쓸린 사고를 함께 수습하는 동안 아젠티의 신앙과 열차 팀의 처지가 대비되고, 정거장에서 벌어진 실종 사건 수사에 Dr. 레이시오가 합류한다.</p>
+    </div>
+    <div class="src"><p class="src-k">원문</p><ol>
+      <li id="sid-200080201"><p class="q">자기소개를 미처 안 했군요——전 「미(美)의 기사단」에서 온 아젠티라고 합니다. 두 분은 존함이 어떻게 되십니까?</p><cite>아젠티</cite></li>
+      <li id="sid-200080210"><p class="q">갑작스럽지만 습관대로 두 분께도 여쭙고 싶군요. 같은 우주 속의 생명으로서, 「미」의 여신 이드릴라 님을 아십니까?</p><cite>아젠티<b>이드릴라</b></cite></li>
+    </ol></div>
+  </article>
+  <article class="ch" id="h06">
+    <p class="ch-k"><b>06</b>개척 후문</p>
+    <h3 class="ch-t">도망친 명화</h3>
+    <p class="ch-s">「기억 회상」</p>
+    <div class="ch-b">
+      <p>헤르타가 사라진 기물을 찾아달라 의뢰하고, 개척자는 아스타·힌켈·아들러의 기억을 더듬어 단서를 모은다. 공간을 넘나드는 명화를 쫓던 중 아스타가 삼켜지고, 스크루룸이 헤르타의 기물 보관실 폴딩 스페이스로 이동 경로를 차단해 명화를 포획한다.</p>
+    </div>
+    <div class="src"><p class="src-k">원문</p><ol>
+      <li id="sid-200091656"><p class="q">「위상의 불꽃」이네요, #29 세르칼 씨의 창조물이죠. 세르칼 씨는 뛰어난 천재예요. 현명하고, 착한 데다 겸손하죠</p><cite>스크루룸<b>위상의 불꽃</b></cite></li>
+      <li id="sid-200091355"><p class="q">이만 돌아가서 아스타 그리고 스크루룸과 의논해 보자</p><cite>Dr. 레이시오<b>스크루룸</b></cite></li>
+    </ol></div>
+  </article>
+  <article class="ch" id="h07">
+    <p class="ch-k"><b>07</b>개척 후문</p>
+    <h3 class="ch-t">뭇별이 빛날 때</h3>
+    <p class="ch-s">「천재의 뭇별이 빛날 때」</p>
+    <div class="ch-b">
+      <p>시뮬레이션 우주의 업데이트를 앞두고 지니어스 클럽의 거물들이 우주정거장에 모인다. 완·매가 창조한 생명체를 회수해 달라 부탁하고, 개척자는 비밀 캐빈에서 그녀의 진짜 야심과 마주한다.</p>
+    </div>
+    <div class="src"><p class="src-k">원문</p><ol>
+      <li id="sid-200100206"><p class="q">완•매 씨는 조용한 성격이라 단체로 반겨주는 건 불편해하실 것 같아서 최대한 그분 성격에 맞춰 간략하게 진행해달라고 해뒀어</p><cite>아스타<b>완·매</b></cite></li>
+      <li id="sid-200100305"><p class="q">응, 나도 만나서 반가워. 우리 시뮬레이션 우주에서 본 적 있지?</p><cite>완•매<b>시뮬레이션 우주</b></cite></li>
+    </ol></div>
+  </article>
+  <nav class="actnav" aria-label="막 이동"><button class="anv anv-p" type="button" data-act="1.0"><i aria-hidden="true">←</i>프롤로그</button><span class="anv is-off" aria-hidden="true"></span></nav>
+</section>
+</main>
+<footer class="foot"><p>붕괴: 스타레일 스토리 아카이브 · <a href="../">목차</a></p><p>임무명과 대사는 공식 클라이언트 한국어 텍스트 기준.</p></footer>
+</div>
+<div class="popx" id="pop" role="dialog" aria-modal="true" aria-label="인물·개념 설명">
+  <div class="popx-bg" data-close></div>
+  <div class="popx-card" id="popsh"></div>
+</div>
+<script>window.CARD_DATA = {"kafka": {"kind": "인물", "name": "카프카", "facts": [["소속", "스텔라론 헌터"], ["역할", "정거장 침입·이식 실행"], ["첫 등장", "프롤로그 「더 블루」"]], "role": "정거장의 봉인을 열어 스텔라론을 개척자 몸에 넣고 사라진 여자.", "body": ["정거장에 위조 신분으로 들어와 감시실의 봉인을 풀고, 꺼낸 스텔라론을 준비된 수용체에 넣는다. 그 수용체가 개척자다. 이식 뒤에는 기억을 지우고, 곁에 올 사람들을 따라가라고 일러 둔 뒤 은하열차 팀이 도착하기 전에 자리를 뜬다.", "스스로를 「운명의 노예」라 부르는 쪽은 은랑이고, 카프카는 엘리오의 각본을 따르는 사람으로 그려진다. 정거장에서의 행동도 목적을 설명하지 않는다. 남기는 것은 예측된 미래에 대한 한 문장과, 선택의 기회가 주어지면 후회할 짓은 하지 말라는 당부뿐이다."], "quotes": [["선택의 기회가 주어지면 후회할 짓은 하지 말렴……", "카프카", "「깊은 곳에 이른 혼란」"]]}, "silverwolf": {"kind": "인물", "name": "은랑", "facts": [["소속", "스텔라론 헌터"], ["분야", "해킹·에테르 편집"], ["상대", "스크루룸"]], "role": "정거장의 잠금을 해제한 해커. 카프카의 조력자.", "body": ["정거장의 자체 보호 시스템을 뚫고 스텔라론의 봉인을 해제한다. 스스로 “해킹에 있어선 천재 헤르타라도 내 적수가 못 되지”라고 말할 정도이고, 헤르타는 클럽의 스크루룸과 비등한 실력을 가진 사람으로 그녀를 기억한다.", "스크루룸과의 싸움은 엘리오가 그녀를 눈여겨본 계기다. 그때 상대가 누구인지 몰랐다는 말을 하면서도, 결과적으로는 그 한 판이 스텔라론 헌터에 합류하는 길이 되었다."], "quotes": [["물론, 해킹에 있어선 천재 헤르타라도 내 적수가 못 되지", "은랑", "「깊은 곳에 이른 혼란」"]]}, "stellaron": {"kind": "개념", "name": "스텔라론", "facts": [["분류", "재앙 물질"], ["유래", "「파멸」"], ["별칭", "만계의 암"]], "role": "문명의 소원에 반응해 재난의 형태로 실현되는 물질.", "body": ["헤르타의 연구에 따르면 일종의 생명체이자, 특수한 메커니즘으로 어떤 운명의 길이나 에이언즈의 힘을 잇는 물질이다. 자기가 있는 세계의 문명을 진화시키려는 욕망에 반응하지만, 실현되는 소원의 형태는 대부분 재난이다. 이 메커니즘은 「파멸」의 나누크와 연결된 것으로 본다.", "관측되거나 현실에 영향을 미친 뒤에는 되돌릴 수 없다. 잠잠한 해수면에 폭풍이 몰아치듯 성간 여행을 위험하게 만들고, 열계 같은 공간 왜곡을 만든다. 스타피스 컴퍼니는 이 확산을 암세포에 빗대어 만계의 암이라 부른다."], "quotes": [["「스텔라론」에 관한 미스터리가 너무 많아서 헤르타 씨조차도 정확하게 설명할 수 없어", "히메코", "「계속되는 여정」"]]}, "hunter": {"kind": "세력", "name": "스텔라론 헌터", "facts": [["목적", "스텔라론 수집"], ["배후", "엘리오의 각본"], ["구성", "카프카 · 은랑 · 블레이드 등"]], "role": "우주의 스텔라론을 사냥해 모으는 무리.", "body": ["에이언즈를 죽이려는 의도를 지닌 집단으로, 각 세계에 흩어진 스텔라론을 거둬들인다. 헤르타는 스텔라론 하나로 만족하지 않고 우주의 것을 몇 개나 가져가도 만족하지 못한다며 진짜 목적을 알 수 없다고 말한다.", "행동의 바탕에는 엘리오의 각본이 있다. 미래를 예견한다는 엘리오가 적어 둔 대로 움직이고, 구성원 각자는 그 각본 안에서 자기 몫을 받는다. 카프카가 정거장에서 한 일도 그 각본의 한 줄이다."], "quotes": [["스텔라론 헌터, 대체 무슨 생각인지는 모르겠지만… 선주 연맹은 우리처럼 쉽게 넘어가지 않을 걸세", "웰트", "「계속되는 여정」"]]}, "trailblazer": {"kind": "인물", "name": "개척자", "facts": [["소속", "은하열차"], ["상태", "스텔라론 수용체"], ["첫 등장", "프롤로그 「더 블루」"]], "role": "스텔라론을 몸에 넣은 채 정거장에서 깨어난 사람.", "body": ["이름 말고는 기억이 없다. 정거장의 보관 캐빈에서 깨어났을 때 몸에는 스텔라론이 들어 있었고, 카프카는 이름 하나는 기억할 것이라고 말한 뒤 사라졌다. 이름은 정해져 있지 않다.", "스텔라론이 안정된 상태로 몸에 남아 있고, 「개척」의 길을 걸으면서 나누크의 눈길까지 받았다. 헤르타가 이 점을 연구 대상으로 삼고, 히메코는 이 점이 열차의 답과 닿아 있다고 본다. 마지막 선택에서 열차를 고르면 무명객의 네 가지를 안고 야릴로-Ⅵ로 향한다."], "quotes": [["내 몸 안에 있는 스텔라론이란 건 대체……", "개척자", "「깊은 곳에 이른 혼란」"]]}, "march7": {"kind": "인물", "name": "Mar. 7th", "facts": [["소속", "은하열차"], ["능력", "얼음"], ["과거", "육상빙에 봉인"]], "role": "얼음에 봉인된 채 표류하다 열차에 구출된 소녀.", "body": ["열차가 구해 주기 전까지 커다란 얼음에 봉인된 채 우주를 떠돌았다. 깨어났을 때 눈을 떠 보니 별빛이 보였고, 손을 뻗어 잡은 것은 방 천장의 등불이었다. 「Mar. 7th」라는 이름은 그날을 기념해 스스로 붙인 것이다.", "위험하면 무의식적으로 얼음을 만들어 몸을 받친다. 성격은 밝고 말이 많고, 열차 팀에서 개척자와 가장 먼저 친해지는 사람이다. 함께 싸운 뒤 휴대폰 비콘을 교환하고, 열차가 다음 행성으로 향할 때도 가장 먼저 들뜬다."], "quotes": [["내가 누구인지, 이름이 뭔지, 어디서 왔는지 같은 건… 다 잊어버렸어. 「Mar. 7th」라는 이름도 내가 깨어난 날을 기념하려고 지은 거야", "Mar. 7th", "「깊은 곳에 이른 혼란」"]]}, "danheng": {"kind": "인물", "name": "단항", "facts": [["소속", "은하열차"], ["역할", "경호원·기록"], ["거점", "자료실"]], "role": "열차의 경호원. 정거장에서 가장 먼저 상황을 정리하는 사람.", "body": ["정거장에서 아를란을 구해 오고, 승강기 권한과 반물질 군단의 규모, 종말 괴수의 정체를 차례로 짚는다. 감정을 앞세우지 않고 판단하되, 다친 사람을 두고 가는 쪽이 더 큰 짐이라는 말은 서슴지 않는다.", "열차에서는 자료실에 머물며 은하열차의 첫 운행부터 지금까지의 기록을 정리한다. 선주 나부와 스타피스 컴퍼니를 거쳐 열차에 왔고, 무엇에게 쫓기는지는 본인도 모른다고 말한다. 정거장에서 카프카의 통신을 보고 선주가 위험하다고 하는 장면이 그 과거를 스친다."], "quotes": [["내 생각에 「미지」는 「기지」보다 두려울 게 없는 것 같아, 「미지」는… 제어할 수 있거나 변할 수 있는 걸 뜻하기도 하거든", "단항", "「계속되는 여정」"]]}, "asta": {"kind": "인물", "name": "아스타", "facts": [["직위", "정거장 책임자 대행"], ["소속", "헤르타 우주정거장"], ["기원", "스타피스 계열 가문"]], "role": "헤르타를 대신해 정거장을 운영하는 책임자.", "body": ["헤르타가 직접 임명한 책임자 대행이다. 스스로를 헤르타의 일을 대신하는 집사라고 부르지만, 연구원들을 다루고 지식학회를 상대하는 일은 그녀의 전문이다. “학자들이 집에 있는 어수선한 늙은이들보단 훨씬 다루기 쉬워”라는 말이 그 요령을 요약한다.", "습격 당일에는 연구원 대피를 지휘하고, 종말 괴수가 온 뒤에도 캐빈에 남아 통신을 잡는다. 재난이 지나간 뒤에는 배리어 복구와 열계화 대응을 맡고, 개척자의 잔류를 거절하면서도 언제든 돌아와 돕겠다는 말에는 거절하지 않겠다고 답한다."], "quotes": [["네가 마음에 들긴 하지만… 네 몸속엔 아직 「스텔라론」이 있잖아", "아스타", "「계속되는 여정」"]]}, "arlan": {"kind": "인물", "name": "아를란", "facts": [["직위", "방위과 책임자"], ["가족", "강아지 페피"], ["상태", "다리·손 부상"]], "role": "연구원 대피를 지휘하다 다친 방위과 책임자.", "body": ["아스타를 따라 정거장에 왔다. 연구는 모르지만, 연구를 사랑하는 사람들이 편히 연구할 수 있게 지키는 일에 만족을 느낀다. 습격 당일 마지막까지 보관 캐빈을 수색하다 다리와 손을 다쳤고, 그래도 자기가 짐이 될 거라며 승강기 옆에 남겠다고 한다.", "대피가 끝난 뒤 승강기 권한을 잠가 군단의 침입을 막아 둔 사람도 아를란이다. 세 사람에게 전투용 광추를 건네고, 자기가 아스타에게 상황을 보고하겠다며 먼저 자리를 뜬다. 강아지 페피는 재난 중에 작은 수면 캡슐에 숨어 있었다."], "quotes": [["몸이 불편해서… 짐만 될 거야. 난 여기 남아서 너희가 도착하면 승강기 권한을 다시 잠그려고", "아를란", "「중심에 멈춘 소용돌이」"]]}, "herta": {"kind": "인물", "name": "헤르타", "facts": [["소속", "지니어스 클럽 #83"], ["사도", "「지식」 누스"], ["이명", "정거장의 주인"]], "role": "정거장을 지은 천재. 본체는 다른 곳에 있고 인형으로 말한다.", "body": ["지니어스 클럽 #83 회원이자 「지식」 누스의 사도다. 어린 시절 솔리톤 난제를 풀고, 청년기에 시그마 중입자 변환법을 발견하고, 중년에 헤르타 서열을 제안했으며, 노년에 다시 젊어져 허수 범람의 비밀을 파고들었다. 행성 열아홉 개를 구하고 에이언즈를 두 번 알현했다.", "정거장은 활성화되지 않은 스텔라론을 붙잡아 「더 블루」를 재난에서 구하려고 지은 시설이다. 본인은 관리하지 않고 아스타에게 맡기며, 관심이 식으면 대상도 버린다. 개척자에 대해서는 스텔라론을 안정시킨 체질 자체를 연구하고 싶어 하고, 그 관심이 식으면 곧 잊는다고 스스로 말한다."], "quotes": [["지금 이 꼬마한테 「스텔라론」이 있다는 거야?", "헤르타", "「계속되는 여정」"]]}, "himeko": {"kind": "인물", "name": "히메코", "facts": [["직위", "은하열차 항법사"], ["소유", "은하열차"], ["역할", "정거장 지원"]], "role": "은하열차의 항법사이자 실질적인 주인.", "body": ["열차의 모든 움직임을 결정하는 사람이다. 웰트는 “폼폼을 차장님이라 부르긴 하지만, 히메코야말로 은하열차의 진짜 소유주란 걸 모두가 알고 있지”라고 말한다. 열차를 발견하고, 손상된 기억을 붙잡아 항로를 다시 세운 것도 그녀다.", "정거장 습격에서는 레일건과 지원으로 열차 팀을 받치고, 사건이 끝난 뒤에는 개척자에게 선택지를 준다. 스텔라론을 몸에 지닌 사람이 그 답을 자기 것으로 만들어야 한다는 판단 아래, 정거장에 남는 길과 열차에 타는 길을 함께 놓는다."], "quotes": [["개척자… 다른 선택권도 있어, 플랫폼에 은하열차가 서 있거든. 원한다면 우리랑 같이 가도 돼", "히메코", "「계속되는 여정」"]]}, "welt": {"kind": "인물", "name": "웰트", "facts": [["소속", "은하열차"], ["역할", "전투·진찰"], ["이름", "웰트•양"]], "role": "블랙홀로 종말 괴수를 삼킨 열차의 승객.", "body": ["종말 괴수의 마지막 공격 앞에서 플랫폼에 도착해, 블랙홀로 괴수를 삼켜 Mar. 7th와 개척자를 구한다. 개척자의 몸속 스텔라론을 잠시 안정시킨 것도 그다. 다만 그것이 남아 있는 이상 구했다고 할 수는 없다고 정확히 말한다.", "열차 팀의 어른 역할을 맡는다. 히메코가 젊은 셋에게 여정을 맡기자 이번에도 자기 차례는 아니라고 물러서고, 워프가 처음인 개척자에게 눈을 감고 있으면 어지러움이 덜할 것이라고 알려 준다. 폼폼의 화가 무섭다거나, 단항의 과거를 감싸는 태도도 그에게서 나온다."], "quotes": [["겁줄 생각은 아니지만, 솔직히 그게 몸 안에 남아있는 이상 구했다고 할 순 없지", "웰트", "「계속되는 여정」"]]}, "pompom": {"kind": "인물", "name": "폼폼", "facts": [["직위", "은하열차 차장"], ["제약", "열차 밖으로 나갈 수 없음"], ["역할", "안내·규칙"]], "role": "열차의 차장. 승객의 규칙과 안전을 맡는다.", "body": ["열차의 작은 정령 같은 존재로, 승객이 도움을 필요로 하면 바로 나타난다. 새 승객에게는 열차의 규칙을 알리고, 워프 전에는 좌석과 카운트다운을 안내한다. 화가 나면 무섭다는 것이 웰트의 설명이다.", "자기 자신은 아직 열차에서 벗어날 수 없다고 말한다. 모든 정거장에 가슴 뛰는 모험이 있다고 말하면서도 정작 자기가 해 본 적은 없다고 답하는 장면이 그 처지를 남긴다. 대신 승객에게 작은 선물을 건네며 앞으로의 성장에 투자한다고 말한다."], "quotes": [["특별한 건 너뿐이 아니거든! 이점 꼭 기억하도록", "폼폼", "「계속되는 여정」"]]}, "elio": {"kind": "인물", "name": "엘리오", "facts": [["소속", "스텔라론 헌터"], ["능력", "미래 예견"], ["매개", "각본"]], "role": "미래를 예견한다는 스텔라론 헌터의 지도자.", "body": ["스텔라론 헌터의 행동은 엘리오의 각본을 따른다. 카프카는 “엘리오께서 미래를 내다보실 순 있지만, 네 선택엔 간섭할 수 없으시거든”이라고 말하고, 은랑은 각본에 적히지 않은 일은 중요하지 않다고 정리한다.", "정거장에서 개척자에게 주어진 미래도 각본의 한 줄이다. 다만 엘리오가 예견한 것은 결과이고, 그 결과에 도달하는 방식은 개척자의 선택에 남겨진다. 카프카가 “네 의지로 결말에 도달해 봐”라고 말하는 이유다."], "quotes": [["엘리오께서 미래를 내다보실 순 있지만, 네 선택엔 간섭할 수 없으시거든", "카프카", "「깊은 곳에 이른 혼란」"]]}, "genius": {"kind": "세력", "name": "지니어스 클럽", "facts": [["기반", "「지식」 누스"], ["창설", "#1 잔다르"], ["회원", "83명 이상"]], "role": "「지식」의 가호 아래 모인 천재들의 느슨한 모임.", "body": ["잔다르•원•쿠와바라가 세운 모임으로, 「지식」 누스의 가호를 받는다. 회원은 80여 명이 넘고 그중 절반 이상이 이미 죽었다. 회원 번호는 클럽에 들어온 순서를 따른다.", "정거장에는 회원들의 초상화가 걸려 있다. #1 잔다르, #4 폴카•카카몬드, #22 에이든, #56 엘리야 살라스, #76 스크루룸, #83 헤르타. 정거장 자체가 이들의 이름을 걸고 세워진 시설이고, 시뮬레이션 우주는 그중 네 명이 힘을 합쳐 만든 프로젝트다."], "quotes": [["이 사람은 헤르타, 모두에게 더 익숙한 호칭은 지니어스 클럽 #83 회원이지", "헤르타", "「깊은 곳에 이른 혼란」"]]}, "ipc": {"kind": "세력", "name": "스타피스 컴퍼니", "facts": [["기반", "「보존」 클리포트"], ["성격", "은하 최대 경제 조직"], ["상품", "광추 사용권"]], "role": "「보존」을 숭배하다 은하 최대의 경제 조직이 된 파벌.", "body": ["성간평화컴퍼니라는 이름으로도 불린다. 「보존」의 클리포트를 숭배하지만, 우연한 계기로 은하에서 가장 큰 경제 조직이 되었다. 자판기부터 보험과 광추 사용권까지, 정거장의 일상에도 그 손길이 닿아 있다.", "광추의 사용권을 기억의 정원에서 허가받은 곳도 이곳이다. 스텔라론 헌터를 수배 전단으로 쫓는 쪽이고, 그 수배령은 카프카에게 악명이 아니라 극찬에 가깝다. 은하를 여행하려면 이들과의 교섭을 피할 수 없다."], "quotes": [["「스타피스 컴퍼니」의 자판기는 어디에 있어도 이상할 거 없잖아?", "폼폼", "「계속되는 여정」"]]}, "legion": {"kind": "세력", "name": "반물질 군단", "facts": [["기반", "「파멸」 나누크"], ["병기", "종말 괴수"], ["목표", "혼란과 재난"]], "role": "나누크의 뜻을 집행하며 문명을 부수는 군단.", "body": ["에이언즈 나누크의 축복을 받은 군단이다. 「파멸」의 뜻을 집행하고, 생명과 문명의 반대편에 서서 혼란과 재난을 퍼뜨린다. 행동에 당위성은 없고, 신념의 집행만이 유일한 동기다.", "정거장을 습격한 것은 절멸 대군이 아니라 도처에서 악행을 저지르는 패잔병들이었다. 그래도 방어 시스템을 무력화하고 승강기와 배리어를 차례로 뚫었으며, 마지막에는 천체를 상대하기 위해 만든 병기 종말 괴수를 투입한다."], "quotes": [["군단은 에이언즈 나누크의 축복을 받았지. 작정하고 왔을 테니 이곳 사람들은 절대 방어할 수 없어", "단항", "「맴도는 그림자」"]]}, "nanook": {"kind": "에이언즈", "name": "나누크", "facts": [["관할", "「파멸」"], ["추종", "반물질 군단"], ["관계", "스텔라론"]], "role": "우주를 없애는 것을 목적으로 하는 「파멸」의 에이언즈.", "body": ["「파멸」의 에이언즈는 우주를 없앨 생각뿐이라고 히메코는 말한다. 반물질 군단이 그 신도이고, 스텔라론의 메커니즘도 이 에이언즈와 연결된 것으로 본다.", "정거장의 종말 괴수와 싸우던 개척자는 정신이 끊긴 자리에서 목소리를 듣는다. “종착지로 가”, “네 의지로 그 결말에 도달해 봐”, “이미 널 눈여겨보고 있어”. 헤르타는 개척자가 「개척」의 길을 걸으면서 나누크의 눈길까지 받았다는 점을 시뮬레이션 우주 프로젝트에 필요한 조건으로 꼽는다."], "quotes": [["네 의지로 그 결말에 도달해 봐. 봐, 이미 널 눈여겨보고 있어", "나누크", "「맴도는 그림자」"]]}, "destruction": {"kind": "운명의 길", "name": "「파멸」", "facts": [["에이언즈", "나누크"], ["사도", "절멸 대군"], ["성질", "소멸"]], "role": "존재를 없애는 쪽으로 기울어진 운명의 길.", "body": ["나누크가 관할하는 운명의 길이다. 반물질 군단은 이 길의 신도로서 「파멸」의 뜻을 집행한다. 히메코는 종말 괴수는 어떻게든 상대할 수 있어도 「파멸」의 사도까지 온다면 상황이 달라진다고 말한다.", "스텔라론의 재난과도 닿아 있다. 문명의 소원을 재난의 형태로 실현하는 메커니즘이 나누크와 연결되어 있다는 것이 헤르타의 관측이다."], "quotes": [["지금은 종말 괴수뿐이라 어떻게든 상대할 순 있지만, 「파멸」의 사도까지 온다면……", "히메코", "「맴도는 그림자」"]]}, "trailblaze": {"kind": "운명의 길", "name": "「개척」", "facts": [["에이언즈", "아키비리"], ["표상", "은하열차"], ["추종", "무명객"]], "role": "미지로 나아가는 것을 본질로 하는 운명의 길.", "body": ["아키비리가 관할하던 운명의 길이다. 아키비리가 죽은 뒤에도 길은 닫히지 않았고, 그래서 은하열차는 여전히 우주를 넘나든다. 히메코는 “「개척」은 우리의 사명이자 열차가 은하 사이를 오가는 힘의 원천”이라고 말한다.", "세계에 도착할 때마다 해야 할 일도 이 길에서 나온다. 「탐사」, 「이해」, 「수립」, 「연결」. 개척자는 이 길을 걸으면서 나누크의 눈길을 함께 받은, 흔치 않은 경우다."], "quotes": [["「개척」은 우리의 사명이자 열차가 은하 사이를 오가는 힘의 원천이기도 해", "히메코", "「계속되는 여정」"]]}, "express": {"kind": "개념", "name": "은하열차", "facts": [["제작", "아키비리"], ["항로", "페가나 왕복"], ["승객", "무명객"]], "role": "「개척」의 아키비리가 만든, 별바다를 누비는 열차.", "body": ["「개척」의 아키비리가 만든 도구로, 그와 무명객을 태우고 우주를 여행하는 데 쓰였다. 이런 열차가 한 대만 있는 것은 아니라고 하지만, 기록은 대부분 손상되어 제작 과정과 체류 이유는 알 수 없다.", "열차는 아키비리의 과거 항로를 따라 출발역 「페가나」로 돌아가는 순환을 반복한다. 코어가 아키비리의 심장이라는 설이 있고, 그 코어가 세계를 넘나드는 능력을 준다고 본다. 스텔라론이 등장한 뒤로는 각 역마다 연착이 생긴다."], "quotes": [["열차에 온 모든 사람은 이곳 승객이야. 모두가 미지의 종점을 향해 가고 있어", "히메코", "「계속되는 여정」"]]}, "nameless": {"kind": "세력", "name": "무명객", "facts": [["기반", "「개척」"], ["표상", "은하열차"], ["방식", "이름을 남기지 않음"]], "role": "이름을 남기지 않고 미지를 개척하는 이들.", "body": ["「개척」을 따르는 이들의 총칭이다. 은하열차에 타고 세계를 돌며, 도착한 세계에서 탐사하고 이해하고 관계를 세우고 길을 잇는다. 이름을 남기지 않는다는 점이 이들의 규칙이고, 그래서 열차 기록에도 흔적이 적다.", "은하열차에 남은 옛 승객의 명단은 셋뿐이다. 경호원 티어난, 정비사 레그워크, 측량사 라자리나. 이름과 직업 외에는 아무 기록이 없다."], "quotes": [["우주를 운행하는 열차야. 좀 더 알고 싶다면 「은하열차」는 「개척」의 에이언즈 아키비리가 탑승했던 열차라고 해둘게", "히메코", "「찰나의 우주 평화」"]]}, "aeon": {"kind": "개념", "name": "에이언즈", "facts": [["기원", "지혜로운 생물의 승격"], ["권한", "운명의 길 관할"], ["제약", "「원동력」"]], "role": "운명의 길을 관할하는, 은하에서 가장 신비한 존재.", "body": ["지혜로운 생물이 승격된 존재라는 것 외에는 조건도 원리도 모른다. 한 생물이 에이언즈로 초월하면 「운명의 길」의 관할권을 얻고, 그 길의 허수 에너지를 마음껏 운반할 수 있다. 동시에 「원동력」에 속박된다.", "성격은 길에 따라 다르다. 「파멸」은 우주를 없앨 생각뿐이고, 「지식」은 만물의 답을 추구하며, 「보존」은 끊임없이 벽을 쌓는다. 「신비」는 확실한 정보를 흐리는 일에 매진한다. 헤르타와 지니어스 클럽이 시뮬레이션 우주로 파고들려는 것이 바로 이 존재들의 비밀이다."], "quotes": [["에이언즈는 은하에서 가장 신비한 존재야. 우리가 알고 있는 거라곤 그들은 지혜로운 생물이 승격된 존재라는 것뿐이지", "히메코", "「계속되는 여정」"]]}, "akivili": {"kind": "에이언즈", "name": "아키비리", "facts": [["관할", "「개척」"], ["표상", "은하열차"], ["상태", "사망"]], "role": "은하열차를 만들고 사라진 「개척」의 에이언즈.", "body": ["몰락한 에이언즈이자 세상을 떠난 「개척」이다. 죽음은 미스터리로 남아 있고, 어떤 에이언즈가 죽였다는 말도 있지만 히메코는 믿지 않는다. 알려진 에이언즈 중 인간에 가장 가까웠고, 평범한 사람들과 걷고 모험하고 전투하며 함께 기뻐했다고 전해진다.", "고향은 「페가나」이고, 은하열차는 그곳에서 출발해 각 역을 돌아 출발역으로 돌아온다. 열차의 코어가 아키비리의 심장이라는 설이 있으나, 열차에서 관련 증거는 발견되지 않았다."], "quotes": [["몰락한 에이언즈, 세상을 떠난 「개척」… 그의 죽음은 미스터리야. 하지만 알려진 모든 에이언즈들 중, 아키비리는 인간에 가장 가깝지", "히메코", "「계속되는 여정」"]]}, "simuniverse": {"kind": "개념", "name": "시뮬레이션 우주", "facts": [["제작", "지니어스 클럽 네 명"], ["목적", "에이언즈의 비밀"], ["형태", "허구의 우주"]], "role": "에이언즈에게 직접 묻기 위해 만든, 우주를 본뜬 프로그램.", "body": ["완•매, 스크루룸, 헤르타, 그리고 이름을 밝히지 않은 한 명이 함께 만든 프로젝트다. 안에는 이 세계를 간략하게 본뜬 우주와, 본체와 연결되었으나 힘은 없는 허구의 에이언즈가 있다. 그들을 소환해 질문을 던지는 것이 목적이다.", "에이언즈는 자유 의지가 없어 질문을 받아 주지 않는다. 그래서 에이언즈의 인정을 받을 조건을 갖춘 사람이 필요하고, 그 조건에 맞는 사람이 스텔라론을 지니고 나누크의 눈길을 받은 개척자다. 전투는 운명의 길 성향을 드러내는 행위로, 소환의 통로가 된다."], "quotes": [["난 꽤 마음에 드는데…. 하지만 이 헤르타의 포용력은 하해와 같으니 「시뮬레이션 우주」라고 부를게", "헤르타", "「계속되는 여정」"]]}, "lightcone": {"kind": "개념", "name": "광추", "facts": [["기술", "기억의 정원"], ["성질", "추억 보존·강화"], ["유통", "2급 제한 상품"]], "role": "기억의 단편을 담아 힘으로 바꾸는 기물.", "body": ["기억의 정원에서 발명되었다. 「기억」의 추종자들이 기억의 단편을 추출해 광추를 만들고, 그 안에 경험과 능력이 함께 보존된다. 그래서 광추는 귀중한 기물이고, 스타피스 컴퍼니의 2급 유통 제한 상품이다.", "아를란은 정거장에서 세 사람에게 광추 하나를 건네며 정당한 경로로 왔다고만 말한다. 헤르타가 기억의 정원과 어떤 거래를 했는지는 알 수 없지만, 성격상 정당한 경로는 아닐 것이라고 히메코는 짐작한다."], "quotes": [["「광추」는 기억의 정원에서 발명돼, 「기억」 에이언즈의 추종자들이 기억을 보존하기 위해 기억의 단편을 추출해서 「광추」를 만들었어", "히메코", "「찰나의 우주 평화」"]]}, "fragmentum": {"kind": "개념", "name": "열계", "facts": [["원인", "스텔라론"], ["성질", "공간 침식"], ["연결", "세계 간 통로"]], "role": "스텔라론이 만드는 공간 침식이자 괴물의 통로.", "body": ["스텔라론의 폭발로 생기는 침식 현상이다. 열계와 접촉한 사물과 시공은 변화를 겪어 열계 조물이 된다. 정거장에서는 스텔라론을 추출하는 순간 열계가 형성되었고, 침식된 부분은 되돌릴 수 없어 반열계화 상태로 유지된다.", "각 세계의 열계는 서로 통한다. 그래서 괴물이 열계를 통해 정거장 내부로 들어올 수 있다. 개척자의 몸에서는 아무것도 나오지 않지만, 장기 거주가 정거장의 열계화를 앞당길 가능성은 남아 있다."], "quotes": [["각 세계의 「열계」는 서로 통하거든, 그래서 괴물들이 「열계」를 통해 우주정거장 내부로 올 수 있어", "아스타", "「계속되는 여정」"]]}, "beast": {"kind": "개념", "name": "종말 괴수", "facts": [["제작", "반물질 군단"], ["용도", "천체 대항 병기"], ["특성", "배리어 파괴"]], "role": "군단이 천체에 맞서려고 만든 병기.", "body": ["단항의 설명에 따르면 종말 괴수는 군단이 천체에 대항하기 위해 만든 병기다. 정거장의 배리어를 손쉽게 찢고, 헤르타가 없는 정거장의 방어 시스템으로는 대항하기 어렵다.", "정거장에 도착한 개체는 개척자를 노린다. 마지막 공격이 개척자를 덮친 뒤 웰트의 블랙홀에 삼켜지고, 괴수가 쓰러지자 군단은 곧바로 퇴각한다. 이때 개척자가 본 것이 나누크의 시선이다."], "quotes": [["저건 종말 괴수로 군단이 천체에 대항하기 위한 병기예요", "단항", "「맴도는 그림자」"]]}};</script>
+<script>
+(function(){
+  /* ── 밑줄 탭 ───────────────────────────────────────────────────── */
+  var bar=document.querySelector('.pgr');
+  if(bar){
+    var ind=bar.querySelector('.pgr-ind');
+    var btns=[].slice.call(bar.querySelectorAll('button[data-v]'));
+    var panels=[].slice.call(document.querySelectorAll('.vp[data-v]'));
+    var place=function(b){ if(!b||!ind) return; ind.style.width=b.offsetWidth+'px';
+      ind.style.transform='translateX('+b.offsetLeft+'px)'; };
+    var activate=function(v){
+      var on=null;
+      btns.forEach(function(b){ var sel=b.getAttribute('data-v')===v;
+        b.setAttribute('aria-selected',sel?'true':'false'); b.setAttribute('tabindex',sel?'0':'-1');
+        if(sel) on=b; });
+      panels.forEach(function(p){ p.hidden=p.getAttribute('data-v')!==v; });
+      place(on); bar.classList.add('ready');
+    };
+    bar.addEventListener('click',function(e){
+      var b=e.target.closest?e.target.closest('button[data-v]'):null;
+      if(b) activate(b.getAttribute('data-v'));
+    });
+    bar.addEventListener('keydown',function(e){
+      var i=btns.indexOf(document.activeElement); if(i<0) return; var n=null;
+      if(e.key==='ArrowRight') n=btns[(i+1)%btns.length];
+      if(e.key==='ArrowLeft') n=btns[(i-1+btns.length)%btns.length];
+      if(e.key==='Home') n=btns[0];
+      if(e.key==='End') n=btns[btns.length-1];
+      if(n){ e.preventDefault(); n.focus(); activate(n.getAttribute('data-v')); }
+    });
+    window.addEventListener('resize',function(){
+      place(bar.querySelector('button[aria-selected="true"]')); });
+    var cur=bar.querySelector('button[aria-selected="true"]')||btns[0];
+    var hash=decodeURIComponent(location.hash.slice(1));
+    var tgt=hash?document.getElementById(hash):null;
+    if(tgt){ var pn=tgt.closest?tgt.closest('.vp[data-v]'):null;
+      if(pn){ var b2=btns.filter(function(b){return b.getAttribute('data-v')===pn.getAttribute('data-v');})[0];
+        if(b2) cur=b2; } }
+    activate(cur.getAttribute('data-v'));
+    if(tgt){
+      var jump=function(){ var cb=document.documentElement.style.scrollBehavior;
+        document.documentElement.style.scrollBehavior='auto';
+        tgt.scrollIntoView({block:'start'});
+        document.documentElement.style.scrollBehavior=cb; };
+      requestAnimationFrame(jump);
+      window.addEventListener('load',function(){ jump(); setTimeout(jump,80); });
+    }
+    requestAnimationFrame(function(){ place(bar.querySelector('button[aria-selected="true"]')); });
+  }
+
+  /* ── 카드 드로어 ───────────────────────────────────────────────── */
+  var DATA=window.CARD_DATA||{};
+  var pop=document.getElementById('pop'), card=document.getElementById('popsh');
+  var lastFocus=null;
+  function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g,function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function openPop(k){
+    var p=DATA[k]; if(!p||!pop) return;
+    var h='<button class="shx" type="button" aria-label="닫기" data-close>\u00d7</button>'
+      +'<p class="shk">'+esc(p.kind)+'</p><h3 class="sht">'+esc(p.name)+'</h3>';
+    var facts=(p.facts||[]).filter(function(f){return f&&f[0]&&f[1];});
+    if(facts.length) h+='<dl class="shf">'+facts.map(function(f){
+      return '<div><dt>'+esc(f[0])+'</dt><dd>'+esc(f[1])+'</dd></div>'; }).join('')+'</dl>';
+    if(p.role) h+='<p class="shd">'+esc(p.role)+'</p>';
+    var body=(p.body||[]).filter(function(t){return t&&t.length;});
+    if(body.length) h+='<div class="shb">'+body.map(function(t){return '<p>'+esc(t)+'</p>';}).join('')+'</div>';
+    var qs=(p.quotes||[]).filter(function(q){return q&&q[0];});
+    if(qs.length) h+='<p class="shq-k">원문</p><div class="pqs">'+qs.map(function(q){
+      var cite=(q[1]||'')+(q[2]?' \u00b7 '+q[2]:'');
+      return '<figure class="pq"><blockquote>'+esc(q[0])+'</blockquote><figcaption>'
+        +esc(cite)+'</figcaption></figure>'; }).join('')+'</div>';
+    card.innerHTML=h; card.scrollTop=0; card.style.transform=''; card.style.transition='';
+    pop.classList.add('on'); document.body.classList.add('locked');
+    var x=card.querySelector('.shx'); if(x) x.focus();
+  }
+  function closePop(){
+    if(!pop) return;
+    pop.classList.remove('on'); document.body.classList.remove('locked');
+    card.style.transform=''; card.style.transition='';
+    if(lastFocus&&lastFocus.focus) lastFocus.focus();
+  }
+  window.closePop=closePop;
+  document.addEventListener('click',function(e){
+    var kw=e.target.closest?e.target.closest('.kw'):null;
+    if(kw){ lastFocus=kw; openPop(kw.getAttribute('data-k')); return; }
+    if(e.target.closest&&e.target.closest('[data-close]')) closePop();
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'&&pop&&pop.classList.contains('on')) closePop();
+  });
+
+  /* ── 여백 곁가지 — 눌러서 펼치고 접는다 ───────────────────────── */
+  document.addEventListener('click',function(e){
+    var t=e.target.closest?e.target.closest('.side-t'):null;
+    if(!t) return;
+    var a=t.parentNode, b=a.querySelector('.side-b'), inn=b&&b.firstElementChild;
+    var on=a.classList.toggle('open');
+    t.setAttribute('aria-expanded',on?'true':'false');
+    var m=t.querySelector('.side-m'); if(m) m.textContent=on?'\u25be':'\u25b8';
+    if(!b) return;
+    if(on){
+      b.style.height=inn.scrollHeight+'px';
+      var done=function(){ b.removeEventListener('transitionend',done);
+        if(a.classList.contains('open')) b.style.height='auto'; };
+      b.addEventListener('transitionend',done);
+      setTimeout(done,440);                 // 전이가 없거나 끝 이벤트가 없어도 제자리로
+    }else{
+      b.style.height=inn.scrollHeight+'px';
+      void b.offsetHeight;                  // 지금 값을 먼저 굳히고
+      b.style.height='0px';                 // 그 다음 0으로 — 전이가 확실히 걸린다
+    }
+  });
+
+  /* ── 막 끝 — 같은 행성의 다음 막으로 ──────────────────────────── */
+  document.addEventListener('click',function(e){
+    var b=e.target.closest?e.target.closest('[data-act]'):null;
+    if(!b) return;
+    var v=b.getAttribute('data-act');
+    var btn=document.querySelector('.pgr button[data-v="'+v+'"]');
+    if(btn) btn.click();
+    var panel=document.querySelector('.vp[data-v="'+v+'"]');
+    var head=panel&&panel.querySelector('.vp-h');
+    if(head){ var cb=document.documentElement.style.scrollBehavior;
+      document.documentElement.style.scrollBehavior='auto';
+      window.scrollTo(0,head.getBoundingClientRect().top+window.pageYOffset-56);
+      document.documentElement.style.scrollBehavior=cb; }
+  });
+
+  /* ── 스틸 두 장 — 옆으로 넘기고 점만 따라온다 ─────────────────── */
+  function stillSync(fig){
+    var track=fig.querySelector('.still-track'); if(!track) return;
+    var n=track.children.length||1;
+    var i=Math.min(n-1,Math.max(0,Math.round(track.scrollLeft/Math.max(1,track.clientWidth))));
+    [].forEach.call(fig.querySelectorAll('.still-dots i'),function(d,k){
+      d.classList.toggle('on',k===i); });
+    fig.dataset.i=i;
+  }
+  function stillGo(fig,i){
+    var track=fig.querySelector('.still-track'); if(!track) return;
+    var n=track.children.length; i=Math.min(n-1,Math.max(0,i));
+    var prev=track.style.scrollBehavior; track.style.scrollBehavior='auto';
+    track.scrollLeft=i*track.clientWidth; track.style.scrollBehavior=prev;
+    stillSync(fig);
+  }
+  [].forEach.call(document.querySelectorAll('.still.sw'),function(fig){
+    var track=fig.querySelector('.still-track'); if(!track||fig.dataset.ready) return;
+    fig.dataset.ready='1'; var raf=0;
+    track.addEventListener('scroll',function(){
+      if(raf) return; raf=requestAnimationFrame(function(){raf=0;stillSync(fig);});
+    },{passive:true});
+    [].forEach.call(fig.querySelectorAll('.still-nav .sn-b'),function(b){
+      b.addEventListener('click',function(){ stillGo(fig,(+(fig.dataset.i||0))+(+b.dataset.d)); });
+    });
+    stillSync(fig);
+  });
+  /* 바텀 시트 — 손잡이 없이 카드를 아래로 끌어 닫기 */
+  if(card){
+    var sy=0,sx=0,dy=0,decided=false,dragging=false,base=0;
+    card.addEventListener('touchstart',function(e){
+      if(e.touches.length!==1||!pop.classList.contains('on')){sy=null;return;}
+      sy=e.touches[0].clientY; sx=e.touches[0].clientX; dy=0; decided=false; dragging=false;
+      base=card.scrollTop; card.style.transition='none';
+    },{passive:true});
+    card.addEventListener('touchmove',function(e){
+      if(sy===null||e.touches.length!==1) return;
+      var t=e.touches[0]; dy=t.clientY-sy; var dx=t.clientX-sx;
+      if(!decided){ if(Math.abs(dy)<6&&Math.abs(dx)<6) return; decided=true;
+        dragging=dy>0&&Math.abs(dy)>Math.abs(dx)&&base<=0;
+        if(!dragging){ card.style.transition=''; return; } }
+      if(!dragging) return;
+      if(e.cancelable) e.preventDefault();
+      card.style.transform='translateY('+Math.max(0,dy)+'px)';
+    },{passive:false});
+    var end=function(){ if(sy===null) return; card.style.transition='';
+      if(dragging&&dy>60){ card.style.transform=''; closePop(); } else { card.style.transform=''; }
+      sy=null; dragging=false; decided=false; dy=0; };
+    card.addEventListener('touchend',end,{passive:true});
+    card.addEventListener('touchcancel',end,{passive:true});
+  }
+})();
+</script>
+</body>
+</html>
