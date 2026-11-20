@@ -8,16 +8,10 @@
 <meta name="description" content="야릴로-VI의 제1장과 개척 후문 — 장별 줄거리와 원문 대사.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20fill='%23070a13'/%3E%3Cpath%20d='M16%205.5l2.6%207.4%207.4%202.6-7.4%202.6-2.6%207.4-2.6-7.4L5.5%2015.5l7.4-2.6z'%20fill='none'%20stroke='%23d8c49e'%20stroke-width='1.3'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="../hsr.css">
+<link rel="stylesheet" href="../chrome.css">
 </head>
 <body>
-<div class="topbar"><div class="topbar-in">
-  <a class="tb-home" href="../" aria-label="홈 — 전체 목차"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10.6 12 4l8 6.6V20h-5.4v-5.2h-5.2V20H4z"/></svg></a>
-  <div class="pgr" role="tablist" aria-label="막 선택">
-    <span class="pgr-ind" aria-hidden="true"></span>
-    <button type="button" role="tab" id="tab-10" data-v="1.0" aria-controls="v-10" aria-selected="true" tabindex="0">제1장</button>
-    <button type="button" role="tab" id="tab-14" data-v="1.4" aria-controls="v-14" aria-selected="false" tabindex="-1">개척 후문</button>
-  </div>
-</div></div>
+<div class="topbar"><div class="topbar-in"><a class="tb-home" href="../" aria-label="홈 — 전체 목차"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10.6 12 4l8 6.6V20h-5.4v-5.2h-5.2V20H4z"/></svg></a><div class="pgr" role="tablist" aria-label="막 선택"><span class="pgr-ind" aria-hidden="true"></span><button type="button" role="tab" data-v="1.0" aria-controls="b10" aria-selected="true" tabindex="0">제1장</button><button type="button" role="tab" data-v="1.4" aria-controls="b14" aria-selected="false" tabindex="-1">개척 후문</button></div></div></div>
 <div class="wrap">
 <header class="hero">
   <div class="mast"><span class="mast-l">JARILO-VI</span></div>
@@ -31,7 +25,8 @@
   <p class="lede">개척자는 스텔라론의 흔적을 찾아 설원에 내렸다가 브로냐와 스바로그, 그리고 수호자가 감춘 마지막 거짓말 앞에 선다. 개척 후문에서는 700년 전 컴퍼니 투자금의 빚이 도시를 다시 흔든다.</p>
 </header>
 <main>
-<section class="vp" id="v-10" data-v="1.0" role="tabpanel" aria-labelledby="tab-10">
+<div class="actview" id="actview">
+<section class="vp act-block" id="v-10" data-act="1.0" data-rank="0" aria-label="제1장 「야릴로-VI」">
   <header class="vp-h"><h2 class="vp-t">제1장 「야릴로-VI」</h2><p class="vp-s">설원 · 벨로보그 상층 · 하층 구역 · 큰 광산구역 · 리벳 타운</p></header>
   <article class="ch" id="j01">
     <p class="ch-k"><b>01</b>제1장</p>
@@ -107,8 +102,9 @@
       <p>브로냐는 수호자의 최후를 선의의 거짓말로 감추고, 일행은 승전보를 전한 뒤 브로냐의 취임을 보고 열차로 돌아간다.</p>
     </div>
   </article>
+  <nav class="actnav" aria-label="막 이동"><span class="anv anv-p is-off" aria-hidden="true"><i aria-hidden="true">←</i></span><button class="anv anv-n" type="button" data-act="1.4" aria-label="다음 막 — 개척 후문"><span>개척 후문</span><i aria-hidden="true">→</i></button></nav>
 </section>
-<section class="vp" id="v-14" data-v="1.4" role="tabpanel" aria-labelledby="tab-14" hidden>
+<section class="vp act-block" id="v-14" data-act="1.4" data-rank="1" aria-label="개척 후문 「겨울꿈에서 깨어난 순간」">
   <header class="vp-h"><h2 class="vp-t">개척 후문 「겨울꿈에서 깨어난 순간」</h2><p class="vp-s">벨로보그 · 박물관 · 광산구역</p></header>
   <article class="ch" id="j09">
     <p class="ch-k"><b>09</b>개척 후문</p>
@@ -135,63 +131,151 @@
       <li id="sid-201020539"><p class="q">두 사람은 처음 보네! 난 토파즈, 스타피스 컴퍼니의 투자 전문가야. 이번에는 특별 업무 때문에 야릴로-Ⅵ에 오게 되었어</p><cite>토파즈</cite></li>
     </ol></div>
   </article>
+  <nav class="actnav" aria-label="막 이동"><button class="anv anv-p" type="button" data-act="1.0" aria-label="이전 막 — 제1장"><i aria-hidden="true">←</i><span>%s</span></button><span class="anv anv-n is-off" aria-hidden="true"><i aria-hidden="true">→</i></span></nav>
 </section>
+</div>
 </main>
-<footer class="foot"><p>붕괴: 스타레일 스토리 아카이브 · <a href="../">목차</a></p><p>임무명과 대사는 공식 클라이언트 한국어 텍스트 기준.</p></footer>
+<footer class="foot"><p>붕괴: 스타레일 스토리 아카이브</p><p>임무명과 대사는 공식 클라이언트 한국어 텍스트 기준.</p></footer>
 </div>
 <script>
 (function(){
-  var bar=document.querySelector('.pgr');
-  if(!bar) return;
-  var ind=bar.querySelector('.pgr-ind');
-  var btns=[].slice.call(bar.querySelectorAll('button[data-v]'));
-  var panels=[].slice.call(document.querySelectorAll('.vp[data-v]'));
-  function place(btn){
-    if(!btn||!ind) return;
-    ind.style.width=btn.offsetWidth+'px';
-    ind.style.transform='translateX('+btn.offsetLeft+'px)';
+  var host=document.getElementById('actview');
+  if(!host) return;
+  var root=document.documentElement;
+  var bar=document.querySelector('.pgr'), ind=bar&&bar.querySelector('.pgr-ind');
+  var btns=bar?[].slice.call(bar.querySelectorAll('button[data-v]')):[];
+  var blocks=[].slice.call(host.querySelectorAll('.act-block'));
+  var reduced=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var cur=null, painted=false, cleanup=null, timer=0;
+
+  function tbh(){ return parseFloat(getComputedStyle(root).getPropertyValue('--tbh'))||48; }
+  function blockFor(v){ for(var i=0;i<blocks.length;i++) if(blocks[i].getAttribute('data-act')===v) return blocks[i]; return null; }
+  function rank(b){ return b?+(b.getAttribute('data-rank')||0):0; }
+  function boxTop(){ return Math.max(0, host.getBoundingClientRect().top+window.pageYOffset-tbh()); }
+  function scrollTop(instant){
+    window.scrollTo({top:boxTop(), behavior:(instant||reduced)?'instant':'smooth'});
   }
-  function activate(v,doScroll){
-    var on=null;
+  function scrollToEl(el){
+    if(!el) return;
+    var y=el.getBoundingClientRect().top+window.pageYOffset-tbh()-12;
+    window.scrollTo({top:Math.max(0,y), behavior:reduced?'instant':'smooth'});
+  }
+  function moveInd(){
+    if(!bar||!ind) return;
+    var b=bar.querySelector('button[aria-selected="true"]')||bar.querySelector('button');
+    if(!b||!b.offsetWidth) return;
+    var br=b.getBoundingClientRect(), xr=bar.getBoundingClientRect();
+    var cs=getComputedStyle(b);
+    var pl=parseFloat(cs.paddingLeft)||0, pr=parseFloat(cs.paddingRight)||0;
+    var w=Math.max(14, br.width-pl-pr);
+    ind.style.width=w+'px';
+    ind.style.transform='translateX('+(br.left-xr.left+pl+Math.max(0,(br.width-pl-pr-w)/2))+'px)';
+    /* 첫 자리는 전환 없이 바로 놓는다. */
+    if(!painted){ painted=true; void bar.offsetWidth; bar.classList.add('pgr-ready'); }
+  }
+  function sync(v){
     btns.forEach(function(b){
-      var sel=b.getAttribute('data-v')===v;
-      b.setAttribute('aria-selected',sel?'true':'false');
-      b.setAttribute('tabindex',sel?'0':'-1');
-      if(sel) on=b;
+      var on=b.getAttribute('data-v')===v;
+      b.setAttribute('aria-selected',on?'true':'false');
+      b.setAttribute('tabindex',on?'0':'-1');
     });
-    panels.forEach(function(p){ p.hidden = p.getAttribute('data-v')!==v; });
-    place(on);
-    bar.classList.add('ready');
-    if(doScroll&&doScroll.scrollIntoView){ doScroll.scrollIntoView({block:'start'}); }
+    moveInd();
   }
-  bar.addEventListener('click',function(e){
-    var b=e.target.closest?e.target.closest('button[data-v]'):null;
-    if(b) activate(b.getAttribute('data-v'));
+  function show(v,o){
+    o=o||{};
+    var next=blockFor(v);
+    if(!next) return;
+    var from=cur;
+    if(from===next){ sync(v); if(o.scroll!==false) scrollTop(o.instant); return; }
+    var dir=from?(rank(next)>rank(from)?1:-1):1;
+    var anim=!(o.instant||o.silent||reduced||!from);
+    cur=next;
+    sync(v);
+    if(cleanup){ cleanup(); cleanup=null; }
+    clearTimeout(timer);
+    blocks.forEach(function(b){ b.classList.remove('v-in','v-go','v-out'); b.style.cssText=''; });
+    next.classList.add('is-on');
+    if(!anim){
+      if(from) from.classList.remove('is-on');
+      if(window.ARCHIVE_HOOK) window.ARCHIVE_HOOK(next, v);
+      if(o.scroll!==false) scrollTop(true);
+      return;
+    }
+    host.classList.add('is-anim');
+    host.style.height=Math.max(from.offsetHeight, next.offsetHeight)+'px';
+    window.scrollTo({top:boxTop(), behavior:'instant'});
+    var aN=null,aC=null;
+    if(next.animate){
+      aN=next.animate([{opacity:0,transform:'translate3d('+(dir*26)+'px,0,0)'},
+                       {opacity:1,transform:'translate3d(0,0,0)'}],
+                      {duration:420,easing:'cubic-bezier(.22,.61,.36,1)',fill:'both'});
+      aC=from.animate([{opacity:1,transform:'translate3d(0,0,0)'},
+                       {opacity:0,transform:'translate3d('+(-dir*26)+'px,0,0)'}],
+                      {duration:300,easing:'ease',fill:'both'});
+    }
+    var done=false;
+    function finish(){
+      if(done) return;
+      done=true; cleanup=null;
+      clearTimeout(timer); clearTimeout(guard);
+      try{ if(aN) aN.cancel(); if(aC) aC.cancel(); }catch(e){}
+      from.classList.remove('is-on'); from.style.cssText=''; next.style.cssText='';
+      host.classList.remove('is-anim'); host.style.height='';
+      window.scrollTo({top:boxTop(), behavior:'instant'});
+      if(window.ARCHIVE_HOOK) window.ARCHIVE_HOOK(next, v);
+    }
+    cleanup=finish;
+    if(aN) aN.finished.then(finish, function(){});
+    /* 프레임이 오지 않는 기기에서는 연출을 접고 곧바로 넘긴다. */
+    var guard=setTimeout(function(){ if(aN&&(aN.currentTime||0)<60) finish(); },320);
+    timer=setTimeout(finish,1300);
+  }
+
+  window.ARCHIVE={show:show, sync:sync, moveInd:moveInd, scrollToEl:scrollToEl,
+                  blockFor:blockFor, current:function(){ return cur; }};
+
+  /* ── 탭 누르기·키보드 ─────────────────────────────────────────── */
+  if(bar){
+    bar.addEventListener('click',function(e){
+      var b=e.target.closest?e.target.closest('button[data-v]'):null;
+      if(!b) return;
+      show(b.getAttribute('data-v'));
+    });
+    bar.addEventListener('keydown',function(e){
+      var i=btns.indexOf(document.activeElement); if(i<0) return;
+      var n=null;
+      if(e.key==='ArrowRight') n=btns[(i+1)%btns.length];
+      if(e.key==='ArrowLeft') n=btns[(i-1+btns.length)%btns.length];
+      if(e.key==='Home') n=btns[0];
+      if(e.key==='End') n=btns[btns.length-1];
+      if(n){ e.preventDefault(); n.focus(); show(n.getAttribute('data-v')); }
+    });
+    window.addEventListener('resize',moveInd);
+  }
+
+  /* ── 막 끝 — 같은 행성의 이웃 막으로 ─────────────────────────── */
+  document.addEventListener('click',function(e){
+    var b=e.target.closest?e.target.closest('.actnav [data-act]'):null;
+    if(!b) return;
+    var v=b.getAttribute('data-act');
+    show(v);
+    var head=blockFor(v);
+    if(head) scrollToEl(head.querySelector('.vp-h,.ahead,.ch-h')||head);
   });
-  bar.addEventListener('keydown',function(e){
-    var i=btns.indexOf(document.activeElement);
-    if(i<0) return;
-    var n=null;
-    if(e.key==='ArrowRight') n=btns[(i+1)%btns.length];
-    if(e.key==='ArrowLeft') n=btns[(i-1+btns.length)%btns.length];
-    if(e.key==='Home') n=btns[0];
-    if(e.key==='End') n=btns[btns.length-1];
-    if(n){ e.preventDefault(); n.focus(); activate(n.getAttribute('data-v')); place(n); }
-  });
-  window.addEventListener('resize',function(){
-    place(bar.querySelector('button[aria-selected="true"]'));
-  });
-  var current=bar.querySelector('button[aria-selected="true"]')||btns[0];
+
+  /* ── 첫 막: 주소 해시가 가리키는 막부터 ─────────────────────── */
+  var start=btns.length?btns[0].getAttribute('data-v'):null;
   var hash=decodeURIComponent(location.hash.slice(1));
-  var target=hash?document.getElementById(hash):null;
-  if(target){
-    var panel=target.closest?target.closest('.vp[data-v]'):null;
-    if(panel){ current=btns.filter(function(b){return b.getAttribute('data-v')===panel.getAttribute('data-v');})[0]||current; }
+  var tgt=hash?document.getElementById(hash):null;
+  if(tgt){
+    var blk=tgt.closest?tgt.closest('.act-block'):null;
+    if(blk&&blk.getAttribute('data-act')) start=blk.getAttribute('data-act');
   }
-  activate(current.getAttribute('data-v'),target);
-  requestAnimationFrame(function(){
-    place(bar.querySelector('button[aria-selected="true"]'));
-  });
+  if(start){
+    show(start,{instant:true,scroll:false});
+    requestAnimationFrame(moveInd);
+    if(tgt) setTimeout(function(){ scrollToEl(tgt); },60);
+  }
 })();
 </script>
 </body>
