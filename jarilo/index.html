@@ -155,10 +155,10 @@
   function scrollTop(instant){
     window.scrollTo({top:boxTop(), behavior:(instant||reduced)?'instant':'smooth'});
   }
-  function scrollToEl(el){
+  function scrollToEl(el, instant){
     if(!el) return;
     var y=el.getBoundingClientRect().top+window.pageYOffset-tbh()-12;
-    window.scrollTo({top:Math.max(0,y), behavior:reduced?'instant':'smooth'});
+    window.scrollTo({top:Math.max(0,y), behavior:(instant||reduced)?'instant':'smooth'});
   }
   function moveInd(){
     if(!bar||!ind) return;
@@ -274,7 +274,14 @@
   if(start){
     show(start,{instant:true,scroll:false});
     requestAnimationFrame(moveInd);
-    if(tgt) setTimeout(function(){ scrollToEl(tgt); },60);
+  }
+  /* 주소의 절로 바로 — 그림이 늦게 붙어 자리가 밀리는 문서라 몇 번 더 잡아 준다. */
+  if(tgt){
+    var jump=function(){ scrollToEl(tgt, true); };
+    jump();
+    setTimeout(jump,120);
+    setTimeout(jump,600);
+    window.addEventListener('load',function(){ setTimeout(jump,60); });
   }
 })();
 </script>
